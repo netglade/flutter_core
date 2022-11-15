@@ -37,8 +37,8 @@ dart_code_metrics:
 
 [netglade_link]: https://netglade.cz/en
 [logo]: https://avatars.githubusercontent.com/u/118181453?s=200
-[ci_badge]: https://github.com/NetGlade/netglade_analysis/workflows/ci/badge.svg
-[ci_badge_link]: https://github.com/NetGlade/netglade_analysis/actions
+[ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
+[ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_badge_link]: https://opensource.org/licenses/MIT
 [pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
