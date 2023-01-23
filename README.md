@@ -54,10 +54,10 @@ To indicate your project is using `netglade_analysis` →
 ```
 
 [netglade_link]: https://netglade.cz/en
-[netglade_link_light]: https://netglade.cz/en#gh-light-mode-only
-[netglade_link_dark]: https://netglade.cz/en#gh-dark-mode-only
-[netglade_logo_light]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png#gh-light-mode-only
-[netglade_logo_dark]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png#gh-dark-mode-only
+[netglade_link_light]: https://netglade.cz/en#gh-dark-mode-only
+[netglade_link_dark]: https://netglade.cz/en#gh-light-mode-only
+[netglade_logo_light]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png#gh-dark-mode-only
+[netglade_logo_dark]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png#gh-light-mode-only
 
 [ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
 [ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
