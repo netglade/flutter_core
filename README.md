@@ -32,7 +32,7 @@ Then, add an include in `analysis_options.yaml`:
 include: package:netglade_analysis/lints.yaml
 ```
 
-To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml`:  
+To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml` (and add `dart_code_metrics` to dev dependencies):  
 
 ```yaml
 analyzer:
