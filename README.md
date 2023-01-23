@@ -1,16 +1,21 @@
-# NetGlade Analysis
+# netglade analysis
 
-[![NetGlade][logo]][netglade_link]
+[![netglade][netglade_logo_light]][netglade_link_light]
+[![netglade][netglade_logo_dark]][netglade_link_dark]
 
-Developed with 💙 by [NetGlade][netglade_link]
+Developed with 💚 by [netglade][netglade_link]
 
 [![ci][ci_badge]][ci_badge_link]
 [![pub package][pub_badge]][pub_badge_link]
-[![License: MIT][license_badge]][license_badge_link]
+[![license: MIT][license_badge]][license_badge_link]
+[![style: netglade analysis][style_badge]][style_badge_link]
 
 ---
 
-This package provides lint rules for Dart and Flutter which are used at [NetGlade][netglade_link].
+This package provides lint rules for Dart and Flutter which are used at [netglade][netglade_link].
+
+You can also check all the available Dart lint rules on [linter rules site][linter_rules] or [supported lint rules site][supported_lint_rules].
+And you can see all the available on [DCM rules site][dcm_rules].
 
 ## Usage
 
@@ -25,21 +30,44 @@ Then, add an include in `analysis_options.yaml`:
 
 ```yaml
 include: package:netglade_analysis/lints.yaml
+```
 
+To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml`:  
+
+```yaml
 analyzer:
   plugins:
     - dart_code_metrics
 
 dart_code_metrics:
   extends:
-    - package:netglade_analysis/code_metrics.yaml
+    - package:netglade_analysis/dcm.yaml
+```
+
+## Badge
+
+To indicate your project is using `netglade_analysis` →
+[![style: netglade analysis][style_badge]][style_badge_link]
+
+```md
+[![style: netglade analysis](https://img.shields.io/badge/style-netglade_analysis-26D07C.svg)](https://pub.dev/packages/netglade_analysis)
 ```
 
 [netglade_link]: https://netglade.cz/en
-[logo]: https://avatars.githubusercontent.com/u/118181453?s=200
+[netglade_link_light]: https://netglade.cz/en#gh-light-mode-only
+[netglade_link_dark]: https://netglade.cz/en#gh-dark-mode-only
+[netglade_logo_light]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png#gh-light-mode-only
+[netglade_logo_dark]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png#gh-dark-mode-only
+
 [ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
 [ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_badge_link]: https://opensource.org/licenses/MIT
 [pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
 [pub_badge_link]: https://pub.dartlang.org/packages/netglade_analysis
+[style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
+[style_badge_link]: https://pub.dev/packages/netglade_analysis
+
+[linter_rules]: https://dart.dev/tools/linter-rules
+[supported_lint_rules]: https://dart-lang.github.io/linter/lints
+[dcm_rules]: https://dcm.dev/docs/individuals/rules/
