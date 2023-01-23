@@ -1,3 +1,6 @@
+# 1.1.1
+- Configure `prefer-static-class` DCM rule exceptions for hooks and providers.
+
 # 1.1.0
 - Add `prefer-static-class` DCM rule.
 - Add `use-setstate-synchronously` DCM rule.
@@ -7,4 +10,4 @@
 
 # 1.0.0
 
-- Add `analysis_options` and `code_metrics` used at [NetGlade](https://netglade.cz/en)
+- Add `analysis_options` and `code_metrics` used at [netglade](https://netglade.cz/en)

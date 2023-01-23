@@ -32,7 +32,7 @@ dart_code_metrics:
     # - ban-name
     - binary-expression-operand-order
     - double-literal-format
-    - format-comment
+    # - format-comment
     - list-all-equatable-fields
     - member-ordering:
         # alphabetize: true
@@ -90,7 +90,11 @@ dart_code_metrics:
           - test/**
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
-    - prefer-static-class
+    - prefer-static-class:
+        ignore-private: true
+        ignore-names:
+          - (.*)Provider
+          - use(.*)
     # - prefer-trailing-comma # already in Dart lints - require_trailing_commas
     - tag-name
 
