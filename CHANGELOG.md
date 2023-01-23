@@ -1,5 +1,6 @@
 # 1.1.1
 - Configure `prefer-static-class` DCM rule exceptions for hooks and providers.
+- Disabled `format-comment` because of https://github.com/dart-code-checker/dart-code-metrics/issues/1158.
 
 # 1.1.0
 - Add `prefer-static-class` DCM rule.

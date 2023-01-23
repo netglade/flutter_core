@@ -32,7 +32,7 @@ dart_code_metrics:
     # - ban-name
     - binary-expression-operand-order
     - double-literal-format
-    # - format-comment
+    # - format-comment # waiting for https://github.com/dart-code-checker/dart-code-metrics/issues/1158
     - list-all-equatable-fields
     - member-ordering:
         # alphabetize: true
