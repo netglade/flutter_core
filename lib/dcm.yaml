@@ -1,9 +1,11 @@
 dart_code_metrics:
   rules:
     ### Dart
+    # - arguments-ordering # way too pedantic
     - avoid-banned-imports
     - avoid-cascade-after-if-null
     - avoid-collection-methods-with-unrelated-types
+    - avoid-double-slash-imports
     - avoid-duplicate-exports
     - avoid-dynamic
     - avoid-global-state
@@ -22,6 +24,7 @@ dart_code_metrics:
     - avoid-redundant-async
     - avoid-throw-in-catch-block
     - avoid-top-level-members-in-tests
+    - avoid-unnecessary-conditionals # already in Dart lints - avoid_bool_literals_in_conditional_expressions
     - avoid-unnecessary-type-assertions
     - avoid-unnecessary-type-casts
     - avoid-unrelated-type-assertions
@@ -29,9 +32,10 @@ dart_code_metrics:
     # - ban-name
     - binary-expression-operand-order
     - double-literal-format
-    # - format-comment
+    - format-comment
+    - list-all-equatable-fields
     - member-ordering:
-        alphabetize: true
+        # alphabetize: true
         order:
           - public-fields
           - private-fields
@@ -72,11 +76,11 @@ dart_code_metrics:
     - no-object-declaration
     - prefer-async-await
     - prefer-commenting-analyzer-ignores
-    # - prefer-conditional-expressions
+    - prefer-conditional-expressions
     # - prefer-correct-identifier-length
     - prefer-correct-test-file-name
     - prefer-correct-type-name
-    # - prefer-enums-by-name
+    - prefer-enums-by-name
     - prefer-first
     - prefer-immediate-return
     - prefer-iterable-of
@@ -86,16 +90,17 @@ dart_code_metrics:
           - test/**
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
-    # - prefer-trailing-comma
+    - prefer-static-class
+    # - prefer-trailing-comma # already in Dart lints - require_trailing_commas
     - tag-name
 
     ### Flutter
-
     - always-remove-listener
-    # - avoid-border-all
+    - avoid-border-all
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
     - avoid-unnecessary-setstate
+    - use-setstate-synchronously
     - avoid-expanded-as-spacer
     - avoid-wrapping-in-padding
     - check-for-equals-in-render-object-setters
@@ -105,6 +110,7 @@ dart_code_metrics:
     - prefer-extracting-callbacks
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
+    - prefer-using-list-view
 
     ### Intl
     # - prefer-intl-name
