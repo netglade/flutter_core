@@ -1,7 +1,10 @@
 # netglade analysis
 
-[![netglade][netglade_logo_light]][netglade_link_light]
-[![netglade][netglade_logo_dark]][netglade_link_dark]
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
+  <img alt="netglade" src="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
+</picture>
 
 Developed with 💚 by [netglade][netglade_link]
 
@@ -32,7 +35,7 @@ Then, add an include in `analysis_options.yaml`:
 include: package:netglade_analysis/lints.yaml
 ```
 
-To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml` (and add `dart_code_metrics` to dev dependencies):  
+To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml` (and add `dart_code_metrics` to dev dependencies):
 
 ```yaml
 analyzer:
@@ -54,10 +57,6 @@ To indicate your project is using `netglade_analysis` →
 ```
 
 [netglade_link]: https://netglade.cz/en
-[netglade_link_light]: https://netglade.cz/en#gh-dark-mode-only
-[netglade_link_dark]: https://netglade.cz/en#gh-light-mode-only
-[netglade_logo_light]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png#gh-dark-mode-only
-[netglade_logo_dark]: https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png#gh-light-mode-only
 
 [ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
 [ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
