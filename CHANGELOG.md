@@ -1,3 +1,6 @@
+# 1.1.2
+- Enabled `format-comment`; issues with it were fixed.
+
 # 1.1.1
 - Configure `prefer-static-class` DCM rule exceptions for hooks and providers.
 - Disabled `format-comment` because of https://github.com/dart-code-checker/dart-code-metrics/issues/1158.
