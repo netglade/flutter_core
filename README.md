@@ -83,7 +83,7 @@ To indicate your project is using `netglade_analysis` →
 [style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
 [style_badge_link]: https://pub.dev/packages/netglade_analysis
 [discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
-[discord_badge_link]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
+[discord_badge_link]: https://discord.gg/sJfBBuDZy4
 
 [linter_rules]: https://dart.dev/tools/linter-rules
 [supported_lint_rules]: https://dart-lang.github.io/linter/lints
