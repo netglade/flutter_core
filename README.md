@@ -1,10 +1,12 @@
 # netglade analysis
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
-  <img alt="netglade" src="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
-</picture>
+<a href="https://netglade.com/en">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_light.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
+      <img alt="netglade" src="https://raw.githubusercontent.com/netglade/.github/main/assets/netglade_logo_dark.png">
+    </picture>
+</a>
 
 Developed with 💚 by [netglade][netglade_link]
 
@@ -12,6 +14,7 @@ Developed with 💚 by [netglade][netglade_link]
 [![pub package][pub_badge]][pub_badge_link]
 [![license: MIT][license_badge]][license_badge_link]
 [![style: netglade analysis][style_badge]][style_badge_link]
+[![Discord][discord_badge]][discord_badge_link]
 
 ---
 
@@ -47,6 +50,19 @@ dart_code_metrics:
     - package:netglade_analysis/dcm.yaml
 ```
 
+## Recommendations
+
+Consider adding an analyzer exclude for generated, coverage, ... files. 
+
+```yaml
+analyzer:
+  exclude:
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'
+    - test/.test_coverage.dart
+    - lib/generated_plugin_registrant.dart
+```
+
 ## Badge
 
 To indicate your project is using `netglade_analysis` →
@@ -56,7 +72,7 @@ To indicate your project is using `netglade_analysis` →
 [![style: netglade analysis](https://img.shields.io/badge/style-netglade_analysis-26D07C.svg)](https://pub.dev/packages/netglade_analysis)
 ```
 
-[netglade_link]: https://netglade.cz/en
+[netglade_link]: https://netglade.com/en
 
 [ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
 [ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
@@ -66,6 +82,8 @@ To indicate your project is using `netglade_analysis` →
 [pub_badge_link]: https://pub.dartlang.org/packages/netglade_analysis
 [style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
 [style_badge_link]: https://pub.dev/packages/netglade_analysis
+[discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
+[discord_badge_link]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
 
 [linter_rules]: https://dart.dev/tools/linter-rules
 [supported_lint_rules]: https://dart-lang.github.io/linter/lints

@@ -15,12 +15,6 @@ analyzer:
     unused_local_variable: warning
     deprecated_member_use_from_same_package: warning
 
-  exclude:
-    - '**/*.g.dart'
-    - '**/*.freezed.dart'
-    - test/.test_coverage.dart
-    - lib/generated_plugin_registrant.dart
-
 linter:
   rules:
     ### ERROR
