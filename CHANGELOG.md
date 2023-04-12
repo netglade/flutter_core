@@ -1,3 +1,6 @@
+## 1.2.1
+- Update logo
+
 ## 1.2.0
 - Remove `analyzer:exclude:` from `lints.yaml`. (add to README as a recommendation)
 - Add a Discord link to README.
