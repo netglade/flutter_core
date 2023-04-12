@@ -1,5 +1,5 @@
 name: netglade_analysis
-version: 1.2.2
+version: 1.2.3
 description: Lint rules for Dart and Flutter used internally at netglade.
 repository: https://github.com/netglade/netglade_analysis
 issue_tracker: https://github.com/netglade/netglade_analysis/issues

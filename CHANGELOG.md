@@ -1,3 +1,6 @@
+## 1.2.3
+- Fix pub dev icon
+
 ## 1.2.2
 - Fix pub dev picture
 
