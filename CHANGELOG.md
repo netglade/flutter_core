@@ -1,3 +1,6 @@
+## 1.2.2
+- Fix pub dev picture
+
 ## 1.2.1
 - Update logo
 
