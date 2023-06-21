@@ -1,3 +1,6 @@
+## 2.0.0
+- Update DCM rules to DCM Teams 1.6.0
+
 ## 1.2.3
 - Fix pub dev icon
 
