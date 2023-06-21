@@ -1,39 +1,83 @@
+# version 1.6.0
 dart_code_metrics:
   rules:
-    ### Dart
+    ### Common
     # - arguments-ordering # way too pedantic
-    - avoid-banned-imports
+    # - avoid-banned-file-names
+    # - avoid-banned-imports
+    # - avoid-banned-types
+    - avoid-bottom-type-in-patterns
+    - avoid-bottom-type-in-records
     - avoid-cascade-after-if-null
+    - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
+    - avoid-declaring-call-method # TODO
     - avoid-double-slash-imports
     - avoid-duplicate-exports
+    - avoid-duplicate-named-imports
+    - avoid-duplicate-patterns
     - avoid-dynamic
+    - avoid-equal-expressions
+    - avoid-explicit-pattern-field-name
+    # - avoid-explicit-type-declaration # public API
+    - avoid-function-type-in-records
+    - avoid-future-tostring
     - avoid-global-state
     - avoid-ignoring-return-values
+    - avoid-inverted-boolean-checks
     # - avoid-late-keyword
+    # - avoid-long-functions # way too pedantic
+    - avoid-long-parameter-list # TODO je to jen pro poziční?
+    - avoid-long-records
+    - avoid-missed-calls
     - avoid-missing-enum-constant-in-map
+    - avoid-mixing-named-and-positional-fields
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
+    - avoid-nested-records
+    - avoid-nested-switch-expressions
+    - avoid-nested-switches
     - avoid-non-ascii-symbols
     - avoid-non-null-assertion:
         exclude:
           - test/**
+    - avoid-one-field-records
     - avoid-passing-async-when-sync-expected:
         exclude:
           - test/**
+    - avoid-positional-record-field-access
     - avoid-redundant-async
+    - avoid-redundant-else
+    - avoid-redundant-positional-field-name
+    - avoid-redundant-pragma-inline
+    - avoid-self-assignment
+    - avoid-self-compare
+    - avoid-shadowing # TODO
+    # - avoid-similar-names # way too pedantic
+    - avoid-substring # TODO
     - avoid-throw-in-catch-block
-    - avoid-top-level-members-in-tests
+    - avoid-throw-objects-without-tostring
+    - avoid-top-level-members-in-tests # TODO fix?
+    - avoid-unassigned-late-fields-keyword
     - avoid-unnecessary-conditionals # already in Dart lints - avoid_bool_literals_in_conditional_expressions
+    - avoid-unnecessary-negations
+    - avoid-unnecessary-nullable-return-type
+    - avoid-unnecessary-return
     - avoid-unnecessary-type-assertions
     - avoid-unnecessary-type-casts
     - avoid-unrelated-type-assertions
+    - avoid-unrelated-type-casts
+    - avoid-unsafe-collection-methods
+    - avoid-unused-generics
     - avoid-unused-parameters
-    # - ban-name
+    # - banned-usage
     - binary-expression-operand-order
     - double-literal-format
-    - format-comment
-    - list-all-equatable-fields
+    - format-comment:
+        only-doc-comments: true
+    # - format-test-name # good but painful
+    - function-always-returns-null
+    # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         # alphabetize: true
         order:
@@ -62,25 +106,31 @@ dart_code_metrics:
     - missing-test-assertion:
         include-assertions:
           - assertAllTrue
+    - move-records-to-typedefs: # TODO: check IDE tooltip
+        min-fields: 3
+        min-occurrences: 3
     - newline-before-return
     - no-boolean-literal-compare
     - no-empty-block
-    - no-equal-arguments:
-        ignored-parameters:
-          - height
-          - width
+    # - no-equal-arguments # way too pedantic
+    - no-equal-conditions
+    - no-equal-switch-case
+    - no-equal-switch-expression-cases
     - no-equal-then-else
     #- no-magic-number: # way to strict for default values of parameters etc.
-    #    exclude:
-    #      - test/**
     - no-object-declaration
     - prefer-async-await
+    - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
-    # - prefer-correct-identifier-length
+    # - prefer-correct-identifier-length # way too pedantic
+    - prefer-correct-switch-length
     - prefer-correct-test-file-name
     - prefer-correct-type-name
+    - prefer-declaring-const-constructor
+    - prefer-early-return
     - prefer-enums-by-name
+    - prefer-explicit-parameter-names
     - prefer-first
     - prefer-immediate-return
     - prefer-iterable-of
@@ -90,37 +140,85 @@ dart_code_metrics:
           - test/**
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
+    - prefer-return-await
+    - prefer-returning-conditional-expressions
+    - prefer-simpler-patterns-null-check
     - prefer-static-class:
         ignore-private: true
         ignore-names:
           - (.*)Provider
           - use(.*)
+    - prefer-test-matchers # TODO
     # - prefer-trailing-comma # already in Dart lints - require_trailing_commas
+    - prefer-unwrapping-future-or # TODO?
+    - prefer-visible-for-testing-on-members
+    - prefer-wildcard-pattern
     - tag-name
+    - unnecessary-trailing-comma:
+        max-width: 120
 
     ### Flutter
+    - add-copy-with # TODO
     - always-remove-listener
     - avoid-border-all
+    - avoid-empty-setstate
+    - avoid-expanded-as-spacer
+    - avoid-incomplete-copy-with
+    - avoid-inherited-widget-in-initstate
+    - avoid-late-context
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
+    - avoid-state-constructors
+    - avoid-stateless-widget-initialized-fields
     - avoid-unnecessary-setstate
-    - use-setstate-synchronously
-    - avoid-expanded-as-spacer
+    - avoid-unnecessary-stateful-widgets
     - avoid-wrapping-in-padding
     - check-for-equals-in-render-object-setters
     - consistent-update-render-object
+    - dispose-fields
+    - prefer-action-button-tooltip
     - prefer-const-border-radius
     - prefer-correct-edge-insets-constructor
+    - prefer-define-hero-tag
     - prefer-extracting-callbacks
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
     - prefer-using-list-view
+    # - prefer-widget-private-members # cannot use this.field in constructor
+    - proper-super-calls
+    - use-setstate-synchronously
 
-    ### Intl
-    # - prefer-intl-name
-    # - provide-correct-intl-args
+    ### Provider
+    - avoid-instantiating-in-value-provider
+    - avoid-read-inside-build
+    - avoid-watch-outside-build
+    - dispose-providers
+    - prefer-multi-provider
 
-    ### Angular
-    # - avoid-preserve-whitespace-false
-    # - component-annotation-arguments-ordering
-    # - prefer-on-push-cd-strategy
+    ### Bloc
+    - avoid-bloc-public-methods
+    # - avoid-cubits
+    # - avoid-passing-bloc-to-bloc
+    - check-is-not-closed-after-async-gap # TODO: check if safeEmit works
+    - prefer-correct-bloc-provider
+    - prefer-multi-bloc-provider
+
+    ### Equatable
+    - extend-equatable # TODO
+    - list-all-equatable-fields
+
+    ### Flame - not used
+
+    ### Pubspec
+    - avoid-any-version
+    # - avoid-dependency-overrides
+    - banned-dependencies
+    - prefer-caret-version-syntax
+    # - prefer-correct-package-name
+    - prefer-correct-screenshots
+    - prefer-publish-to-none # TODO
+    - prefer-semver-version
+
+    ### Intl - not used
+
+    ### Angular - not used
