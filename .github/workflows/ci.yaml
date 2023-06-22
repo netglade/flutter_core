@@ -22,5 +22,8 @@ jobs:
       - name: Analyze
         run: dart analyze .
 
+      - name: DCM Analyze
+        run: dcm analyze --reporter=github .
+
       - name: Dry Publish
         run: dart pub publish --dry-run
