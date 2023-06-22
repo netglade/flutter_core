@@ -1,14 +1,14 @@
 ## 2.0.0
-- Update DCM rules to DCM Teams 1.6.0
+- Update DCM rules to adhere DCM Teams 1.6.0.
 
 ## 1.2.3
-- Fix pub dev icon
+- Fix pub dev icon.
 
 ## 1.2.2
-- Fix pub dev picture
+- Fix pub dev picture.
 
 ## 1.2.1
-- Update logo
+- Update logo.
 
 ## 1.2.0
 - Remove `analyzer:exclude:` from `lints.yaml`. (add to README as a recommendation)
