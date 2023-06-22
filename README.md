@@ -27,7 +27,7 @@ To use the lints, add as a dev dependency in your `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
-  netglade_analysis: ^1.2.0
+  netglade_analysis: ^2.0.0
 ```
 
 Then, add an include in `analysis_options.yaml`:
@@ -36,13 +36,10 @@ Then, add an include in `analysis_options.yaml`:
 include: package:netglade_analysis/lints.yaml
 ```
 
-To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml` (and add `dart_code_metrics` to dev dependencies):
+To also use [Dart Code Metrics](https://dcm.dev), add configuration in `analysis_options.yaml`.
+Then you can use its CLI tool.
 
 ```yaml
-analyzer:
-  plugins:
-    - dart_code_metrics
-
 dart_code_metrics:
   extends:
     - package:netglade_analysis/dcm.yaml
@@ -85,4 +82,4 @@ To indicate your project is using `netglade_analysis` →
 
 [linter_rules]: https://dart.dev/tools/linter-rules
 [supported_lint_rules]: https://dart-lang.github.io/linter/lints
-[dcm_rules]: https://dcm.dev/docs/individuals/rules/
+[dcm_rules]: https://dcm.dev/docs/rules/

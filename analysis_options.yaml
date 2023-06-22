@@ -1,1 +1,7 @@
 include: lib/lints.yaml
+
+dart_code_metrics:
+  extends:
+    - package:netglade_analysis/dcm.yaml
+  pubspec-rules:
+    prefer-publish-to-none: false
