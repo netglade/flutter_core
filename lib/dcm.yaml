@@ -1,5 +1,16 @@
 # version 1.6.0
 dart_code_metrics:
+  pubspec-rules:
+    ### Pubspec
+    - avoid-any-version
+    # - avoid-dependency-overrides
+    - banned-dependencies
+    - prefer-caret-version-syntax
+    # - prefer-correct-package-name
+    - prefer-correct-screenshots
+    - prefer-publish-to-none
+    - prefer-semver-version
+
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
@@ -11,7 +22,7 @@ dart_code_metrics:
     - avoid-cascade-after-if-null
     - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
-    - avoid-declaring-call-method # TODO
+    - avoid-declaring-call-method
     - avoid-double-slash-imports
     - avoid-duplicate-exports
     - avoid-duplicate-named-imports
@@ -27,7 +38,7 @@ dart_code_metrics:
     - avoid-inverted-boolean-checks
     # - avoid-late-keyword
     # - avoid-long-functions # way too pedantic
-    - avoid-long-parameter-list # TODO je to jen pro poziční?
+    # - avoid-long-parameter-list # doesn't play well with Flutter
     - avoid-long-records
     - avoid-missed-calls
     - avoid-missing-enum-constant-in-map
@@ -52,14 +63,17 @@ dart_code_metrics:
     - avoid-redundant-pragma-inline
     - avoid-self-assignment
     - avoid-self-compare
-    - avoid-shadowing # TODO
+    - avoid-shadowing:
+        ignore-parameters: true
+        ignored-names:
+          - context
     # - avoid-similar-names # way too pedantic
-    - avoid-substring # TODO
+    - avoid-substring
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
-    - avoid-top-level-members-in-tests # TODO fix?
+    - avoid-top-level-members-in-tests
     - avoid-unassigned-late-fields-keyword
-    - avoid-unnecessary-conditionals # already in Dart lints - avoid_bool_literals_in_conditional_expressions
+    - avoid-unnecessary-conditionals
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-return
@@ -79,7 +93,7 @@ dart_code_metrics:
     - function-always-returns-null
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
-        # alphabetize: true
+        alphabetize: true
         order:
           - public-fields
           - private-fields
@@ -103,16 +117,25 @@ dart_code_metrics:
           - public-methods
           - private-methods
           - build-method
-    - missing-test-assertion:
-        include-assertions:
-          - assertAllTrue
-    - move-records-to-typedefs: # TODO: check IDE tooltip
+    - missing-test-assertion
+    - move-records-to-typedefs:
         min-fields: 3
         min-occurrences: 3
     - newline-before-return
     - no-boolean-literal-compare
     - no-empty-block
-    # - no-equal-arguments # way too pedantic
+    - no-equal-arguments:
+        ignored-parameters:
+          - height
+          - width
+          - top
+          - right
+          - bottom
+          - left
+          - topLeft
+          - topRight
+          - bottomLeft
+          - bottomRight
     - no-equal-conditions
     - no-equal-switch-case
     - no-equal-switch-expression-cases
@@ -148,17 +171,17 @@ dart_code_metrics:
         ignore-names:
           - (.*)Provider
           - use(.*)
-    - prefer-test-matchers # TODO
+    - prefer-test-matchers
     # - prefer-trailing-comma # already in Dart lints - require_trailing_commas
-    - prefer-unwrapping-future-or # TODO?
+    # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
     - prefer-wildcard-pattern
     - tag-name
     - unnecessary-trailing-comma:
-        max-width: 120
+        max-width: 80
 
     ### Flutter
-    - add-copy-with # TODO
+    - add-copy-with
     - always-remove-listener
     - avoid-border-all
     - avoid-empty-setstate
@@ -199,25 +222,15 @@ dart_code_metrics:
     - avoid-bloc-public-methods
     # - avoid-cubits
     # - avoid-passing-bloc-to-bloc
-    - check-is-not-closed-after-async-gap # TODO: check if safeEmit works
+    - check-is-not-closed-after-async-gap
     - prefer-correct-bloc-provider
     - prefer-multi-bloc-provider
 
     ### Equatable
-    - extend-equatable # TODO
+    - extend-equatable
     - list-all-equatable-fields
 
     ### Flame - not used
-
-    ### Pubspec
-    - avoid-any-version
-    # - avoid-dependency-overrides
-    - banned-dependencies
-    - prefer-caret-version-syntax
-    # - prefer-correct-package-name
-    - prefer-correct-screenshots
-    - prefer-publish-to-none # TODO
-    - prefer-semver-version
 
     ### Intl - not used
 
