@@ -82,4 +82,4 @@ To indicate your project is using `netglade_analysis` →
 
 [linter_rules]: https://dart.dev/tools/linter-rules
 [supported_lint_rules]: https://dart-lang.github.io/linter/lints
-[dcm_rules]: https://dcm.dev/docs/individuals/rules/
+[dcm_rules]: https://dcm.dev/docs/rules/
