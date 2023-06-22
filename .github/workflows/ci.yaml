@@ -31,7 +31,7 @@ jobs:
           sudo apt-get install dcm
 
       - name: DCM Analyze
-        run: dcm analyze --reporter=github .
+        run: dcm analyze --reporter=github --ci-key ${{ secrets.DCM_KEY }} --email ${{ secrets.DCM_EMAIL }} .
 
       - name: Dry Publish
         run: dart pub publish --dry-run
