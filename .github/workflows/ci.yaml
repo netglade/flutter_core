@@ -22,6 +22,12 @@ jobs:
       - name: Analyze
         run: dart analyze .
 
+      - name: Install DCM
+        run: |
+          sudo apt-get update
+          wget -qO- https://dcm.dev/pgp-key.public | sudo gpg --dearmor -o /usr/share/keyrings/dcm.gpg
+          echo 'deb [signed-by=/usr/share/keyrings/dcm.gpg arch=amd64] https://dcm.dev/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
+
       - name: DCM Analyze
         run: dcm analyze --reporter=github .
 
