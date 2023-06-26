@@ -164,7 +164,7 @@ dart_code_metrics:
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
     - prefer-return-await
-    - prefer-returning-conditional-expressions
+    # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-patterns-null-check
     - prefer-static-class:
         ignore-private: true

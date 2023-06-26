@@ -67,7 +67,6 @@
   - prefer-early-return
   - prefer-explicit-parameter-names
   - prefer-return-await
-  - prefer-returning-conditional-expressions
   - prefer-simpler-patterns-null-check
   - prefer-test-matchers
   - prefer-visible-for-testing-on-members
