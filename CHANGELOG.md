@@ -1,3 +1,6 @@
+## 2.0.1
+- Fix README logo
+
 ## 2.0.0
 - New Dart lints:
   - collection_methods_unrelated_type

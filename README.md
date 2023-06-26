@@ -1,8 +1,4 @@
 <a href="https://github.com/netglade">
-    <img alt="netglade" height='120px' src="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_dark.png">
-</a>
-
-<a href="https://github.com/netglade">
    <picture >
      <source media="(prefers-color-scheme: dark)" height='120px' srcset="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_light.png">
      <source media="(prefers-color-scheme: light)" height='120px' srcset="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_dark.png">
