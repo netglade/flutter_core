@@ -1,4 +1,4 @@
-# version 1.6.0
+# version 1.6.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   pubspec-rules:
     ### Pubspec
@@ -38,7 +38,8 @@ dart_code_metrics:
     - avoid-inverted-boolean-checks
     # - avoid-late-keyword
     # - avoid-long-functions # way too pedantic
-    # - avoid-long-parameter-list # doesn't play well with Flutter
+    - avoid-long-parameter-list:
+        ignore-optional: true # exclude optional and (required) named parameters
     - avoid-long-records
     - avoid-missed-calls
     - avoid-missing-enum-constant-in-map
@@ -163,7 +164,7 @@ dart_code_metrics:
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
     - prefer-return-await
-    - prefer-returning-conditional-expressions
+    # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-patterns-null-check
     - prefer-static-class:
         ignore-private: true
