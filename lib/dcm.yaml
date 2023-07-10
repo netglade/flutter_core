@@ -14,9 +14,11 @@ dart_code_metrics:
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
+    # - avoid-accessing-other-classes-private-members # TODO?
     # - avoid-banned-file-names
     # - avoid-banned-imports
     # - avoid-banned-types
+    - avoid-barrel-files # TODO?
     - avoid-bottom-type-in-patterns
     - avoid-bottom-type-in-records
     - avoid-cascade-after-if-null
@@ -33,23 +35,33 @@ dart_code_metrics:
     # - avoid-explicit-type-declaration # public API
     - avoid-function-type-in-records
     - avoid-future-tostring
+    - avoid-generics-shadowing
     - avoid-global-state
     - avoid-ignoring-return-values
+    - avoid-importing-entrypoint-exports
     - avoid-inverted-boolean-checks
+    - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
     # - avoid-long-functions # way too pedantic
-    - avoid-long-parameter-list:
-        ignore-optional: true # exclude optional and (required) named parameters
+    # - avoid-long-parameter-list: # TODO: ?
+        # ignore-optional: true # exclude optional and (non-required) named parameters
     - avoid-long-records
     - avoid-missed-calls
     - avoid-missing-enum-constant-in-map
+    - avoid-misused-wildcard-pattern
     - avoid-mixing-named-and-positional-fields
+    # - avoid-mutating-parameters # TODO: ?
+    # - avoid-negated-conditions # TODO: ?
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
+    - avoid-nested-futures
     - avoid-nested-records
+    - avoid-nested-streams-and-futures
     - avoid-nested-switch-expressions
     - avoid-nested-switches
-    - avoid-non-ascii-symbols
+    - avoid-non-ascii-symbols:
+        exclude:
+          - test/**
     - avoid-non-null-assertion:
         exclude:
           - test/**
@@ -64,6 +76,7 @@ dart_code_metrics:
     - avoid-redundant-pragma-inline
     - avoid-self-assignment
     - avoid-self-compare
+    - avoid-shadowed-extension-methods
     - avoid-shadowing:
         ignore-parameters: true
         ignored-names:
@@ -74,7 +87,10 @@ dart_code_metrics:
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
     - avoid-unassigned-late-fields-keyword
+    - avoid-uncaught-future-errors
+    - avoid-unnecessary-call
     - avoid-unnecessary-conditionals
+    - avoid-unnecessary-futures
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-return
@@ -92,6 +108,7 @@ dart_code_metrics:
         only-doc-comments: true
     # - format-test-name # good but painful
     - function-always-returns-null
+    - map-keys-ordering # TODO?
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -122,7 +139,8 @@ dart_code_metrics:
         min-fields: 3
         min-occurrences: 3
     - newline-before-return
-    - no-boolean-literal-compare
+    - no-boolean-literal-compare:
+        allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
     - no-equal-arguments:
         ignored-parameters:
@@ -137,6 +155,7 @@ dart_code_metrics:
           - bottomLeft
           - bottomRight
     - no-equal-conditions
+    - no-equal-nested-conditions
     - no-equal-switch-case
     - no-equal-switch-expression-cases
     - no-equal-then-else
@@ -146,7 +165,10 @@ dart_code_metrics:
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
+    - prefer-correct-error-name # TODO: ?
+    - prefer-correct-future-return-type
     # - prefer-correct-identifier-length # way too pedantic
+    - prefer-correct-stream-return-type
     - prefer-correct-switch-length
     - prefer-correct-test-file-name
     - prefer-correct-type-name
@@ -163,6 +185,9 @@ dart_code_metrics:
           - test/**
     - prefer-moving-to-variable:
         allowed-duplicated-chains: 3
+        exclude:
+          - test/**
+    - prefer-parentheses-with-if-null
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-patterns-null-check
@@ -172,7 +197,8 @@ dart_code_metrics:
           - (.*)Provider
           - use(.*)
     - prefer-test-matchers
-    # - prefer-trailing-comma # already in Dart lints - require_trailing_commas
+    - prefer-trailing-comma
+    # - prefer-type-over-var # we prefer inference
     # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
     - prefer-wildcard-pattern
@@ -189,10 +215,12 @@ dart_code_metrics:
     - avoid-incomplete-copy-with
     - avoid-inherited-widget-in-initstate
     - avoid-late-context
+    - avoid-missing-image-alt # TODO?
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
+    - avoid-unnecessary-overrides-in-state # TODO?
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets
     - avoid-wrapping-in-padding
@@ -202,6 +230,7 @@ dart_code_metrics:
     - prefer-action-button-tooltip
     - prefer-const-border-radius
     - prefer-correct-edge-insets-constructor
+    - prefer-dedicated-media-query-methods
     - prefer-define-hero-tag
     - prefer-extracting-callbacks
     - prefer-single-widget-per-file:
