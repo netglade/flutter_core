@@ -14,11 +14,11 @@ dart_code_metrics:
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
-    # - avoid-accessing-other-classes-private-members # TODO?
+    - avoid-accessing-other-classes-private-members
     # - avoid-banned-file-names
     # - avoid-banned-imports
     # - avoid-banned-types
-    - avoid-barrel-files # TODO?
+    # - avoid-barrel-files # for now we use them
     - avoid-bottom-type-in-patterns
     - avoid-bottom-type-in-records
     - avoid-cascade-after-if-null
@@ -43,15 +43,15 @@ dart_code_metrics:
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
     # - avoid-long-functions # way too pedantic
-    # - avoid-long-parameter-list: # TODO: ?
+    # - avoid-long-parameter-list: # way too pedantic
         # ignore-optional: true # exclude optional and (non-required) named parameters
     - avoid-long-records
     - avoid-missed-calls
     - avoid-missing-enum-constant-in-map
     - avoid-misused-wildcard-pattern
     - avoid-mixing-named-and-positional-fields
-    # - avoid-mutating-parameters # TODO: ?
-    # - avoid-negated-conditions # TODO: ?
+    # - avoid-mutating-parameters # we use ValueNotifier etc.
+    - avoid-negated-conditions # TODO: ?
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
     - avoid-nested-futures
@@ -108,7 +108,7 @@ dart_code_metrics:
         only-doc-comments: true
     # - format-test-name # good but painful
     - function-always-returns-null
-    - map-keys-ordering # TODO?
+    - map-keys-ordering
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -165,7 +165,7 @@ dart_code_metrics:
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
-    - prefer-correct-error-name # TODO: ?
+    - prefer-correct-error-name # TODO: we use `e`
     - prefer-correct-future-return-type
     # - prefer-correct-identifier-length # way too pedantic
     - prefer-correct-stream-return-type
@@ -215,12 +215,12 @@ dart_code_metrics:
     - avoid-incomplete-copy-with
     - avoid-inherited-widget-in-initstate
     - avoid-late-context
-    - avoid-missing-image-alt # TODO?
+    - avoid-missing-image-alt
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
-    - avoid-unnecessary-overrides-in-state # TODO?
+    - avoid-unnecessary-overrides-in-state
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets
     - avoid-wrapping-in-padding
