@@ -1,3 +1,29 @@
+## 3.0.0
+- Adhere to DCM 1.7.0:
+  - Add avoid-accessing-other-classes-private-members
+  - Add avoid-generics-shadowing
+  - Add avoid-keywords-in-wildcard-pattern
+  - Add avoid-misused-wildcard-pattern
+  - Add avoid-nested-futures
+  - Add avoid-nested-streams-and-futures
+  - Add avoid-shadowed-extension-methods
+  - Add avoid-uncaught-future-errors
+  - Add avoid-unnecessary-call
+  - Add avoid-unnecessary-futures
+  - Add map-keys-ordering
+  - Add no-equal-nested-conditions
+  - Add prefer-correct-future-return-type
+  - Add prefer-correct-stream-return-type
+  - Add prefer-parentheses-with-if-null
+  - Add prefer-trailing-comma
+  - Add avoid-missing-image-alt
+  - Add avoid-unnecessary-overrides-in-state
+  - Add prefer-dedicated-media-query-methods
+  - Update allow-false for no-boolean-literal-compare
+  - Disable in tests avoid-non-ascii-symbols
+  - Disable in tests prefer-moving-to-variable
+  - Remove avoid-long-parameter-list
+
 ## 2.0.1
 - Fix README logo
 
