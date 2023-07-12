@@ -38,7 +38,7 @@ dart_code_metrics:
     - avoid-generics-shadowing
     - avoid-global-state
     - avoid-ignoring-return-values
-    - avoid-importing-entrypoint-exports
+    # - avoid-importing-entrypoint-exports: false # TODO: has false positives in monorepo
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
@@ -51,7 +51,7 @@ dart_code_metrics:
     - avoid-misused-wildcard-pattern
     - avoid-mixing-named-and-positional-fields
     # - avoid-mutating-parameters # we use ValueNotifier etc.
-    - avoid-negated-conditions # TODO: ?
+    # - avoid-negated-conditions # sometimes it might be better
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
     - avoid-nested-futures
@@ -108,7 +108,9 @@ dart_code_metrics:
         only-doc-comments: true
     # - format-test-name # good but painful
     - function-always-returns-null
-    - map-keys-ordering
+    - map-keys-ordering:
+        exclude:
+          - test/**
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -165,7 +167,7 @@ dart_code_metrics:
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
-    - prefer-correct-error-name # TODO: we use `e`
+    # - prefer-correct-error-name # we use `e`
     - prefer-correct-future-return-type
     # - prefer-correct-identifier-length # way too pedantic
     - prefer-correct-stream-return-type
