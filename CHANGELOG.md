@@ -1,3 +1,23 @@
+## 4.0.0
+- Adhere to DCM 1.8.0:
+  - Add prefer-custom-finder-over-find
+  - Add prefer-symbol-over-key
+  - Add avoid-map-keys-contains
+  - Add avoid-async-call-in-sync-function
+  - Add avoid-duplicate-mixins
+  - Add avoid-nullable-interpolation
+  - Add avoid-unused-instances
+  - Add enum-constants-ordering
+  - Add prefer-named-boolean-parameters
+  - Add prefer-correct-for-loop-increment
+  - Add prefer-public-exception-classes
+  - Add avoid-unnecessary-reassignment
+  - Add avoid-recursive-widget-calls
+  - Add prefer-text-rich
+- Adhere to Dart lints 3.1.0:
+  - Add no_self_assignments
+  - Add no_wildcard_variable_uses
+
 ## 3.0.0
 - Adhere to DCM 1.7.0:
   - Add avoid-accessing-other-classes-private-members
