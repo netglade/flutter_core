@@ -16,7 +16,7 @@ analyzer:
     deprecated_member_use_from_same_package: warning
     record_literal_one_positional_no_trailing_comma: error
 
-# version 1.35.0 - https://github.com/dart-lang/linter/blob/main/CHANGELOG.md
+# version 3.1.0 - https://github.com/dart-lang/linter/blob/main/CHANGELOG.md
 linter:
   rules:
     ### ERROR
@@ -45,8 +45,8 @@ linter:
     - no_adjacent_strings_in_list
     - no_duplicate_case_values
     - no_logic_in_create_state
-    # - no_self_assignments # WIP
-    # - no_wildcard_variable_uses # WIP
+    - no_self_assignments
+    - no_wildcard_variable_uses
     # - prefer_relative_imports
     - prefer_void_to_null
     - test_types_in_equals
