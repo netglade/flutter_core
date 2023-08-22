@@ -46,7 +46,7 @@ dart_code_metrics:
     # - avoid-late-keyword
     # - avoid-long-functions # way too pedantic
     # - avoid-long-parameter-list: # way too pedantic
-        # ignore-optional: true # exclude optional and (non-required) named parameters
+    # ignore-optional: true # exclude optional and (non-required) named parameters
     - avoid-long-records
     - avoid-map-keys-contains
     - avoid-missed-calls
@@ -148,7 +148,7 @@ dart_code_metrics:
     - move-records-to-typedefs:
         min-fields: 3
         min-occurrences: 3
-    - newline-before-case # TODO
+    - newline-before-case
     - newline-before-return
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
