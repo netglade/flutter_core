@@ -1,3 +1,9 @@
+## 4.1.0
+- Temporarily remove (its WIP and not recognized):
+  - no_wildcard_variable_uses
+  - no_self_assignments
+- Remove no-equal-arguments
+
 ## 4.0.0
 - Adhere to DCM 1.8.0:
   - Add prefer-custom-finder-over-find

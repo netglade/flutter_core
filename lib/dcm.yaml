@@ -153,18 +153,18 @@ dart_code_metrics:
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
-    - no-equal-arguments:
-        ignored-parameters:
-          - height
-          - width
-          - top
-          - right
-          - bottom
-          - left
-          - topLeft
-          - topRight
-          - bottomLeft
-          - bottomRight
+    # - no-equal-arguments: # TODO: hard to set up so it makes sense
+    #     ignored-parameters:
+    #       - height
+    #       - width
+    #       - top
+    #       - right
+    #       - bottom
+    #       - left
+    #       - topLeft
+    #       - topRight
+    #       - bottomLeft
+    #       - bottomRight
     - no-equal-conditions
     - no-equal-nested-conditions
     - no-equal-switch-case
