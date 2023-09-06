@@ -63,7 +63,7 @@ dart_code_metrics:
     - avoid-passing-async-when-sync-expected:
         exclude:
           - test/**
-    - avoid-passing-default-values # TODO: auto fix removes only value, not named part
+    - avoid-passing-default-values
     - avoid-passing-self-as-argument
     - avoid-positional-record-field-access
     - avoid-recursive-calls
