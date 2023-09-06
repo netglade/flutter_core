@@ -1,3 +1,16 @@
+## 4.2.0
+- Adhere to DCM 1.9.0:
+  - Add avoid-async-callback-in-fake-async
+  - Add move-variable-closer-to-its-usage
+  - Add avoid-passing-self-as-argument
+  - Add avoid-referencing-discarded-variables
+  - Add avoid-unconditional-break
+  - Add avoid-weak-cryptographic-algorithms
+  - Add avoid-identical-exception-handling-blocks
+  - Add avoid-recursive-calls
+  - Add avoid-missing-interpolation
+  - Add avoid-unnecessary-if
+
 ## 4.1.0
 - Temporarily remove (its WIP and not recognized):
   - no_wildcard_variable_uses

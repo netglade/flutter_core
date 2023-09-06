@@ -1,16 +1,5 @@
 # version 1.8.0 - https://dcm.dev/changelog/
 dart_code_metrics:
-  pubspec-rules:
-    ### Pubspec
-    - avoid-any-version
-    # - avoid-dependency-overrides
-    - banned-dependencies
-    - prefer-caret-version-syntax
-    # - prefer-correct-package-name
-    - prefer-correct-screenshots
-    - prefer-publish-to-none
-    - prefer-semver-version
-
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
@@ -39,6 +28,7 @@ dart_code_metrics:
     - avoid-future-tostring
     - avoid-generics-shadowing
     - avoid-global-state
+    - avoid-identical-exception-handling-blocks
     - avoid-ignoring-return-values
     - avoid-importing-entrypoint-exports
     - avoid-inverted-boolean-checks
@@ -73,11 +63,15 @@ dart_code_metrics:
     - avoid-passing-async-when-sync-expected:
         exclude:
           - test/**
+    - avoid-passing-default-values # TODO: auto fix removes only value, not named part
+    - avoid-passing-self-as-argument
     - avoid-positional-record-field-access
+    - avoid-recursive-calls
     - avoid-redundant-async
     - avoid-redundant-else
     - avoid-redundant-positional-field-name
     - avoid-redundant-pragma-inline
+    - avoid-referencing-discarded-variables
     - avoid-self-assignment
     - avoid-self-compare
     - avoid-shadowed-extension-methods
@@ -92,9 +86,11 @@ dart_code_metrics:
     - avoid-top-level-members-in-tests
     - avoid-unassigned-late-fields-keyword
     - avoid-uncaught-future-errors
+    - avoid-unconditional-break
     - avoid-unnecessary-call
     - avoid-unnecessary-conditionals
     - avoid-unnecessary-futures
+    - avoid-unnecessary-if
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-reassignment
@@ -107,6 +103,7 @@ dart_code_metrics:
     - avoid-unused-generics
     - avoid-unused-instances
     - avoid-unused-parameters
+    - avoid-weak-cryptographic-algorithms
     # - banned-usage
     - binary-expression-operand-order
     - double-literal-format
@@ -148,12 +145,13 @@ dart_code_metrics:
     - move-records-to-typedefs:
         min-fields: 3
         min-occurrences: 3
+    - move-variable-closer-to-its-usage
     - newline-before-case
     - newline-before-return
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
-    # - no-equal-arguments: # TODO: hard to set up so it makes sense
+    # - no-equal-arguments: # hard to set up so it makes sense
     #     ignored-parameters:
     #       - height
     #       - width
@@ -170,8 +168,9 @@ dart_code_metrics:
     - no-equal-switch-case
     - no-equal-switch-expression-cases
     - no-equal-then-else
-    #- no-magic-number: # way to strict for default values of parameters etc.
+    #- no-magic-number: # way too strict for default values of parameters etc.
     - no-object-declaration
+    # - parameters-ordering # way too strict
     - prefer-async-await
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
@@ -190,6 +189,7 @@ dart_code_metrics:
     - prefer-enums-by-name
     - prefer-explicit-parameter-names
     - prefer-first
+    # - prefer-getter-over-method # TODO: triggers for private, to__(), as__() methods
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last
@@ -216,6 +216,9 @@ dart_code_metrics:
     # - prefer-type-over-var # we prefer inference
     # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
+    - avoid-missing-interpolation:
+        exclude:
+          - test/**
     - prefer-wildcard-pattern
     - tag-name
     - unnecessary-trailing-comma:
@@ -277,11 +280,37 @@ dart_code_metrics:
     - list-all-equatable-fields
 
     ### Flame - not used
-
-    ### Intl - not used
-
-    ### Angular - not used
+    # - avoid-creating-vector-in-update
+    # - avoid-initializing-in-on-mount
+    # - avoid-redundant-async-on-load
+    # - correct-game-instantiating
 
     ### Patrol
     - prefer-custom-finder-over-find
     - prefer-symbol-over-key
+
+    ## Fake Async
+    - avoid-async-callback-in-fake-async
+
+    ### Intl - not used
+    # - prefer-date-format
+    # - prefer-intl-name
+    # - prefer-number-format
+    # - prefer-provide-intl-description
+    # - provide-correct-intl-args
+
+    ### Angular - not used
+    # - avoid-preserve-whitespace-false
+    # - component-annotation-arguments-ordering
+    # - prefer-on-push-cd-strategy
+
+  pubspec-rules:
+    ### Pubspec
+    - avoid-any-version
+    # - avoid-dependency-overrides
+    - banned-dependencies
+    - prefer-caret-version-syntax
+    # - prefer-correct-package-name
+    - prefer-correct-screenshots
+    - prefer-publish-to-none
+    - prefer-semver-version
