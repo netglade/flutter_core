@@ -1,3 +1,16 @@
+## 5.0.0
+- Adhere to DCM 1.10.0:
+  - Add avoid-accessing-collections-by-constant-index
+  - Add avoid-extensions-on-records
+  - Add avoid-local-functions
+  - Enable skip-checked-fields on avoid-non-null-assertion
+  - Add avoid-nullable-parameters-with-default-values
+  - Add avoid-unnecessary-late
+  - Add avoid-wildcard-cases-with-enums
+  - Add avoid-single-child-column-or-row
+  - Add prefer-sliver-prefix
+  - Add avoid-functions-in-register-singleton
+
 ## 4.2.0
 - Adhere to DCM 1.9.0:
   - Add avoid-async-callback-in-fake-async

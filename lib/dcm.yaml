@@ -1,8 +1,9 @@
-# version 1.8.0 - https://dcm.dev/changelog/
+# version 1.10.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
+    - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-async-call-in-sync-function
     # - avoid-banned-file-names
@@ -24,6 +25,7 @@ dart_code_metrics:
     - avoid-equal-expressions
     - avoid-explicit-pattern-field-name
     # - avoid-explicit-type-declaration # public API
+    - avoid-extensions-on-records
     - avoid-function-type-in-records
     - avoid-future-tostring
     - avoid-generics-shadowing
@@ -34,6 +36,8 @@ dart_code_metrics:
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
+    - avoid-local-functions
+    # - avoid-long-files # hard to get the right settings
     # - avoid-long-functions # way too pedantic
     # - avoid-long-parameter-list: # way too pedantic
     # ignore-optional: true # exclude optional and (non-required) named parameters
@@ -56,9 +60,11 @@ dart_code_metrics:
         exclude:
           - test/**
     - avoid-non-null-assertion:
+        skip-checked-fields: true
         exclude:
           - test/**
     - avoid-nullable-interpolation
+    - avoid-nullable-parameters-with-default-values
     - avoid-one-field-records
     - avoid-passing-async-when-sync-expected:
         exclude:
@@ -90,7 +96,9 @@ dart_code_metrics:
     - avoid-unnecessary-call
     - avoid-unnecessary-conditionals
     - avoid-unnecessary-futures
+    # - avoid-unnecessary-getter # it's ok to have getter for private field
     - avoid-unnecessary-if
+    - avoid-unnecessary-late
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-reassignment
@@ -104,6 +112,7 @@ dart_code_metrics:
     - avoid-unused-instances
     - avoid-unused-parameters
     - avoid-weak-cryptographic-algorithms
+    - avoid-wildcard-cases-with-enums
     # - banned-usage
     - binary-expression-operand-order
     - double-literal-format
@@ -116,6 +125,7 @@ dart_code_metrics:
         exclude:
           - test/**
     - match-class-name-pattern
+    # - match-getter-setter-field-names # forces API to equals internal code
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -179,7 +189,7 @@ dart_code_metrics:
     - prefer-correct-for-loop-increment
     - prefer-correct-future-return-type
     # - prefer-correct-identifier-length # way too pedantic
-    # - prefer-correct-json-casts # overkill213
+    # - prefer-correct-json-casts # overkill
     - prefer-correct-stream-return-type
     - prefer-correct-switch-length
     - prefer-correct-test-file-name
@@ -189,7 +199,7 @@ dart_code_metrics:
     - prefer-enums-by-name
     - prefer-explicit-parameter-names
     - prefer-first
-    # - prefer-getter-over-method # TODO: triggers for private, to__(), as__() methods
+    # - prefer-getter-over-method # way to pedantic
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last
@@ -201,6 +211,7 @@ dart_code_metrics:
         exclude:
           - test/**
     - prefer-named-boolean-parameters
+    # - prefer-named-imports # ok, but we don't have a usecase now
     - prefer-parentheses-with-if-null
     - prefer-public-exception-classes
     - prefer-return-await
@@ -237,6 +248,7 @@ dart_code_metrics:
     - avoid-recursive-widget-calls
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
+    - avoid-single-child-column-or-row
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
     - avoid-unnecessary-overrides-in-state
@@ -254,6 +266,7 @@ dart_code_metrics:
     - prefer-extracting-callbacks
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
+    - prefer-sliver-prefix
     - prefer-text-rich
     - prefer-using-list-view
     # - prefer-widget-private-members # cannot use this.field in constructor
@@ -292,11 +305,16 @@ dart_code_metrics:
     ## Fake Async
     - avoid-async-callback-in-fake-async
 
+    ## Get It
+    - avoid-functions-in-register-singleton:
+        severity: error
+
     ### Intl - not used
     # - prefer-date-format
     # - prefer-intl-name
     # - prefer-number-format
-    # - prefer-provide-intl-description
+    # - prefer-providing-intl-description
+    # - prefer-providing-intl-examples
     # - provide-correct-intl-args
 
     ### Angular - not used
