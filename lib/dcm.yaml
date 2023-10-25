@@ -6,9 +6,9 @@ dart_code_metrics:
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-async-call-in-sync-function
-    # - avoid-banned-file-names
-    # - avoid-banned-imports
-    # - avoid-banned-types
+    # - avoid-banned-file-names # * OK, we just don't have global config 
+    # - avoid-banned-imports # * OK, we just don't have global config
+    # - avoid-banned-types # * OK, we just don't have global config
     # - avoid-barrel-files # for now we use them
     - avoid-bottom-type-in-patterns
     - avoid-bottom-type-in-records
@@ -185,7 +185,9 @@ dart_code_metrics:
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
-    # - prefer-correct-error-name # we use `e`
+    - prefer-correct-error-name:
+        allowed-names:
+          - e
     - prefer-correct-for-loop-increment
     - prefer-correct-future-return-type
     # - prefer-correct-identifier-length # way too pedantic
@@ -326,7 +328,7 @@ dart_code_metrics:
     ### Pubspec
     - avoid-any-version
     # - avoid-dependency-overrides
-    - banned-dependencies
+    # - banned-dependencies # * OK, we just don't have global config 
     - prefer-caret-version-syntax
     # - prefer-correct-package-name
     - prefer-correct-screenshots
