@@ -1,6 +1,7 @@
 ## 6.0.0
-- Enable DCM rule prefer-correct-error-name with `e` for error
-- Disable DCM rule banned-dependencies since we do not configure it (and add comment so we know it's ok)
+- Add DCM rule prefer-correct-error-name with `e` for error
+- Add DCM rule prefer-widget-private-members
+- Remove DCM rule banned-dependencies since we do not configure it (and add comment so we know it's ok)
 - Adhere to DCM 1.11.0:
   - TODO...
 

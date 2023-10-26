@@ -6,7 +6,7 @@ dart_code_metrics:
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-async-call-in-sync-function
-    # - avoid-banned-file-names # * OK, we just don't have global config 
+    # - avoid-banned-file-names # * OK, we just don't have global config
     # - avoid-banned-imports # * OK, we just don't have global config
     # - avoid-banned-types # * OK, we just don't have global config
     # - avoid-barrel-files # for now we use them
@@ -40,7 +40,7 @@ dart_code_metrics:
     # - avoid-long-files # hard to get the right settings
     # - avoid-long-functions # way too pedantic
     # - avoid-long-parameter-list: # way too pedantic
-    # ignore-optional: true # exclude optional and (non-required) named parameters
+    #     ignore-optional: true # exclude optional and (non-required) named parameters
     - avoid-long-records
     - avoid-map-keys-contains
     - avoid-missed-calls
@@ -113,7 +113,7 @@ dart_code_metrics:
     - avoid-unused-parameters
     - avoid-weak-cryptographic-algorithms
     - avoid-wildcard-cases-with-enums
-    # - banned-usage
+    # - banned-usage # * OK, we just don't have global config
     - binary-expression-operand-order
     - double-literal-format
     - enum-constants-ordering
@@ -201,7 +201,7 @@ dart_code_metrics:
     - prefer-enums-by-name
     - prefer-explicit-parameter-names
     - prefer-first
-    # - prefer-getter-over-method # way to pedantic
+    # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last
@@ -213,7 +213,7 @@ dart_code_metrics:
         exclude:
           - test/**
     - prefer-named-boolean-parameters
-    # - prefer-named-imports # ok, but we don't have a usecase now
+    # - prefer-named-imports # * OK, we just don't have global config
     - prefer-parentheses-with-if-null
     - prefer-public-exception-classes
     - prefer-return-await
@@ -226,7 +226,7 @@ dart_code_metrics:
           - use(.*)
     - prefer-test-matchers
     - prefer-trailing-comma
-    # - prefer-type-over-var # we prefer inference
+    # - prefer-type-over-var # we prefer type inference
     # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
     - avoid-missing-interpolation:
@@ -271,7 +271,7 @@ dart_code_metrics:
     - prefer-sliver-prefix
     - prefer-text-rich
     - prefer-using-list-view
-    # - prefer-widget-private-members # cannot use this.field in constructor
+    - prefer-widget-private-members
     - proper-super-calls
     - use-setstate-synchronously
 
@@ -304,10 +304,10 @@ dart_code_metrics:
     - prefer-custom-finder-over-find
     - prefer-symbol-over-key
 
-    ## Fake Async
+    ### Fake Async
     - avoid-async-callback-in-fake-async
 
-    ## Get It
+    ### Get It
     - avoid-functions-in-register-singleton:
         severity: error
 
@@ -330,7 +330,7 @@ dart_code_metrics:
     # - avoid-dependency-overrides
     # - banned-dependencies # * OK, we just don't have global config 
     - prefer-caret-version-syntax
-    # - prefer-correct-package-name
+    # - prefer-correct-package-name # * OK, we just don't have global config 
     - prefer-correct-screenshots
     - prefer-publish-to-none
     - prefer-semver-version
