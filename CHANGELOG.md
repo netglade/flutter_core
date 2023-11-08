@@ -3,7 +3,19 @@
 - Add DCM rule prefer-widget-private-members
 - Remove DCM rule banned-dependencies since we do not configure it (and add comment so we know it's ok)
 - Adhere to DCM 1.11.0:
-  - TODO...
+  - Add avoid-duplicate-cascades
+  - Add avoid-duplicate-switch-case-conditions
+  - Add avoid-unnecessary-local-late
+  - Add avoid-unnecessary-super
+  - Add prefer-both-inlining-annotations
+  - Add prefer-correct-callback-field-name
+  - Add prefer-correct-error-name
+  - Add prefer-correct-setter-parameter-name
+  - Add prefer-explicit-function-type
+  - Add prefer-specific-cases-first
+  - Add prefer-typedefs-for-callbacks
+  - Add prefer-unique-test-names
+  - Add prefer-widget-private-members
 
 ## 5.0.0
 - Adhere to DCM 1.10.0:

@@ -348,9 +348,9 @@ dart_code_metrics:
     ### Pubspec
     - avoid-any-version
     # - avoid-dependency-overrides
-    # - banned-dependencies # * OK, we just don't have global config 
+    # - banned-dependencies # * OK, we just don't have global config
     - prefer-caret-version-syntax
-    # - prefer-correct-package-name # * OK, we just don't have global config 
+    # - prefer-correct-package-name # * OK, we just don't have global config
     - prefer-correct-screenshots
     - prefer-publish-to-none
     - prefer-semver-version
