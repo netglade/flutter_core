@@ -132,7 +132,7 @@ dart_code_metrics:
           - test/**
     - match-class-name-pattern
     # - match-getter-setter-field-names # forces API to equals internal code
-    # - match-lib-folder-structure # TODO: discuss
+    # - match-lib-folder-structure # maybe later
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -200,7 +200,7 @@ dart_code_metrics:
           - e
     - prefer-correct-for-loop-increment
     - prefer-correct-future-return-type
-    # - prefer-correct-handler-name # TODO: not now
+    # - prefer-correct-handler-name # not now
     # - prefer-correct-identifier-length # way too pedantic
     # - prefer-correct-json-casts # overkill
     - prefer-correct-setter-parameter-name
