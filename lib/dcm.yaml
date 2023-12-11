@@ -1,4 +1,4 @@
-# version 1.10.0 - https://dcm.dev/changelog/
+# version 1.12.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   rules:
     ### Common
@@ -6,21 +6,26 @@ dart_code_metrics:
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-async-call-in-sync-function
-    # - avoid-banned-file-names
-    # - avoid-banned-imports
-    # - avoid-banned-types
+    # - avoid-banned-annotations # * OK, we just don't have global config
+    # - avoid-banned-file-names # * OK, we just don't have global config
+    # - avoid-banned-imports # * OK, we just don't have global config
+    # - avoid-banned-types # * OK, we just don't have global config
     # - avoid-barrel-files # for now we use them
     - avoid-bottom-type-in-patterns
     - avoid-bottom-type-in-records
     - avoid-cascade-after-if-null
     - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
+    # - avoid-collection-mutating-methods # sometimes it's ok
     - avoid-declaring-call-method
     - avoid-double-slash-imports
+    - avoid-duplicate-cascades
     - avoid-duplicate-exports
     - avoid-duplicate-mixins
     - avoid-duplicate-named-imports
     - avoid-duplicate-patterns
+    - avoid-duplicate-switch-case-conditions
+    - avoid-duplicate-test-assertions
     - avoid-dynamic
     - avoid-equal-expressions
     - avoid-explicit-pattern-field-name
@@ -33,6 +38,11 @@ dart_code_metrics:
     - avoid-identical-exception-handling-blocks
     - avoid-ignoring-return-values
     - avoid-importing-entrypoint-exports
+    - avoid-inferrable-type-arguments:
+        ignored-invocations:
+          - context.read
+          - context.watch
+          - GetIt.I
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
@@ -40,7 +50,7 @@ dart_code_metrics:
     # - avoid-long-files # hard to get the right settings
     # - avoid-long-functions # way too pedantic
     # - avoid-long-parameter-list: # way too pedantic
-    # ignore-optional: true # exclude optional and (non-required) named parameters
+    #     ignore-optional: true # exclude optional and (non-required) named parameters
     - avoid-long-records
     - avoid-map-keys-contains
     - avoid-missed-calls
@@ -90,7 +100,7 @@ dart_code_metrics:
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
-    - avoid-unassigned-late-fields-keyword
+    - avoid-unassigned-late-fields
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unnecessary-call
@@ -98,11 +108,12 @@ dart_code_metrics:
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
     - avoid-unnecessary-if
-    - avoid-unnecessary-late
+    - avoid-unnecessary-local-late
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-reassignment
     - avoid-unnecessary-return
+    - avoid-unnecessary-super
     - avoid-unnecessary-type-assertions
     - avoid-unnecessary-type-casts
     - avoid-unrelated-type-assertions
@@ -113,19 +124,22 @@ dart_code_metrics:
     - avoid-unused-parameters
     - avoid-weak-cryptographic-algorithms
     - avoid-wildcard-cases-with-enums
-    # - banned-usage
+    # - banned-usage # * OK, we just don't have global config
     - binary-expression-operand-order
     - double-literal-format
     - enum-constants-ordering
     - format-comment:
         only-doc-comments: true
     # - format-test-name # good but painful
-    - function-always-returns-null
+    - function-always-returns-null:
+        ignored-invocations:
+          - useEffect
     - map-keys-ordering:
         exclude:
           - test/**
     - match-class-name-pattern
     # - match-getter-setter-field-names # forces API to equals internal code
+    # - match-lib-folder-structure # maybe later
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
     - member-ordering:
         order:
@@ -181,15 +195,23 @@ dart_code_metrics:
     #- no-magic-number: # way too strict for default values of parameters etc.
     - no-object-declaration
     # - parameters-ordering # way too strict
+    # - prefer-addition-subtraction-assignments # dunno
+    - prefer-any-or-every
     - prefer-async-await
+    - prefer-both-inlining-annotations
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
-    # - prefer-correct-error-name # we use `e`
+    - prefer-correct-callback-field-name
+    - prefer-correct-error-name:
+        allowed-names:
+          - e
     - prefer-correct-for-loop-increment
     - prefer-correct-future-return-type
+    # - prefer-correct-handler-name # not now
     # - prefer-correct-identifier-length # way too pedantic
     # - prefer-correct-json-casts # overkill
+    - prefer-correct-setter-parameter-name
     - prefer-correct-stream-return-type
     - prefer-correct-switch-length
     - prefer-correct-test-file-name
@@ -197,9 +219,11 @@ dart_code_metrics:
     - prefer-declaring-const-constructor
     - prefer-early-return
     - prefer-enums-by-name
+    - prefer-explicit-function-type
     - prefer-explicit-parameter-names
+    # - prefer-explicit-type-arguments # inference is better
     - prefer-first
-    # - prefer-getter-over-method # way to pedantic
+    # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last
@@ -211,25 +235,33 @@ dart_code_metrics:
         exclude:
           - test/**
     - prefer-named-boolean-parameters
-    # - prefer-named-imports # ok, but we don't have a usecase now
+    # - prefer-named-imports # * OK, we just don't have global config
+    - prefer-null-aware-spread
     - prefer-parentheses-with-if-null
+    # - prefer-prefixed-global-constants  # * OK, we just don't have global config
     - prefer-public-exception-classes
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-patterns-null-check
+    - prefer-specific-cases-first
     - prefer-static-class:
         ignore-private: true
         ignore-names:
           - (.*)Provider
           - use(.*)
+    - prefer-switch-with-enums
     - prefer-test-matchers
     - prefer-trailing-comma
-    # - prefer-type-over-var # we prefer inference
+    # - prefer-type-over-var # we prefer type inference
+    - prefer-typedefs-for-callbacks
+    - prefer-unique-test-names
     # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
     - avoid-missing-interpolation:
         exclude:
           - test/**
+    # - avoid-missing-test-files # * OK, but should be enabled per project
+    - avoid-misused-test-matchers
     - prefer-wildcard-pattern
     - tag-name
     - unnecessary-trailing-comma:
@@ -269,7 +301,7 @@ dart_code_metrics:
     - prefer-sliver-prefix
     - prefer-text-rich
     - prefer-using-list-view
-    # - prefer-widget-private-members # cannot use this.field in constructor
+    - prefer-widget-private-members
     - proper-super-calls
     - use-setstate-synchronously
 
@@ -302,12 +334,17 @@ dart_code_metrics:
     - prefer-custom-finder-over-find
     - prefer-symbol-over-key
 
-    ## Fake Async
+    ### Fake Async
     - avoid-async-callback-in-fake-async
 
-    ## Get It
+    ### Get It
     - avoid-functions-in-register-singleton:
         severity: error
+
+    ### Flutter Hooks
+    - avoid-conditional-hooks
+    - avoid-hooks-outside-build
+    - prefer-use-prefix
 
     ### Intl - not used
     # - prefer-date-format
@@ -326,9 +363,9 @@ dart_code_metrics:
     ### Pubspec
     - avoid-any-version
     # - avoid-dependency-overrides
-    - banned-dependencies
+    # - banned-dependencies # * OK, we just don't have global config
     - prefer-caret-version-syntax
-    # - prefer-correct-package-name
+    # - prefer-correct-package-name # * OK, we just don't have global config
     - prefer-correct-screenshots
     - prefer-publish-to-none
     - prefer-semver-version

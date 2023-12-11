@@ -1,3 +1,31 @@
+## 6.0.0
+- Add DCM rule prefer-correct-error-name with `e` for error
+- Add DCM rule prefer-widget-private-members
+- Remove DCM rule banned-dependencies since we do not configure it (and add comment so we know it's ok)
+- Adhere to DCM 1.11.0 and 1.12.0:
+  - Add avoid-duplicate-cascades
+  - Add avoid-duplicate-switch-case-conditions
+  - Add avoid-unnecessary-local-late
+  - Add avoid-unnecessary-super
+  - Add prefer-both-inlining-annotations
+  - Add prefer-correct-callback-field-name
+  - Add prefer-correct-error-name
+  - Add prefer-correct-setter-parameter-name
+  - Add prefer-explicit-function-type
+  - Add prefer-specific-cases-first
+  - Add prefer-typedefs-for-callbacks
+  - Add prefer-unique-test-names
+  - Add prefer-widget-private-members
+  - Add avoid-inferrable-type-arguments
+  - Add prefer-switch-with-enums
+  - Add avoid-misused-test-matchers
+  - Add prefer-any-or-every
+  - Add avoid-duplicate-test-assertions
+  - Add avoid-conditional-hooks
+  - Add avoid-hooks-outside-build
+  - Add prefer-use-prefix
+- Update function-always-returns-null - disable in useEffect
+
 ## 5.0.0
 - Adhere to DCM 1.10.0:
   - Add avoid-accessing-collections-by-constant-index
