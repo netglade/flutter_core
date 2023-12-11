@@ -1,4 +1,4 @@
-# version 1.10.0 - https://dcm.dev/changelog/
+# version 1.12.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   rules:
     ### Common
@@ -25,6 +25,7 @@ dart_code_metrics:
     - avoid-duplicate-named-imports
     - avoid-duplicate-patterns
     - avoid-duplicate-switch-case-conditions
+    - avoid-duplicate-test-assertions
     - avoid-dynamic
     - avoid-equal-expressions
     - avoid-explicit-pattern-field-name
@@ -37,7 +38,11 @@ dart_code_metrics:
     - avoid-identical-exception-handling-blocks
     - avoid-ignoring-return-values
     - avoid-importing-entrypoint-exports
-    # - avoid-inferrable-type-arguments # TODO, after config to ignore context.read and context.watch is added
+    - avoid-inferrable-type-arguments:
+        ignored-invocations:
+          - context.read
+          - context.watch
+          - GetIt.I
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
@@ -95,7 +100,7 @@ dart_code_metrics:
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
-    - avoid-unassigned-late-fields-keyword
+    - avoid-unassigned-late-fields
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unnecessary-call
@@ -126,7 +131,9 @@ dart_code_metrics:
     - format-comment:
         only-doc-comments: true
     # - format-test-name # good but painful
-    - function-always-returns-null
+    - function-always-returns-null:
+        ignored-invocations:
+          - useEffect
     - map-keys-ordering:
         exclude:
           - test/**
@@ -189,6 +196,7 @@ dart_code_metrics:
     - no-object-declaration
     # - parameters-ordering # way too strict
     # - prefer-addition-subtraction-assignments # dunno
+    - prefer-any-or-every
     - prefer-async-await
     - prefer-both-inlining-annotations
     - prefer-bytes-builder
@@ -241,6 +249,7 @@ dart_code_metrics:
         ignore-names:
           - (.*)Provider
           - use(.*)
+    - prefer-switch-with-enums
     - prefer-test-matchers
     - prefer-trailing-comma
     # - prefer-type-over-var # we prefer type inference
@@ -252,6 +261,7 @@ dart_code_metrics:
         exclude:
           - test/**
     # - avoid-missing-test-files # * OK, but should be enabled per project
+    - avoid-misused-test-matchers
     - prefer-wildcard-pattern
     - tag-name
     - unnecessary-trailing-comma:
@@ -330,6 +340,11 @@ dart_code_metrics:
     ### Get It
     - avoid-functions-in-register-singleton:
         severity: error
+
+    ### Flutter Hooks
+    - avoid-conditional-hooks
+    - avoid-hooks-outside-build
+    - prefer-use-prefix
 
     ### Intl - not used
     # - prefer-date-format
