@@ -1,3 +1,14 @@
+## 7.0.0
+- Adhere to DCM 1.13.0:
+  - Add avoid-duplicate-collection-elements
+  - Add avoid-duplicate-initializers
+  - Add avoid-duplicate-map-keys
+  - Add avoid-nullable-tostring
+  - Add avoid-unused-after-null-check
+  - Add move-variable-outside-iteration
+- Update prefer-switch-with-enums with `ignore-contains: true`
+- Remove DCM rules `match-class-name-pattern`, `tag-name`, `add-copy-with`, and `extend-equatable`, since we do not configure it (and added comment so we know it's ok)
+
 ## 6.0.0
 - Add DCM rule prefer-correct-error-name with `e` for error
 - Add DCM rule prefer-widget-private-members
