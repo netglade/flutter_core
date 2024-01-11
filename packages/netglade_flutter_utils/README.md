@@ -1,10 +1,4 @@
-<a href="https://github.com/netglade">
-   <picture >
-     <source media="(prefers-color-scheme: dark)" height='120px' srcset="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_light.png">
-     <source media="(prefers-color-scheme: light)" height='120px' srcset="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_dark.png">
-     <img alt="netglade" height='120px' src="https://raw.githubusercontent.com/netglade/netglade_analysis/main/doc/badge_dark.png">
-   </picture>
-</a>
+# netglade_flutter_utils
 
 Developed with 💚 by [netglade][netglade_link]
 
@@ -21,18 +15,18 @@ Flutter utils used internally at [netglade][netglade_link].
 
 
 [netglade_link]: https://netglade.com/en
-
-[ci_badge]: https://github.com/netglade/netglade_analysis/workflows/ci/badge.svg
-[ci_badge_link]: https://github.com/netglade/netglade_analysis/actions
-[license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license_badge_link]: https://opensource.org/licenses/MIT
-[pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
-[pub_badge_link]: https://pub.dartlang.org/packages/netglade_analysis
-[style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
-[style_badge_link]: https://pub.dev/packages/netglade_analysis
 [discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
 [discord_badge_link]: https://discord.gg/sJfBBuDZy4
 
-[linter_rules]: https://dart.dev/tools/linter-rules
-[supported_lint_rules]: https://dart-lang.github.io/linter/lints
-[dcm_rules]: https://dcm.dev/docs/rules/
+[ci_badge]: https://github.com/netglade/flutter_core/workflows/netglade_flutter_utils-test/badge.svg
+[ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_flutter_utils-test.yaml
+
+[pub_badge]: https://img.shields.io/pub/v/netglade_flutter_utils.svg
+[pub_badge_link]: https://pub.dartlang.org/packages/netglade_flutter_utils
+
+[style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
+[style_badge_link]: https://pub.dev/packages/netglade_analysis
+
+[license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[license_badge_link]: https://opensource.org/licenses/MIT
+
