@@ -45,6 +45,7 @@ jobs:
         run: |
           pwd
           ls
+          cd .
 
       - name: Run DCM
         uses: CQLabs/dcm-action@v1
@@ -58,4 +59,4 @@ jobs:
           fatal_warnings: true
 
       - name: Dry Publish
-        run: flutter pub publish --dry-run || true
+        run: dart pub publish --dry-run || true

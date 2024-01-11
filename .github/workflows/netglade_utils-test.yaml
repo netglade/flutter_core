@@ -33,8 +33,8 @@ jobs:
       - name: Format
         run: dart format --line-length 120 --set-exit-if-changed .
 
-      - name: Flutter Analyze
-        run: flutter analyze --no-pub --fatal-infos --fatal-warnings
+      - name: Dart Analyze
+        run: dart analyze .
 
       - name: Install DCM
         uses: CQLabs/setup-dcm@v1
@@ -53,4 +53,4 @@ jobs:
           fatal_warnings: true
 
       - name: Dry Publish
-        run: flutter pub publish --dry-run || true
+        run: dart pub publish --dry-run || true
