@@ -1,6 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:netglade_flutter_utils/netglade_flutter_utils.dart';
+
 void main() {
-  /// The following line would normally show lint warnings
-  /// but we can disable the lint rules for this line using the following syntax:
-  // ignore: unused_local_variable, prefer_final_locals
-  var a = 5;
+  runApp(const DemoApp());
+}
+
+// ignore: prefer-match-file-name, ok for demo
+class DemoApp extends StatelessWidget {
+  const DemoApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Conditional(
+        condition: true,
+        whenTrue: (context) => const Text('yep'),
+        whenFalse: (context) => const Text('nope'),
+      ),
+    );
+  }
 }

@@ -7,7 +7,7 @@ scripts:
   # ANALYZING
 
   lint:
-    run: melos run lint:dart && melos run lint:dcm
+    run: melos run -- lint:dart && melos run lint:dcm
     description: Run all static analysis checks.
 
   lint:dart:
@@ -25,6 +25,12 @@ scripts:
     packageFilters:
       dirExists:
         - test
+
+  publishable:
+    run: melos exec -- dart pub publish --dry-run
+    description: Checks whether packages are publishable.
+    packageFilters:
+      scope: "*"
 
   # CLEAN
 

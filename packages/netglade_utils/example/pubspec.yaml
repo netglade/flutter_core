@@ -7,3 +7,5 @@ environment:
 
 dependencies:
   netglade_analysis: ^7.0.0
+  netglade_utils:
+    path: ..
