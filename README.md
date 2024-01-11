@@ -19,19 +19,19 @@ Dart and Flutter packages used internally at [netglade][netglade_link]
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_badge_link]: https://opensource.org/licenses/MIT
 
-[netglade_analysis-link]: https://github.com/netglade/flutter_core/tree/main/packages/netglade_analysis
+[netglade_analysis-link]: packages/netglade_analysis
 [netglade_analysis-pub-badge]: https://img.shields.io/pub/v/netglade_analysis.svg
 [netglade_analysis-pub-badge-link]: https://pub.dartlang.org/packages/netglade_analysis
 [netglade_analysis-build-badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_analysis-test.yml?branch=main
 [netglade_analysis-build-badge-link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_utils-test.yaml
 
-[netglade_utils-link]: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
+[netglade_utils-link]: packages/netglade_utils
 [netglade_utils-pub-badge]: https://img.shields.io/pub/v/netglade_utils.svg
 [netglade_utils-pub-badge-link]: https://pub.dartlang.org/packages/netglade_utils
 [netglade_utils-build-badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_utils-test.yml?branch=main
 [netglade_utils-build-badge-link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_utils-test.yaml
 
-[netglade_flutter_utils-link]: https://github.com/netglade/flutter_core/tree/main/packages/netglade_flutter_utils
+[netglade_flutter_utils-link]: packages/netglade_flutter_utils
 [netglade_flutter_utils-pub-badge]: https://img.shields.io/pub/v/netglade_flutter_utils.svg
 [netglade_flutter_utils-pub-badge-link]: https://pub.dartlang.org/packages/netglade_flutter_utils
 [netglade_flutter_utils-build-badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_flutter_utils-test.yml?branch=main
