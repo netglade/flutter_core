@@ -47,10 +47,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
-          folders: packages/netglade_utils
+          folders: ./
           fatal_style: true
           fatal_performance: true
           fatal_warnings: true
 
       - name: Dry Publish
-        run: dart pub publish --dry-run || true
+        run: dart pub publish --dry-run

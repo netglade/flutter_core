@@ -53,4 +53,4 @@ jobs:
           fatal_warnings: true
 
       - name: Dry Publish
-        run: dart pub publish --dry-run || true
+        run: dart pub publish --dry-run

@@ -41,12 +41,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: test path
-        run: |
-          pwd
-          ls
-          cd .
-
       - name: Run DCM
         uses: CQLabs/dcm-action@v1
         with:
@@ -59,4 +53,4 @@ jobs:
           fatal_warnings: true
 
       - name: Dry Publish
-        run: dart pub publish --dry-run || true
+        run: dart pub publish --dry-run
