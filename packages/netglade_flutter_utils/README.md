@@ -18,7 +18,7 @@ Flutter utils used internally at [netglade][netglade_link].
 [discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
 [discord_badge_link]: https://discord.gg/sJfBBuDZy4
 
-[ci_badge]: https://github.com/netglade/flutter_core/workflows/netglade_flutter_utils-test/badge.svg
+[ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_flutter_utils-test.yml?branch=main
 [ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_flutter_utils-test.yaml
 
 [pub_badge]: https://img.shields.io/pub/v/netglade_flutter_utils.svg
