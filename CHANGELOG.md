@@ -6,6 +6,8 @@
   - Add avoid-nullable-tostring
   - Add avoid-unused-after-null-check
   - Add move-variable-outside-iteration
+  - Add avoid-undisposed-instances
+  - Add avoid-unassigned-stream-subscriptions
 - Update prefer-switch-with-enums with `ignore-contains: true`
 - Remove DCM rules `match-class-name-pattern`, `tag-name`, `add-copy-with`, and `extend-equatable`, since we do not configure it (and added comment so we know it's ok)
 

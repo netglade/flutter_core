@@ -105,6 +105,7 @@ dart_code_metrics:
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
     - avoid-unassigned-late-fields
+    - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unnecessary-call
@@ -290,6 +291,7 @@ dart_code_metrics:
     - avoid-single-child-column-or-row
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
+    - avoid-undisposed-instances
     - avoid-unnecessary-overrides-in-state
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets
