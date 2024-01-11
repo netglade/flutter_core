@@ -1,4 +1,4 @@
-# version 1.12.0 - https://dcm.dev/changelog/
+# version 1.13.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   rules:
     ### Common
@@ -20,7 +20,10 @@ dart_code_metrics:
     - avoid-declaring-call-method
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
+    - avoid-duplicate-collection-elements
     - avoid-duplicate-exports
+    - avoid-duplicate-initializers
+    - avoid-duplicate-map-keys
     - avoid-duplicate-mixins
     - avoid-duplicate-named-imports
     - avoid-duplicate-patterns
@@ -75,6 +78,7 @@ dart_code_metrics:
           - test/**
     - avoid-nullable-interpolation
     - avoid-nullable-parameters-with-default-values
+    - avoid-nullable-tostring
     - avoid-one-field-records
     - avoid-passing-async-when-sync-expected:
         exclude:
@@ -101,6 +105,7 @@ dart_code_metrics:
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
     - avoid-unassigned-late-fields
+    - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unnecessary-call
@@ -119,6 +124,7 @@ dart_code_metrics:
     - avoid-unrelated-type-assertions
     - avoid-unrelated-type-casts
     - avoid-unsafe-collection-methods
+    - avoid-unused-after-null-check
     - avoid-unused-generics
     - avoid-unused-instances
     - avoid-unused-parameters
@@ -137,7 +143,7 @@ dart_code_metrics:
     - map-keys-ordering:
         exclude:
           - test/**
-    - match-class-name-pattern
+    # - match-class-name-pattern # * OK, we just don't have global config
     # - match-getter-setter-field-names # forces API to equals internal code
     # - match-lib-folder-structure # maybe later
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
@@ -170,6 +176,7 @@ dart_code_metrics:
         min-fields: 3
         min-occurrences: 3
     - move-variable-closer-to-its-usage
+    - move-variable-outside-iteration
     - newline-before-case
     - newline-before-return
     - no-boolean-literal-compare:
@@ -238,7 +245,7 @@ dart_code_metrics:
     # - prefer-named-imports # * OK, we just don't have global config
     - prefer-null-aware-spread
     - prefer-parentheses-with-if-null
-    # - prefer-prefixed-global-constants  # * OK, we just don't have global config
+    # - prefer-prefixed-global-constants # * OK, we just don't have global config
     - prefer-public-exception-classes
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
@@ -249,7 +256,8 @@ dart_code_metrics:
         ignore-names:
           - (.*)Provider
           - use(.*)
-    - prefer-switch-with-enums
+    - prefer-switch-with-enums:
+        ignore-contains: true
     - prefer-test-matchers
     - prefer-trailing-comma
     # - prefer-type-over-var # we prefer type inference
@@ -263,12 +271,12 @@ dart_code_metrics:
     # - avoid-missing-test-files # * OK, but should be enabled per project
     - avoid-misused-test-matchers
     - prefer-wildcard-pattern
-    - tag-name
+    # - tag-name # * OK, we just don't have global config
     - unnecessary-trailing-comma:
         max-width: 80
 
     ### Flutter
-    - add-copy-with
+    # - add-copy-with # * OK, we just don't have global config
     - always-remove-listener
     - avoid-border-all
     - avoid-empty-setstate
@@ -283,6 +291,7 @@ dart_code_metrics:
     - avoid-single-child-column-or-row
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
+    - avoid-undisposed-instances
     - avoid-unnecessary-overrides-in-state
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets
@@ -321,7 +330,7 @@ dart_code_metrics:
     - prefer-multi-bloc-provider
 
     ### Equatable
-    - extend-equatable
+    # - extend-equatable # * OK, we just don't have global config
     - list-all-equatable-fields
 
     ### Flame - not used
