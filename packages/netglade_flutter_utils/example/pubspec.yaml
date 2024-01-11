@@ -1,0 +1,9 @@
+name: netglade_flutter_utils_example
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  netglade_analysis: ^7.0.0

@@ -1,0 +1,32 @@
+name: flutter_core_workspace
+
+packages:
+  - packages/*
+
+scripts:
+  # ANALYZING
+
+  lint:
+    run: melos run lint:dart && melos run lint:dcm
+    description: Run all static analysis checks.
+
+  lint:dart:
+    run: melos exec -c 10 -- dart analyze --fatal-infos
+    description: Run Dart static analysis checks.
+
+  lint:dcm:
+    run: melos exec -c 10 -- dcm analyze . --fatal-style --fatal-performance --fatal-warnings
+    description: Run DCM static analysis checks.
+
+  # TESTING
+
+  test:
+    run: melos exec -- flutter test
+    packageFilters:
+      dirExists:
+        - test
+
+  # CLEAN
+
+  clean:
+    run: melos exec -- flutter clean

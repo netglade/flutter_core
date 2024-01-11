@@ -1,0 +1,29 @@
+name: netglade_flutter_utils
+version: 1.0.0
+description: Flutter utils used internally at netglade.
+repository: https://github.com/netglade/flutter_core/packages/netglade_flutter_utils
+issue_tracker: https://github.com/netglade/flutter_core/issues
+homepage: https://github.com/netglade/flutter_core
+documentation: https://github.com/netglade/flutter_core
+screenshots:
+  - description: The netglade_flutter_utils package logo.
+    path: doc/icon.png
+
+environment:
+  sdk: ^3.0.0
+  flutter: ^3.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.20.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0
+  netglade_analysis: ^7.0.0
+  test: ^1.24.6
+
+flutter:
+  uses-material-design: true
