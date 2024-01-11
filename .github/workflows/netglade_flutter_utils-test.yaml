@@ -47,7 +47,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
-          folders: .
+          folders: packages/netglade_flutter_utils
           fatal_style: true
           fatal_performance: true
           fatal_warnings: true

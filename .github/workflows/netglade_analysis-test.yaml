@@ -41,13 +41,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: test path
+        run: |
+          pwd
+          ls
+
       - name: Run DCM
         uses: CQLabs/dcm-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
-          folders: .
+          folders: packages/netglade_analysis
           fatal_style: true
           fatal_performance: true
           fatal_warnings: true
