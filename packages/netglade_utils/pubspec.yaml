@@ -1,13 +1,10 @@
 name: netglade_utils
-version: 1.0.0
+version: 1.0.1
 description: Dart utils used internally at netglade.
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues
 homepage: https://github.com/netglade/flutter_core
 documentation: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
-screenshots:
-  - description: The netglade_utils package logo.
-    path: doc/icon.png
 
 environment:
   sdk: ^3.0.0

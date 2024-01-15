@@ -1,9 +1,5 @@
 <a href="https://github.com/netglade">
-   <picture >
-     <source media="(prefers-color-scheme: dark)" height='120px' srcset="https://raw.githubusercontent.com/netglade/flutter_core/main/packages/netglade_analysis/doc/badge_light.png">
-     <source media="(prefers-color-scheme: light)" height='120px' srcset="https://raw.githubusercontent.com/netglade/flutter_core/main/packages/netglade_analysis/doc/badge_dark.png">
-     <img alt="netglade" height='120px' src="https://raw.githubusercontent.com/netglade/netglade_analysis/main/packages/netglade_analysis/doc/badge_dark.png">
-   </picture>
+  <img alt="netglade" height='120px' src="https://raw.githubusercontent.com/netglade/netglade_analysis/main/packages/netglade_analysis/doc/badge.png">
 </a>
 
 Developed with 💚 by [netglade][netglade_link]
@@ -71,7 +67,7 @@ To indicate your project is using `netglade_analysis` →
 [discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
 [discord_badge_link]: https://discord.gg/sJfBBuDZy4
 
-[ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_analysis-test.yml?branch=main
+[ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_analysis-test.yaml?branch=main
 [ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_analysis-test.yaml
 
 [pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
