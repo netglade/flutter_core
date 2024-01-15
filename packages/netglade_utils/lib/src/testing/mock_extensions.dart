@@ -26,24 +26,6 @@ extension VerificationResultEx on VerificationResult {
   void calledOnce() => called(1);
 }
 
-// TODO(utils): add when we will add api service
-//
-// extension ApiFailureAnswer<T> on When<Future<Result<ApiResponseOk<T>, ApiResponseFail>>> {
-//   void thenAnswerWithApiFailure(ApiError apiError) => thenAnswerWith(Error(ApiResponseFail(apiError: apiError)));
-// }
-
-// extension ApiSuccessAnswer<T> on When<Future<Result<ApiResponseOk<T>, ApiResponseFail>>> {
-//   void thenAnswerWithApiSuccess(T data) => thenAnswerWith(
-//         Success(
-//           ApiResponseOk(
-//             data: data,
-//             statusCode: 200,
-//             response: Response('body', 200),
-//           ),
-//         ),
-//       );
-// }
-
 extension SuccessAnswer<T, E> on When<Future<Result<T, E>>> {
   void thenAnswerWithSuccess(T value) => thenAnswer((_) async => Success(value));
 }
