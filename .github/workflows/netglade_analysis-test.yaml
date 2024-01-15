@@ -1,14 +1,28 @@
-name: ci
+name: netglade_analysis test
 
 on:
   push:
     branches:
       - main
+    tags-ignore:
+      - 'netglade_analysis-v*'
+    paths:
+      - 'packages/netglade_analysis/**'
   pull_request:
+    branches:
+      - main
+    paths:
+      - 'packages/netglade_analysis/**'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    defaults:
+      run:
+        working-directory: packages/netglade_analysis
+
     steps:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
@@ -17,7 +31,7 @@ jobs:
         run: dart pub get
 
       - name: Format
-        run: dart format --set-exit-if-changed .
+        run: dart format --line-length 120 --set-exit-if-changed .
 
       - name: Analyze
         run: dart analyze .
@@ -33,7 +47,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
-          folders: .
+          folders: packages/netglade_analysis
           fatal_style: true
           fatal_performance: true
           fatal_warnings: true
