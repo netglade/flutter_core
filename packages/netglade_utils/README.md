@@ -21,8 +21,8 @@ Dart utils used internally at [netglade][netglade_link].
 [ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_utils-test.yaml?branch=main
 [ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_utils-test.yaml
 
-[pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
-[pub_badge_link]: https://pub.dartlang.org/packages/netglade_analysis
+[pub_badge]: https://img.shields.io/pub/v/netglade_utils.svg
+[pub_badge_link]: https://pub.dartlang.org/packages/netglade_utils
 
 [style_badge]: https://img.shields.io/badge/style-netglade_analysis-26D07C.svg
 [style_badge_link]: https://pub.dev/packages/netglade_analysis
