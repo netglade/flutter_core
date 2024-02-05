@@ -10,11 +10,13 @@ extension StringExtensions on String {
   /// - '\t'
   ///
   /// When you only need to check exactly empty, use `isEmpty`.
-  /// 
+  ///
   /// * String is blank when it contains only whitespaces.
   bool get isBlank => trim().isEmpty;
 
   /// Returns negation of [isBlank].
+  ///
+  /// * String is blank when it contains only whitespaces.
   bool get isNotBlank => !isBlank;
 
   /// Returns last N characters.
@@ -27,18 +29,22 @@ extension StringExtensions on String {
 extension NullableStringExtensions on String? {
   /// Returns true when `this` is `String` which is `isBlank`.
   /// When the value is `null`, returns `false`.
-  /// 
-  /// * String? is blank when it has a value and contains only whitespaces. 
+  ///
+  /// * String? is blank when it has a value and contains only whitespaces.
   bool get isBlank {
     return this?.isBlank ?? false;
   }
 
   /// Returns true when `this` is either `null` or `isBlank`.
+  ///
+  /// * String? is blank when it has a value and contains only whitespaces.
   bool get isNullOrBlank {
     return this?.isBlank ?? true;
   }
 
   /// Returns negation of [isBlank].
+  ///
+  /// * String? is blank when it has a value and contains only whitespaces.
   bool get isNotBlank {
     return !isBlank;
   }
