@@ -1,4 +1,3 @@
-import 'package:characters/characters.dart';
 import 'package:netglade_utils/netglade_utils.dart';
 import 'package:test/test.dart';
 
