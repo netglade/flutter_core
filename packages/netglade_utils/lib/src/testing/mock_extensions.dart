@@ -4,7 +4,6 @@ import 'dart:async';
 
 import 'package:mocktail/mocktail.dart';
 import 'package:netglade_utils/src/result/result.dart';
-import 'package:netglade_utils/src/typedefs/typedefs.dart';
 
 extension FutureVoidAnswer on When<Future<void>> {
   void thenAnswerWithVoid() => thenAnswer((_) async => <void>{});
@@ -46,14 +45,14 @@ extension StreamSubscriptionAnswer<T> on When<StreamSubscription<T>> {
   void thenAnswerWithProvidedCallback() => thenAnswer((i) {
         final callback = i.positionalArguments.singleOrNull;
 
-        // ignore: no-empty-block, it needs to be empty
-        return Stream.fromIterable(<T>[]).listen(callback != null ? callback as Setter<T> : (_) {});
+        // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
+        return Stream.fromIterable(<T>[]).listen(callback != null ? callback as void Function(T value) : (_) {});
       });
 
   void thenAnswerWithCustomStream(Stream<T> stream) => thenAnswer((i) {
         final callback = i.positionalArguments.singleOrNull;
 
-        // ignore: no-empty-block, it needs to be empty
-        return stream.listen(callback != null ? callback as Setter<T> : (_) {});
+        // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
+        return stream.listen(callback != null ? callback as void Function(T value) : (_) {});
       });
 }

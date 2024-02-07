@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:clock/clock.dart';
-import 'package:netglade_utils/src/typedefs/typedefs.dart';
+
+typedef OnTakingTooLongCallback = void Function();
 
 extension FutureExtensions<T> on Future<T> {
   // ignore: comment_references, see https://github.com/dart-lang/linter/issues/2079
   /// If [this] future taking longer than [duration] to execute - [callback] is called.
-  Future<T> onTakingTooLong(Duration duration, VoidCallback callback) async {
+  Future<T> onTakingTooLong(Duration duration, OnTakingTooLongCallback callback) async {
     final timer = Timer(duration, callback);
 
     try {
