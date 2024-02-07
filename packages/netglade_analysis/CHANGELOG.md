@@ -1,3 +1,10 @@
+## 8.0.0
+- Adhere to DCM 1.14.0:
+  - Add avoid-empty-test-groups
+  - Add avoid-not-encodable-in-to-json
+  - Add avoid-contradictory-expressions
+  - Add avoid-excessive-expressions
+
 ## 7.0.0
 - Adhere to DCM 1.13.0:
   - Add avoid-duplicate-collection-elements

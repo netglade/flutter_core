@@ -1,4 +1,4 @@
-# version 1.13.0 - https://dcm.dev/changelog/
+# version 1.14.0 - https://dcm.dev/changelog/
 dart_code_metrics:
   rules:
     ### Common
@@ -17,6 +17,7 @@ dart_code_metrics:
     - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
     # - avoid-collection-mutating-methods # sometimes it's ok
+    - avoid-contradictory-expressions
     - avoid-declaring-call-method
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
@@ -30,7 +31,9 @@ dart_code_metrics:
     - avoid-duplicate-switch-case-conditions
     - avoid-duplicate-test-assertions
     - avoid-dynamic
+    - avoid-empty-test-groups
     - avoid-equal-expressions
+    - avoid-excessive-expressions
     - avoid-explicit-pattern-field-name
     # - avoid-explicit-type-declaration # public API
     - avoid-extensions-on-records
@@ -76,6 +79,7 @@ dart_code_metrics:
         skip-checked-fields: true
         exclude:
           - test/**
+    - avoid-not-encodable-in-to-json
     - avoid-nullable-interpolation
     - avoid-nullable-parameters-with-default-values
     - avoid-nullable-tostring
