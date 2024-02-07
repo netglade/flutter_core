@@ -24,6 +24,14 @@ extension StringExtensions on String {
   String lastNCharacters(int limit) {
     return characters.getRange(max(0, length - limit)).toString();
   }
+
+  String? ifEmpty([String? defaultValue]) {
+    return isEmpty ? defaultValue : this;
+  }
+
+  String? ifBlank([String? defaultValue]) {
+    return isBlank ? defaultValue : this;
+  }
 }
 
 extension NullableStringExtensions on String? {
@@ -42,6 +50,11 @@ extension NullableStringExtensions on String? {
     return this?.isBlank ?? true;
   }
 
+  /// Returns negation of [isNullOrBlank].
+  bool get isNotNullNorBlank {
+    return !isNullOrBlank;
+  }
+
   /// Returns negation of [isBlank].
   ///
   /// * String? is blank when it has a value and contains only whitespaces.
@@ -57,5 +70,13 @@ extension NullableStringExtensions on String? {
   /// Returns negation of [isNullOrEmpty].
   bool get isNotNullNorEmpty {
     return !isNullOrEmpty;
+  }
+
+  String? ifEmpty([String? defaultValue]) {
+    return (this?.isEmpty ?? false) ? defaultValue : this;
+  }
+
+  String? ifBlank([String? defaultValue]) {
+    return (this?.isBlank ?? false) ? defaultValue : this;
   }
 }

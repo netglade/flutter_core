@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations, unnecessary_nullable_for_final_variable_declarations, omit_local_variable_types
+
 import 'package:netglade_utils/netglade_utils.dart';
 import 'package:test/test.dart';
 
@@ -23,33 +25,40 @@ void main() {
   group('isBlank', () {
     group('on String', () {
       test('empty message is isBlank', () {
-        expect(''.isBlank, isTrue);
+        final String value = '';
+        expect(value.isBlank, isTrue);
       });
 
       test('message with whitespaces is isBlank', () {
-        expect('   '.isBlank, isTrue);
+        final String value = '   ';
+        expect(value.isBlank, isTrue);
       });
 
       test('message with non-whitespace characters is not isBlank', () {
-        expect('xxx'.isBlank, isFalse);
+        final String value = 'xxx';
+        expect(value.isBlank, isFalse);
       });
     });
 
     group('on String?', () {
       test('empty message is isBlank', () {
-        expect(''.isBlank, isTrue);
+        final String? value = '';
+        expect(value.isBlank, isTrue);
       });
 
       test('null message is not isBlank', () {
-        expect(null.isBlank, isFalse);
+        final String? value = null;
+        expect(value.isBlank, isFalse);
       });
 
       test('message with whitespaces is isBlank', () {
-        expect('   '.isBlank, isTrue);
+        final String? value = '   ';
+        expect(value.isBlank, isTrue);
       });
 
       test('message with non-whitespace characters is not isBlank', () {
-        expect('xxx'.isBlank, isFalse);
+        final String? value = 'xxx';
+        expect(value.isBlank, isFalse);
       });
     });
   });
@@ -57,33 +66,40 @@ void main() {
   group('isNotBlank', () {
     group('on String', () {
       test('empty message is not isNotBlank', () {
-        expect(''.isNotBlank, isFalse);
+        final String value = '';
+        expect(value.isNotBlank, isFalse);
       });
 
       test('message with whitespaces is not isNotBlank', () {
-        expect('   '.isNotBlank, isFalse);
+        final String value = '   ';
+        expect(value.isNotBlank, isFalse);
       });
 
       test('message with non-whitespace characters is isNotBlank', () {
-        expect('xxx'.isNotBlank, isTrue);
+        final String value = 'xxx';
+        expect(value.isNotBlank, isTrue);
       });
     });
 
     group('on String?', () {
       test('empty message is not isNotBlank', () {
-        expect(''.isNotBlank, isFalse);
+        final String? value = '';
+        expect(value.isNotBlank, isFalse);
       });
 
       test('message is null is isNotBlank', () {
-        expect(null.isNotBlank, isTrue);
+        final String? value = null;
+        expect(value.isNotBlank, isTrue);
       });
 
       test('message has whitespaces is not isNotBlank', () {
-        expect('   '.isNotBlank, isFalse);
+        final String? value = '   ';
+        expect(value.isNotBlank, isFalse);
       });
 
       test('message has non-whitespace characters is isNotBlank', () {
-        expect('xxx'.isNotBlank, isTrue);
+        final String? value = 'xxx';
+        expect(value.isNotBlank, isTrue);
       });
     });
   });
@@ -91,19 +107,23 @@ void main() {
   group('isNullOrBlank', () {
     group('on String?', () {
       test('empty message is isNullOrBlank', () {
-        expect(''.isNullOrBlank, isTrue);
+        final String? value = '';
+        expect(value.isNullOrBlank, isTrue);
       });
 
       test('null message is isNullOrBlank', () {
-        expect(null.isNullOrBlank, isTrue);
+        final String? value = null;
+        expect(value.isNullOrBlank, isTrue);
       });
 
       test('message with whitespaces is isNullOrBlank', () {
-        expect('   '.isNullOrBlank, isTrue);
+        final String? value = '   ';
+        expect(value.isNullOrBlank, isTrue);
       });
 
       test('message with non-whitespace characters is not isNullOrBlank', () {
-        expect('xxx'.isNullOrBlank, isFalse);
+        final String? value = 'xxx';
+        expect(value.isNullOrBlank, isFalse);
       });
     });
   });
@@ -111,19 +131,23 @@ void main() {
   group('isNullOrEmpty', () {
     group('on String?', () {
       test('empty message is isNullOrEmpty', () {
-        expect(''.isNullOrEmpty, isTrue);
+        final String? value = '';
+        expect(value.isNullOrEmpty, isTrue);
       });
 
       test('null message is isNullOrEmpty', () {
-        expect(null.isNullOrEmpty, isTrue);
+        final String? value = null;
+        expect(value.isNullOrEmpty, isTrue);
       });
 
       test('message with whitespaces is not isNullOrEmpty', () {
-        expect('   '.isNullOrEmpty, isFalse);
+        final String? value = '   ';
+        expect(value.isNullOrEmpty, isFalse);
       });
 
       test('message with non-whitespace characters is not isNullOrEmpty', () {
-        expect('xxx'.isNullOrEmpty, isFalse);
+        final String? value = 'xxx';
+        expect(value.isNullOrEmpty, isFalse);
       });
     });
   });
@@ -131,19 +155,129 @@ void main() {
   group('isNotNullNorEmpty', () {
     group('on String?', () {
       test('empty message is not isNotNullNorEmpty', () {
-        expect(''.isNotNullNorEmpty, isFalse);
+        final String? value = '';
+        expect(value.isNotNullNorEmpty, isFalse);
       });
 
       test('null message is not isNotNullNorEmpty', () {
-        expect(null.isNotNullNorEmpty, isFalse);
+        final String? value = null;
+        expect(value.isNotNullNorEmpty, isFalse);
       });
 
       test('message with whitespaces is isNotNullNorEmpty', () {
-        expect('   '.isNotNullNorEmpty, isTrue);
+        final String? value = '   ';
+        expect(value.isNotNullNorEmpty, isTrue);
       });
 
       test('message with non-whitespace characters is isNotNullNorEmpty', () {
-        expect('xxx'.isNotNullNorEmpty, isTrue);
+        final String? value = 'xxx';
+        expect(value.isNotNullNorEmpty, isTrue);
+      });
+    });
+  });
+
+  group('isNotNullNorBlank', () {
+    group('on String?', () {
+      test('empty message is not isNotNullNorBlank', () {
+        final String? value = '';
+        expect(value.isNotNullNorBlank, isFalse);
+      });
+
+      test('null message is not isNotNullNorBlank', () {
+        final String? value = null;
+        expect(value.isNotNullNorBlank, isFalse);
+      });
+
+      test('message with whitespaces is not isNotNullNorBlank', () {
+        final String? value = '   ';
+        expect(value.isNotNullNorBlank, isFalse);
+      });
+
+      test('message with non-whitespace characters is isNotNullNorBlank', () {
+        final String? value = 'xxx';
+        expect(value.isNotNullNorBlank, isTrue);
+      });
+    });
+  });
+
+  group('ifEmpty', () {
+    group('on String', () {
+      test('empty message', () {
+        final String value = '';
+        expect(value.ifEmpty('aaa'), equals('aaa'));
+      });
+
+      test('message with whitespaces', () {
+        final String value = '   ';
+        expect(value.ifEmpty('aaa'), equals(value));
+      });
+
+      test('message with non-whitespace characters', () {
+        final String value = 'xxx';
+        expect(value.ifEmpty('aaa'), equals(value));
+      });
+    });
+
+    group('on String?', () {
+      test('empty message', () {
+        final String? value = '';
+        expect(value.ifEmpty('aaa'), equals('aaa'));
+      });
+
+      test('null message', () {
+        final String? value = null;
+        expect(value.ifEmpty('aaa'), equals(value));
+      });
+
+      test('message with whitespaces', () {
+        final String? value = '   ';
+        expect(value.ifEmpty('aaa'), equals(value));
+      });
+
+      test('message with non-whitespace characters', () {
+        final String? value = 'xxx';
+        expect(value.ifEmpty('aaa'), equals(value));
+      });
+    });
+  });
+
+  group('ifBlank', () {
+    group('on String', () {
+      test('empty message', () {
+        final String value = '';
+        expect(value.ifBlank('aaa'), equals('aaa'));
+      });
+
+      test('message with whitespaces', () {
+        final String value = '   ';
+        expect(value.ifBlank('aaa'), equals('aaa'));
+      });
+
+      test('message with non-whitespace characters', () {
+        final String value = 'xxx';
+        expect(value.ifBlank('aaa'), equals(value));
+      });
+    });
+
+    group('on String?', () {
+      test('empty message', () {
+        final String? value = '';
+        expect(value.ifBlank('aaa'), equals('aaa'));
+      });
+
+      test('null message', () {
+        final String? value = null;
+        expect(value.ifBlank('aaa'), equals(value));
+      });
+
+      test('message with whitespaces', () {
+        final String? value = '   ';
+        expect(value.ifBlank('aaa'), equals('aaa'));
+      });
+
+      test('message with non-whitespace characters', () {
+        final String? value = 'xxx';
+        expect(value.ifBlank('aaa'), equals(value));
       });
     });
   });

@@ -1,3 +1,7 @@
+## 1.2.0
+- Add `ifEmpty` and `ifBlank` to string extensions.
+- Remove typedefs. (private)
+
 ## 1.1.0
 - Add `isNotNullNorEmpty` to `String?` extension.
 - Fix implementation and doc comments in `string_extensions`.
