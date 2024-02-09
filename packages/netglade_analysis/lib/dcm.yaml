@@ -173,8 +173,8 @@ dart_code_metrics:
           - init-state-method
           - overridden-public-methods
           - public-methods
-          - private-methods
           - build-method
+          - private-methods
     - missing-test-assertion
     - move-records-to-typedefs:
         min-fields: 3
