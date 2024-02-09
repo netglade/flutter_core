@@ -31,7 +31,10 @@ dart_code_metrics:
     - avoid-duplicate-switch-case-conditions
     - avoid-duplicate-test-assertions
     - avoid-dynamic
-    - avoid-empty-test-groups
+    - avoid-empty-test-groups:
+        include-methods:
+          - blocTest
+          - blocPresentationTest
     - avoid-equal-expressions
     - avoid-excessive-expressions
     - avoid-explicit-pattern-field-name
