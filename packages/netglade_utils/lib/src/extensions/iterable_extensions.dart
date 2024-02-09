@@ -11,7 +11,7 @@ extension IterableExtensions<T> on Iterable<T> {
   }
 
   /// Returns a list containing only elements from the given collection having distinct keys returned by the given [selector] function. If multiple elements have the same key, first element is returned.
-  Iterable<T> distinctBy<K>(Selector<T,K> selector) {
+  Iterable<T> distinctBy<K>(Selector<T, K> selector) {
     return groupBy<T, K>(this, selector)
         .values
         // ignore: avoid-unsafe-collection-methods, groupBy returns non-empty lists
