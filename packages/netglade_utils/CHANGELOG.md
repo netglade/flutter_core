@@ -1,5 +1,5 @@
 ## 1.3.0
-- Add `distinct` and `distinctBy` to iterable extensions.
+- Add `distinctBy` to iterable extensions.
 
 ## 1.2.0
 - Add `ifEmpty` and `ifBlank` to string extensions.
