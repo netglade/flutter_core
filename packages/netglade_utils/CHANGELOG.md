@@ -1,3 +1,6 @@
+## 1.3.0
+- Add `distinctBy` to iterable extensions.
+
 ## 1.2.0
 - Add `ifEmpty` and `ifBlank` to string extensions.
 - Remove typedefs. (private)
