@@ -6,6 +6,6 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  netglade_analysis: ^7.0.0
+  netglade_analysis: ^8.0.0
   netglade_utils:
     path: ..
