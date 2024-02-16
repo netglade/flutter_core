@@ -32,15 +32,6 @@ class _UnderTestWidget extends HookWidget {
     required this.onAction,
   });
 
-  void _handlePopBtnPressed(BuildContext context) {
-    Navigator.of(context).pop();
-  }
-
-  void _handlePushNextBtnPressed(BuildContext context) {
-    // ignore: avoid-undisposed-instances, ok for test
-    unawaited(Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const _MockPage())));
-  }
-
   @override
   Widget build(BuildContext context) {
     final state = useState<String>('??');
@@ -79,6 +70,15 @@ class _UnderTestWidget extends HookWidget {
         ),
       ],
     );
+  }
+
+  void _handlePopBtnPressed(BuildContext context) {
+    Navigator.of(context).pop();
+  }
+
+  void _handlePushNextBtnPressed(BuildContext context) {
+    // ignore: avoid-undisposed-instances, ok for test
+    unawaited(Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const _MockPage())));
   }
 }
 
