@@ -35,14 +35,6 @@ extension StringExtensions on String {
 }
 
 extension NullableStringExtensions on String? {
-  /// Returns true when `this` is `String` which is `isBlank`.
-  /// When the value is `null`, returns `false`.
-  ///
-  /// * String? is blank when it has a value and contains only whitespaces.
-  bool get isBlank {
-    return this?.isBlank ?? false;
-  }
-
   /// Returns true when `this` is either `null` or `isBlank`.
   ///
   /// * String? is blank when it has a value and contains only whitespaces.
@@ -53,13 +45,6 @@ extension NullableStringExtensions on String? {
   /// Returns negation of [isNullOrBlank].
   bool get isNotNullNorBlank {
     return !isNullOrBlank;
-  }
-
-  /// Returns negation of [isBlank].
-  ///
-  /// * String? is blank when it has a value and contains only whitespaces.
-  bool get isNotBlank {
-    return !isBlank;
   }
 
   /// Returns true when `this` is either `null` or `isBlank`.

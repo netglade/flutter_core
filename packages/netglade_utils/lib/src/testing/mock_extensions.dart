@@ -6,11 +6,13 @@ import 'package:mocktail/mocktail.dart';
 import 'package:netglade_utils/src/result/result.dart';
 
 extension FutureVoidAnswer on When<Future<void>> {
-  void thenAnswerWithVoid() => thenAnswer((_) async => <void>{});
+  // ignore: no-empty-block, its ok
+  void thenAnswerWithVoid() => thenAnswer((_) async {});
 }
 
 extension VoidAnswer on When<void> {
-  void thenAnswerWithVoid() => thenAnswer((_) => <void>{});
+  // ignore: no-empty-block, its ok
+  void thenAnswerWithVoid() => thenAnswer((_) {});
 }
 
 extension GenericAnswer<T> on When<Future<T>> {
