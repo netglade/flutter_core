@@ -1,3 +1,6 @@
+## 2.0.0
+- Remove `isBlank`, `isNotBlank` from `String?` extension.
+
 ## 1.3.0
 - Add `distinctBy` to iterable extensions.
 
