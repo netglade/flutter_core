@@ -13,6 +13,7 @@
   - Add prefer-private-extension-type-field
   - Add avoid-missing-controller
   - Add avoid-unnecessary-gesture-detector
+- Update prefer-correct-switch-length max-length to 20
 
 ## 8.0.0
 - Adhere to DCM 1.14.0:

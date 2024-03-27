@@ -236,7 +236,8 @@ dart_code_metrics:
     # - prefer-correct-json-casts # overkill
     - prefer-correct-setter-parameter-name
     - prefer-correct-stream-return-type
-    - prefer-correct-switch-length
+    - prefer-correct-switch-length:
+        max-length: 20 # default value 10 is sometimes way too much
     - prefer-correct-test-file-name
     - prefer-correct-type-name
     - prefer-declaring-const-constructor
