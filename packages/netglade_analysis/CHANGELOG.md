@@ -1,3 +1,19 @@
+## 9.0.0
+- Adhere to DCM 1.15.0:
+  - Add avoid-casting-to-extension-type
+  - Add avoid-empty-spread
+  - Add avoid-missing-completer-stack-trace
+  - Add avoid-nested-extension-types
+  - Add avoid-renaming-representation-getters
+  - Add avoid-returning-void
+  - Add avoid-slow-collection-methods
+  - Add avoid-unknown-pragma
+  - Add avoid-unnecessary-collections
+  - Add prefer-overriding-parent-equality
+  - Add prefer-private-extension-type-field
+  - Add avoid-missing-controller
+  - Add avoid-unnecessary-gesture-detector
+
 ## 8.0.0
 - Adhere to DCM 1.14.0:
   - Add avoid-empty-test-groups

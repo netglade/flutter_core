@@ -1,4 +1,4 @@
-# version 1.14.0 - https://dcm.dev/changelog/
+# version 1.15.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -14,6 +14,7 @@ dart_code_metrics:
     - avoid-bottom-type-in-patterns
     - avoid-bottom-type-in-records
     - avoid-cascade-after-if-null
+    - avoid-casting-to-extension-type
     - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
     # - avoid-collection-mutating-methods # sometimes it's ok
@@ -31,6 +32,7 @@ dart_code_metrics:
     - avoid-duplicate-switch-case-conditions
     - avoid-duplicate-test-assertions
     - avoid-dynamic
+    - avoid-empty-spread
     - avoid-empty-test-groups:
         include-methods:
           - blocTest
@@ -63,6 +65,7 @@ dart_code_metrics:
     - avoid-long-records
     - avoid-map-keys-contains
     - avoid-missed-calls
+    - avoid-missing-completer-stack-trace
     - avoid-missing-enum-constant-in-map
     - avoid-misused-wildcard-pattern
     - avoid-mixing-named-and-positional-fields
@@ -70,6 +73,7 @@ dart_code_metrics:
     # - avoid-negated-conditions # sometimes it might be better
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
+    - avoid-nested-extension-types
     - avoid-nested-futures
     - avoid-nested-records
     - avoid-nested-streams-and-futures
@@ -99,6 +103,8 @@ dart_code_metrics:
     - avoid-redundant-positional-field-name
     - avoid-redundant-pragma-inline
     - avoid-referencing-discarded-variables
+    - avoid-renaming-representation-getters
+    - avoid-returning-void
     - avoid-self-assignment
     - avoid-self-compare
     - avoid-shadowed-extension-methods
@@ -107,6 +113,7 @@ dart_code_metrics:
         ignored-names:
           - context
     # - avoid-similar-names # way too pedantic
+    - avoid-slow-collection-methods
     - avoid-substring
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
@@ -115,7 +122,9 @@ dart_code_metrics:
     - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
+    - avoid-unknown-pragma
     - avoid-unnecessary-call
+    - avoid-unnecessary-collections
     - avoid-unnecessary-conditionals
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
@@ -251,8 +260,10 @@ dart_code_metrics:
     - prefer-named-boolean-parameters
     # - prefer-named-imports # * OK, we just don't have global config
     - prefer-null-aware-spread
+    - prefer-overriding-parent-equality
     - prefer-parentheses-with-if-null
     # - prefer-prefixed-global-constants # * OK, we just don't have global config
+    - prefer-private-extension-type-field
     - prefer-public-exception-classes
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
@@ -291,6 +302,7 @@ dart_code_metrics:
     - avoid-incomplete-copy-with
     - avoid-inherited-widget-in-initstate
     - avoid-late-context
+    - avoid-missing-controller
     - avoid-missing-image-alt
     - avoid-recursive-widget-calls
     - avoid-returning-widgets
@@ -299,6 +311,7 @@ dart_code_metrics:
     - avoid-state-constructors
     - avoid-stateless-widget-initialized-fields
     - avoid-undisposed-instances
+    - avoid-unnecessary-gesture-detector
     - avoid-unnecessary-overrides-in-state
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets

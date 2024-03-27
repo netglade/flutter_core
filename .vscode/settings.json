@@ -1,31 +1,30 @@
 {
-    "dart.flutterSdkPath": ".fvm/flutter_sdk",
-    "search.exclude": {
-        "**/.fvm": true,
-        "**/*.g.dart": true,
-    },
-    "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        ".idea/**": true,
-        ".run/**": true,
-    },
-    // Remove from file watching
-    "files.watcherExclude": {
-        "**/.fvm": true
-    },
-    "dart.lineLength": 120,
-    "editor.rulers": [
-        120
-    ],
-    "yaml.schemas": {
-        "https://json.schemastore.org/dart-build.json": [
-            "build.yaml"
-        ]
-    },
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.patterns": {
-        "*.dart": "${capture}.g.dart,${capture}.freezed.dart,${capture}.auto_mappr.dart"
-    },
-    "yaml.schemaStore.enable": false
+  "dart.flutterSdkPath": ".fvm/versions/3.19.4",
+  "search.exclude": {
+    "**/.fvm": true,
+    "**/*.g.dart": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    ".idea/**": true,
+    ".run/**": true
+  },
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "dart.lineLength": 120,
+  "editor.rulers": [
+    120
+  ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/dart-build.json": [
+      "build.yaml"
+    ]
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.g.dart,${capture}.freezed.dart,${capture}.auto_mappr.dart"
+  },
+  "yaml.schemaStore.enable": false
 }
