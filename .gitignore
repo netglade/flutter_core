@@ -7,7 +7,7 @@ melos_my_project.iml
 .vscode/*
 !.vscode/tasks.json
 !.vscode/settings.json
-.fvm/flutter_sdk
+.fvm/
 
 .packages
 .pub/
