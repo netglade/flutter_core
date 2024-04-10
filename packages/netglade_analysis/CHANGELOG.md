@@ -1,3 +1,9 @@
+## 10.0.0
+- Adhere to DCM 1.16.0:
+  - Add avoid-conditions-with-boolean-literals
+  - Add prefer-for-loop-in-children
+  - Add avoid-unnecessary-hook-widgets
+
 ## 9.0.0
 - Adhere to DCM 1.15.0:
   - Add avoid-casting-to-extension-type

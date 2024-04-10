@@ -1,4 +1,4 @@
-# version 1.15.0 - https://dcm.dev/changelog
+# version 1.16.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -18,6 +18,7 @@ dart_code_metrics:
     - avoid-collapsible-if
     - avoid-collection-methods-with-unrelated-types
     # - avoid-collection-mutating-methods # sometimes it's ok
+    - avoid-conditions-with-boolean-literals
     - avoid-contradictory-expressions
     - avoid-declaring-call-method
     - avoid-double-slash-imports
@@ -188,6 +189,7 @@ dart_code_metrics:
           - build-method
           - private-methods
     - missing-test-assertion
+    # - missing-use-result-annotation # * OK, we just don't have global config
     - move-records-to-typedefs:
         min-fields: 3
         min-occurrences: 3
@@ -215,7 +217,8 @@ dart_code_metrics:
     - no-equal-switch-case
     - no-equal-switch-expression-cases
     - no-equal-then-else
-    #- no-magic-number: # way too strict for default values of parameters etc.
+    #- no-magic-number # way too strict for default values of parameters etc.
+    #- no-magic-string # way too strict for default values of parameters etc.
     - no-object-declaration
     # - parameters-ordering # way too strict
     # - prefer-addition-subtraction-assignments # dunno
@@ -326,6 +329,7 @@ dart_code_metrics:
     - prefer-dedicated-media-query-methods
     - prefer-define-hero-tag
     - prefer-extracting-callbacks
+    - prefer-for-loop-in-children
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
     - prefer-sliver-prefix
@@ -374,6 +378,7 @@ dart_code_metrics:
     ### Flutter Hooks
     - avoid-conditional-hooks
     - avoid-hooks-outside-build
+    - avoid-unnecessary-hook-widgets
     - prefer-use-prefix
 
     ### Intl - not used
