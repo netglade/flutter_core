@@ -1,4 +1,5 @@
 export 'date_time_extensions.dart';
+export 'enum_extensions.dart';
 export 'future_extensions.dart';
 export 'iterable_extensions.dart';
 export 'object_extensions.dart';
