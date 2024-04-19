@@ -1,3 +1,9 @@
+
+## 2.1.0
+- Add `byNameOrDefault` and `byNameOrNull` Enum's extensions.
+- Add `normalizeUrl` and `rtrim` String's extensions.
+- Add `flattenedList` on Iterable of Iterables extension.
+
 ## 2.0.0
 - Remove `isBlank`, `isNotBlank` from `String?` extension.
 

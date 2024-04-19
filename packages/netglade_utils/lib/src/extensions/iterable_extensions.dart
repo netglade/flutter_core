@@ -14,3 +14,7 @@ extension IterableExtensions<T> on Iterable<T> {
     return result.values;
   }
 }
+
+extension IterableIterableExtension<T> on Iterable<Iterable<T>> {
+  List<T> get flattenedList => [for (final elements in this) ...elements];
+}

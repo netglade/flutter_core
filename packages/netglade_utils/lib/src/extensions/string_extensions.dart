@@ -32,6 +32,25 @@ extension StringExtensions on String {
   String? ifBlank([String? defaultValue]) {
     return isBlank ? defaultValue : this;
   }
+
+  /// Normalize supposedly string containing URL
+  ///
+  /// Appends https:// when does not start with.
+  /// Trims any trailing '/' chars.
+  String normalizeUrl() {
+    final value = trim();
+
+    if (value.startsWith(RegExp(r'http[s]?:\/\/'))) return value.rtrim('/');
+
+    return 'https://$value'.rtrim('/');
+  }
+
+  /// Removes any trailing char from [chars].
+  String rtrim(String chars) {
+    final pattern = RegExp('[$chars]+\$');
+
+    return replaceAll(pattern, '');
+  }
 }
 
 extension NullableStringExtensions on String? {
