@@ -1,4 +1,8 @@
 
+## 2.2.0
+- Add `mapIndexed2` - replacement for built-in mapIndexed which uses sync*
+- Add `where` extension on Map type - returning new map instance. 
+
 ## 2.1.0
 - Add `byNameOrDefault` and `byNameOrNull` Enum's extensions.
 - Add `normalizeUrl` and `rtrim` String's extensions.
