@@ -1,3 +1,15 @@
+## 11.0.0
+- Adhere to DCM 1.17.0:
+  - Add avoid-collection-equality-checks
+  - Add avoid-multi-assignment
+  - Add prefer-switch-with-sealed-classes
+  - Add prefer-single-declaration-per-file
+  - Add prefer-use-callback
+  - Add avoid-misused-hooks
+  - Add avoid-ref-read-inside-build
+  - Add avoid-ref-watch-outside-build
+  - Add avoid-unnecessary-consumer-widgets
+
 ## 10.0.0
 - Adhere to DCM 1.16.0:
   - Add avoid-conditions-with-boolean-literals
