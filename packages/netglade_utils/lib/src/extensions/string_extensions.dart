@@ -78,6 +78,7 @@ extension StringExtensions on String {
   }
 }
 
+// ignore: prefer-single-declaration-per-file, ok in single file.
 extension NullableStringExtensions on String? {
   /// Returns true when `this` is either `null` or `isBlank`.
   ///
