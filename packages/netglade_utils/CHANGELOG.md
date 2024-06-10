@@ -1,4 +1,7 @@
 
+## 2.3.0
+- Add more String extensions.
+
 ## 2.2.0
 - Add `mapIndexed2` - replacement for built-in mapIndexed which uses sync*
 - Add `where` extension on Map type - returning new map instance. 

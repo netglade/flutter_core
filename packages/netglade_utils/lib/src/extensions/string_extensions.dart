@@ -51,6 +51,33 @@ extension StringExtensions on String {
 
     return replaceAll(pattern, '');
   }
+
+  String capitalize() {
+    if (length < 2) return this;
+
+    return '${this[0].toUpperCase()}${characters.getRange(1).toLowerCase()}';
+  }
+
+  String shorten(int maxLength) {
+    if (length < maxLength) return this;
+
+    return '${characters.getRange(0, maxLength)}...';
+  }
+
+  String stripOuterQuotes() {
+    var result = this;
+    if (result.startsWith('"')) result = result.replaceFirst('"', '');
+
+    if (result.endsWith('"')) result = result.replaceRange(result.length - 1, null, '');
+
+    return result;
+  }
+
+  String firstLetterUppercase() => '${this[0].toUpperCase()}${characters.getRange(1)}';
+
+  String stripNewLines([String placeholder = ' ']) {
+    return replaceAll(RegExp(r'\s+'), placeholder);
+  }
 }
 
 extension NullableStringExtensions on String? {
