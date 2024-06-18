@@ -5,9 +5,14 @@ import 'package:clock/clock.dart';
 typedef OnTakingTooLongCallback = void Function();
 
 extension FutureExtensions<T> on Future<T> {
+  static const standardProlongTimeMs = 300;
+
   // ignore: comment_references, see https://github.com/dart-lang/linter/issues/2079
   /// If [this] future taking longer than [duration] to execute - [callback] is called.
-  Future<T> onTakingTooLong(Duration duration, OnTakingTooLongCallback callback) async {
+  Future<T> onTakingTooLong(
+    Duration duration,
+    OnTakingTooLongCallback callback,
+  ) async {
     final timer = Timer(duration, callback);
 
     try {
@@ -33,9 +38,17 @@ extension FutureExtensions<T> on Future<T> {
     final diff = DateTime.now().millisecondsSinceEpoch - started;
 
     if (diff < duration.inMilliseconds) {
-      await Future<void>.delayed(Duration(milliseconds: duration.inMilliseconds - diff));
+      await Future<void>.delayed(
+        Duration(milliseconds: duration.inMilliseconds - diff),
+      );
     }
 
     return result;
+  }
+
+  Future<T> standardProlong([int? milliseconds]) {
+    return withMinimalLoadTime(
+      Duration(milliseconds: milliseconds ?? standardProlongTimeMs),
+    );
   }
 }

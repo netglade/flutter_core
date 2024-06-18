@@ -1,4 +1,7 @@
 
+## 2.4.0
+- Add `standartProLong` future extension.
+
 ## 2.3.0
 - Add more String extensions.
 
