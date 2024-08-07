@@ -1,4 +1,4 @@
-# version 1.17.0 - https://dcm.dev/changelog
+# version 1.19.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -94,6 +94,7 @@ dart_code_metrics:
     - avoid-nullable-parameters-with-default-values
     - avoid-nullable-tostring
     - avoid-one-field-records
+    - avoid-only-rethrow
     - avoid-passing-async-when-sync-expected:
         exclude:
           - test/**
@@ -107,6 +108,7 @@ dart_code_metrics:
     - avoid-redundant-pragma-inline
     - avoid-referencing-discarded-variables
     - avoid-renaming-representation-getters
+    - avoid-returning-cascades
     - avoid-returning-void
     - avoid-self-assignment
     - avoid-self-compare
@@ -143,6 +145,7 @@ dart_code_metrics:
     - avoid-unrelated-type-assertions
     - avoid-unrelated-type-casts
     - avoid-unsafe-collection-methods
+    - avoid-unsafe-reduce
     - avoid-unused-after-null-check
     - avoid-unused-generics
     - avoid-unused-instances
@@ -160,6 +163,7 @@ dart_code_metrics:
     - function-always-returns-null:
         ignored-invocations:
           - useEffect
+    - handle-throwing-invocations
     - map-keys-ordering:
         exclude:
           - test/**
@@ -224,6 +228,7 @@ dart_code_metrics:
     #- no-magic-string # way too strict for default values of parameters etc.
     - no-object-declaration
     # - parameters-ordering # way too strict
+    - prefer-abstract-final-static-class
     # - prefer-addition-subtraction-assignments # dunno
     - prefer-any-or-every
     - prefer-async-await
@@ -245,6 +250,7 @@ dart_code_metrics:
     - prefer-correct-switch-length:
         max-length: 20 # default value 10 is sometimes way too much
     - prefer-correct-test-file-name
+    - prefer-correct-throws
     - prefer-correct-type-name
     - prefer-declaring-const-constructor
     - prefer-early-return
@@ -252,6 +258,7 @@ dart_code_metrics:
     - prefer-explicit-function-type
     - prefer-explicit-parameter-names
     # - prefer-explicit-type-arguments # inference is better
+    # - prefer-extracting-function-callbacks # TODO
     - prefer-first
     # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
@@ -266,6 +273,7 @@ dart_code_metrics:
           - test/**
     - prefer-named-boolean-parameters
     # - prefer-named-imports # * OK, we just don't have global config
+    # - prefer-named-parameters # TODO
     - prefer-null-aware-spread
     - prefer-overriding-parent-equality
     - prefer-parentheses-with-if-null
@@ -309,6 +317,7 @@ dart_code_metrics:
     - avoid-empty-setstate
     - avoid-expanded-as-spacer
     - avoid-incomplete-copy-with
+    - avoid-incorrect-image-opacity
     - avoid-inherited-widget-in-initstate
     - avoid-late-context
     - avoid-missing-controller
@@ -360,9 +369,13 @@ dart_code_metrics:
     - prefer-multi-bloc-provider
 
     ### Riverpod
+    - avoid-calling-notifier-members-inside-build
+    - avoid-notifier-constructors
     - avoid-ref-read-inside-build
     - avoid-ref-watch-outside-build
     - avoid-unnecessary-consumer-widgets
+    - dispose-provided-instances
+    - use-ref-read-synchronously
 
     ### Equatable
     # - extend-equatable # * OK, we just don't have global config
@@ -392,6 +405,12 @@ dart_code_metrics:
     - avoid-unnecessary-hook-widgets
     - prefer-use-callback
     - prefer-use-prefix
+
+    ### GetX - not used
+    # - always-remove-getx-listener
+    # - avoid-getx-rx-inside-build
+    # - dispose-getx-fields
+    # - proper-getx-super-calls
 
     ### Intl - not used
     # - prefer-date-format

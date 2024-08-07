@@ -1,3 +1,17 @@
+## 12.0.0
+- Adhere to DCM 1.18.0 and 1.19.0:
+  - Add avoid-only-rethrow
+  - Add avoid-returning-cascades
+  - Add avoid-unsafe-reduce
+  - Add handle-throwing-invocations
+  - Add prefer-abstract-final-static-class
+  - Add prefer-correct-throws
+  - Add avoid-incorrect-image-opacity
+  - Add avoid-calling-notifier-members-inside-build
+  - Add avoid-notifier-constructors
+  - Add dispose-provided-instances
+  - Add use-ref-read-synchronously
+
 ## 11.0.0
 - Adhere to DCM 1.17.0:
   - Add avoid-collection-equality-checks
