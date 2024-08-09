@@ -11,6 +11,11 @@
   - Add avoid-notifier-constructors
   - Add dispose-provided-instances
   - Add use-ref-read-synchronously
+- Adhere to Dart 3.5 and previous lints:
+  - Add invalid_runtime_check_with_js_interop_types
+  - Add missing_code_block_language_in_doc_comment
+  - Add unintended_html_in_doc_comment
+  - Add unnecessary_library_name
 
 ## 11.0.0
 - Adhere to DCM 1.17.0:
