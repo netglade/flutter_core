@@ -8,7 +8,7 @@ documentation: https://github.com/netglade/flutter_core/tree/main/packages/netgl
 
 environment:
   sdk: ^3.0.0
-  flutter: ^3.0.0
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
