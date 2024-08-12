@@ -1,4 +1,4 @@
-# version 1.19.0 - https://dcm.dev/changelog
+# version 1.21.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -9,6 +9,7 @@ dart_code_metrics:
     # - avoid-banned-annotations # * OK, we just don't have global config
     # - avoid-banned-file-names # * OK, we just don't have global config
     # - avoid-banned-imports # * OK, we just don't have global config
+    # - avoid-banned-names # * OK, we just don't have global config
     # - avoid-banned-types # * OK, we just don't have global config
     # - avoid-barrel-files # for now we use them
     - avoid-bottom-type-in-patterns
@@ -120,6 +121,7 @@ dart_code_metrics:
     # - avoid-similar-names # way too pedantic
     - avoid-slow-collection-methods
     - avoid-substring
+    - avoid-suspicious-super-overrides
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
@@ -155,6 +157,7 @@ dart_code_metrics:
     - prefer-switch-with-sealed-classes
     # - banned-usage # * OK, we just don't have global config
     - binary-expression-operand-order
+    - dispose-class-fields
     - double-literal-format
     - enum-constants-ordering
     - format-comment:
@@ -203,6 +206,7 @@ dart_code_metrics:
     - move-variable-closer-to-its-usage
     - move-variable-outside-iteration
     - newline-before-case
+    - newline-before-method
     - newline-before-return
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
@@ -232,6 +236,7 @@ dart_code_metrics:
     # - prefer-addition-subtraction-assignments # dunno
     - prefer-any-or-every
     - prefer-async-await
+    - prefer-boolean-prefixes
     - prefer-both-inlining-annotations
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
@@ -258,7 +263,7 @@ dart_code_metrics:
     - prefer-explicit-function-type
     - prefer-explicit-parameter-names
     # - prefer-explicit-type-arguments # inference is better
-    # - prefer-extracting-function-callbacks # TODO
+    - prefer-extracting-function-callbacks # TODO
     - prefer-first
     # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
@@ -273,7 +278,8 @@ dart_code_metrics:
           - test/**
     - prefer-named-boolean-parameters
     # - prefer-named-imports # * OK, we just don't have global config
-    # - prefer-named-parameters # TODO
+    - prefer-named-parameters: # TODO
+        max-number: 2
     - prefer-null-aware-spread
     - prefer-overriding-parent-equality
     - prefer-parentheses-with-if-null
@@ -304,6 +310,7 @@ dart_code_metrics:
         exclude:
           - test/**
     # - avoid-missing-test-files # * OK, but should be enabled per project
+    - avoid-misused-set-literals
     - avoid-misused-test-matchers
     - prefer-wildcard-pattern
     # - tag-name # * OK, we just don't have global config
@@ -406,6 +413,10 @@ dart_code_metrics:
     - prefer-use-callback
     - prefer-use-prefix
 
+    ### Firabase Analytics
+    - incorrect-firebase-event-name
+    - incorrect-firebase-parameter-name
+
     ### GetX - not used
     # - always-remove-getx-listener
     # - avoid-getx-rx-inside-build
@@ -419,6 +430,9 @@ dart_code_metrics:
     # - prefer-providing-intl-description
     # - prefer-providing-intl-examples
     # - provide-correct-intl-args
+
+    ### Easy Localization
+    - avoid-missing-tr
 
     ### Angular - not used
     # - avoid-preserve-whitespace-false
