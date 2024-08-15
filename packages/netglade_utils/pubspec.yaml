@@ -7,7 +7,7 @@ homepage: https://github.com/netglade/flutter_core
 documentation: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.5.0
 
 dependencies:
   characters: ^1.2.0
