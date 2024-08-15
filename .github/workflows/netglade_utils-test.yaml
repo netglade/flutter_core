@@ -40,6 +40,7 @@ jobs:
         uses: CQLabs/setup-dcm@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          version: auto
 
       - name: Run DCM
         uses: CQLabs/dcm-action@v1
