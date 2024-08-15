@@ -255,7 +255,7 @@ dart_code_metrics:
     - prefer-correct-switch-length:
         max-length: 20 # default value 10 is sometimes way too much
     - prefer-correct-test-file-name
-    - prefer-correct-throws
+    # - prefer-correct-throws # for now hard to maintain
     - prefer-correct-type-name
     - prefer-declaring-const-constructor
     - prefer-early-return
@@ -263,7 +263,7 @@ dart_code_metrics:
     - prefer-explicit-function-type
     - prefer-explicit-parameter-names
     # - prefer-explicit-type-arguments # inference is better
-    - prefer-extracting-function-callbacks # TODO
+    # - prefer-extracting-function-callbacks # not now
     - prefer-first
     # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return

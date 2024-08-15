@@ -87,6 +87,7 @@ final class Some<T> extends Option<T> {
       some(value);
 }
 
+// ignore: prefer-single-declaration-per-file, this can be here
 extension OptionExtension<T> on Option<T> {
   // ignore: avoid-non-null-assertion, developer's responsbility
   T get asSome => mapOrNull(some: (r) => r)!.value;

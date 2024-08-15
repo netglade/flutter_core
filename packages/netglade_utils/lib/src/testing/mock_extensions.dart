@@ -1,4 +1,4 @@
-// ignore_for_file: prefer-match-file-name
+// ignore_for_file: prefer-match-file-name, prefer-single-declaration-per-file
 
 import 'dart:async';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netglade_flutter_utils/src/hooks/route_aware.dart';
 
+// ignore: prefer-boolean-prefixes, dont wannta change public API
 typedef OnPageVisibleCallback = void Function({bool pushedIn});
 
 /// Callback [onPageVisible] called when current PageRoute is visible again.

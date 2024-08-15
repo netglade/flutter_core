@@ -10,8 +10,12 @@ extension TextStyleExtensions on TextStyle {
   TextStyle get italic => copyWith(fontStyle: FontStyle.italic);
 
   TextStyle withLetterSpacing(double value) => copyWith(letterSpacing: value);
+
   TextStyle withLineHeight(double value) => copyWith(height: value);
+
   TextStyle withColor(Color? value) => color != null ? copyWith(color: value) : this;
+
   TextStyle withWeight(FontWeight value) => copyWith(fontWeight: value);
+
   TextStyle withSize(double size) => copyWith(fontSize: size);
 }

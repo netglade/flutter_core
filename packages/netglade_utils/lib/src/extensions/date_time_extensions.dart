@@ -43,6 +43,7 @@ extension DateTimeExtensions on DateTime {
   DateTime get onlyTime => DateTime(1900, 0, 0, hour, minute);
 
   /// Returns true if this is before or is the same as [other].
+  // ignore: prefer-boolean-prefixes, dont wannta change public API
   bool isBeforeOrSame(DateTime other, {bool includeTime = false}) {
     if (includeTime) {
       return isBefore(other) || this == other;
@@ -52,6 +53,7 @@ extension DateTimeExtensions on DateTime {
   }
 
   /// Returns true if this is after os is the same as [other].
+  // ignore: prefer-boolean-prefixes, dont wannta change public API
   bool isAfterOrSame(DateTime other, {bool includeTime = false}) {
     return other.isBeforeOrSame(this, includeTime: includeTime);
   }
@@ -69,6 +71,7 @@ extension DateTimeExtensions on DateTime {
   }
 }
 
+// ignore: prefer-single-declaration-per-file, this can be here
 enum DateSpecification {
   endOfWeek,
   nextWeek,

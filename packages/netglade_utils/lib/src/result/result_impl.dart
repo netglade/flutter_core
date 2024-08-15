@@ -86,6 +86,7 @@ final class Error<S, E> extends Result<S, E> {
       error(this.error);
 }
 
+// ignore: prefer-single-declaration-per-file, this can be here
 extension ResultExtension<S, E> on Result<S, E> {
   bool get isSuccess => this is Success<S, E>;
   bool get isError => !isSuccess;

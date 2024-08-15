@@ -1,5 +1,5 @@
 /// NetGlade Flutter utils library
-/// used internally at [netglade](https://netglade.com).
+/// used internally at netglade.
 library netglade_flutter_utils;
 
 export 'src/conditionals/conditionals.dart';

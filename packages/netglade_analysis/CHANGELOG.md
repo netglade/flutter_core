@@ -1,11 +1,11 @@
 ## 12.0.0
-- Adhere to DCM 1.18.0 and 1.19.0:
+- Minimal Dart 3.5.0
+- Adhere to DCM 1.18.0, 1.19.0, and 1.21.0:
   - Add avoid-only-rethrow
   - Add avoid-returning-cascades
   - Add avoid-unsafe-reduce
   - Add handle-throwing-invocations
   - Add prefer-abstract-final-static-class
-  - Add prefer-correct-throws
   - Add avoid-incorrect-image-opacity
   - Add avoid-calling-notifier-members-inside-build
   - Add avoid-notifier-constructors
