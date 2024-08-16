@@ -51,5 +51,8 @@ jobs:
           fatal_performance: true
           fatal_warnings: true
 
+      - name: Test
+        run: melos run test
+
       - name: Dry Publish Packages
         run: melos publish --dry-run -y
