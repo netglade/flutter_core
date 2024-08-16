@@ -280,5 +280,27 @@ void main() {
         expect(value.ifBlank('aaa'), equals(value));
       });
     });
+
+    group("firstLetterUppercase", () {
+      test("empty message", () {
+        final String value = "";
+        expect(value.firstLetterUppercase(), equals(""));
+      });
+
+      test("message with whitespaces", () {
+        final String value = "   ";
+        expect(value.firstLetterUppercase(), equals(value));
+      });
+
+      test("message with non-whitespace characters", () {
+        final String value = "xxx";
+        expect(value.firstLetterUppercase(), equals("Xxx"));
+      });
+
+      test("message with 1 character", () {
+        final String value = "x";
+        expect(value.firstLetterUppercase(), equals("X"));
+      });
+    });
   });
 }
