@@ -52,4 +52,4 @@ jobs:
           fatal_warnings: true
 
       - name: Dry Publish Packages
-        run: melos publish --dry-run
+        run: melos publish --dry-run -y
