@@ -1,45 +1,44 @@
-name: netglade_analysis test
+name: CI
 
 on:
   push:
     branches:
       - main
-    tags-ignore:
-      - 'netglade_analysis-v*'
-    paths:
-      - 'packages/netglade_analysis/**'
   pull_request:
-    branches:
-      - main
-    paths:
-      - 'packages/netglade_analysis/**'
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-    defaults:
-      run:
-        working-directory: packages/netglade_analysis
 
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
 
-      - name: Install Dependencies
-        run: dart pub get
+      - name: Configure FVM
+        uses: kuhnroyal/flutter-fvm-config-action@v2
+        id: fvm-config-action
+      - name: Setup Flutter and Dart
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
+          channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
+
+      - name: Setup Melos
+        uses: bluefireteam/melos-action@v2
 
       - name: Format
         run: dart format --line-length 120 --set-exit-if-changed .
 
-      - name: Analyze
-        run: dart analyze .
+      - name: Dart Analyze
+        run: melos run lint:dart
 
       - name: Install DCM
         uses: CQLabs/setup-dcm@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          version: 1.21.1
 
       - name: Run DCM
         uses: CQLabs/dcm-action@v1
@@ -52,5 +51,8 @@ jobs:
           fatal_performance: true
           fatal_warnings: true
 
-      - name: Dry Publish
-        run: dart pub publish --dry-run
+      - name: Test
+        run: melos run test
+
+      - name: Dry Publish Packages
+        run: melos publish --dry-run -y

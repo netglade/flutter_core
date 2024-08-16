@@ -5,6 +5,7 @@ typedef WrapperBuilder = Widget Function(BuildContext context, Widget child);
 
 /// Wraps [child] child in [wrapper] widget only if [condition] is true.
 class ConditionalWrap extends StatelessWidget {
+  // ignore: prefer-boolean-prefixes, dont wannta change public API
   final bool condition;
 
   // ignore: prefer-correct-callback-field-name, this is more suited

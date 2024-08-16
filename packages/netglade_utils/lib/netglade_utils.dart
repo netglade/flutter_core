@@ -1,6 +1,6 @@
 /// NetGlade Dart utils library
-/// used internally at [netglade](https://netglade.com).
-library netglade_utils;
+/// used internally at netglade.
+library;
 
 export 'src/copy/copy.dart';
 export 'src/extensions/extensions.dart';

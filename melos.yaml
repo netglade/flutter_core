@@ -26,12 +26,6 @@ scripts:
       dirExists:
         - test
 
-  publishable:
-    run: melos exec -- dart pub publish --dry-run
-    description: Checks whether packages are publishable.
-    packageFilters:
-      scope: "*"
-
   # CLEAN
 
   clean:

@@ -21,6 +21,7 @@ extension IterableExtensions<T> on Iterable<T> {
   Iterable<K> mapIndexed2<K>(K Function(int index, T value) map) => indexed.map((entry) => map(entry.$1, entry.$2));
 }
 
+// ignore: prefer-single-declaration-per-file, this can be here
 extension IterableIterableExtension<T> on Iterable<Iterable<T>> {
   List<T> get flattenedList => [for (final elements in this) ...elements];
 }

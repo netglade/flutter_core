@@ -1,3 +1,6 @@
+## 2.4.1
+- Fix `firstLetterUppercase()` for empty strings.
+- Adhere to `netglade_analysis 12.0.0`.
 
 ## 2.4.0
 - Add `standartProLong` future extension.

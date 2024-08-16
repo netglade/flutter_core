@@ -6,6 +6,7 @@ typedef WidgetWithChildBuilder = Widget Function(BuildContext context, Widget ch
 /// Based on [condition] builds either [whenTrue] on true or [whenFalse] on false and wraps [child] widget.
 /// If no [whenFalse] is specified, `SizedBox.shrink()` is used.
 class ConditionalChild extends StatelessWidget {
+  // ignore: prefer-boolean-prefixes, dont wannta change public API
   final bool condition;
 
   // ignore: prefer-correct-callback-field-name, this is more suited

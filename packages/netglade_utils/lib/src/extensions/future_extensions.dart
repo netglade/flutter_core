@@ -7,8 +7,7 @@ typedef OnTakingTooLongCallback = void Function();
 extension FutureExtensions<T> on Future<T> {
   static const standardProlongTimeMs = 300;
 
-  // ignore: comment_references, see https://github.com/dart-lang/linter/issues/2079
-  /// If [this] future taking longer than [duration] to execute - [callback] is called.
+  /// If `this` future taking longer than [duration] to execute - [callback] is called.
   Future<T> onTakingTooLong(
     Duration duration,
     OnTakingTooLongCallback callback,
