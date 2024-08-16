@@ -24,6 +24,13 @@ jobs:
         with:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
           channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
+        
+      - name: Info
+        run: |
+          flutter --version
+          dart --version
+          which flutter
+          which dart
 
       - name: Setup Melos
         uses: bluefireteam/melos-action@v2
