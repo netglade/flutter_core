@@ -1,43 +1,38 @@
-name: netglade_flutter_utils test
+name: CI
 
 on:
   push:
     branches:
       - main
-    tags-ignore:
-      - 'netglade_flutter_utils-v*'
-    paths:
-      - 'packages/netglade_flutter_utils/**'
   pull_request:
-    branches:
-      - main
-    paths:
-      - 'packages/netglade_flutter_utils/**'
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-    defaults:
-      run:
-        working-directory: packages/netglade_flutter_utils
 
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2.16.0
-        with:
-          channel: stable
-          flutter-version: 3.24.0
 
-      - name: Install Dependencies
-        run: flutter pub get
+      - name: Configure FVM
+        uses: kuhnroyal/flutter-fvm-config-action@v2
+        id: fvm-config-action
+      - name: Setup Flutter and Dart
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
+          channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
+
+      - name: Setup Melos
+        uses: bluefireteam/melos-action@v2
 
       - name: Format
         run: dart format --line-length 120 --set-exit-if-changed .
 
-      - name: Analyze
-        run: flutter analyze --no-pub --fatal-infos --fatal-warnings
+      - name: Dart Analyze
+        run: melos run lint:dart
 
       - name: Install DCM
         uses: CQLabs/setup-dcm@v1
@@ -51,10 +46,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
-          folders: packages/netglade_flutter_utils
+          folders: packages/netglade_analysis
           fatal_style: true
           fatal_performance: true
           fatal_warnings: true
 
-      - name: Dry Publish
-        run: dart pub publish --dry-run
+      - name: Dry Publish Packages
+        run: melos publish --dry-run
