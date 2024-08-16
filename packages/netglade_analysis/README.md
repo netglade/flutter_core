@@ -67,8 +67,8 @@ To indicate your project is using `netglade_analysis` →
 [discord_badge]: https://img.shields.io/discord/1091460081054400532.svg?logo=discord&color=blue
 [discord_badge_link]: https://discord.gg/sJfBBuDZy4
 
-[ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/netglade_analysis-test.yaml?branch=main
-[ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/netglade_analysis-test.yaml
+[ci_badge]: https://img.shields.io/github/actions/workflow/status/netglade/flutter_core/ci.yaml?branch=main
+[ci_badge_link]: https://github.com/netglade/flutter_core/actions/workflows/ci.yaml
 
 [pub_badge]: https://img.shields.io/pub/v/netglade_analysis.svg
 [pub_badge_link]: https://pub.dartlang.org/packages/netglade_analysis
