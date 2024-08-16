@@ -73,7 +73,7 @@ extension StringExtensions on String {
     return result;
   }
 
-  String firstLetterUppercase() => '${this[0].toUpperCase()}${characters.getRange(1)}';
+  String firstLetterUppercase() => isNotEmpty ? '${this[0].toUpperCase()}${characters.getRange(1)}' : '';
 
   String stripNewLines([String placeholder = ' ']) {
     return replaceAll(RegExp(r'\s+'), placeholder);
