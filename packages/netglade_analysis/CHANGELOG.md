@@ -1,3 +1,7 @@
+## 13.0.0
+- Adhere to DCM 1.22.0, 1.23.0, and 1.24.2:
+  - 
+
 ## 12.0.0
 - Minimal Dart 3.5.0
 - Adhere to DCM 1.18.0, 1.19.0, and 1.21.0:

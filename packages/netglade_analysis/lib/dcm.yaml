@@ -1,10 +1,12 @@
-# version 1.21.0 - https://dcm.dev/changelog
+# version 1.24.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
     # - arguments-ordering # way too pedantic
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
+    - avoid-adjacent-strings
+    - avoid-assignments-as-conditions
     - avoid-async-call-in-sync-function
     # - avoid-banned-annotations # * OK, we just don't have global config
     # - avoid-banned-file-names # * OK, we just don't have global config
@@ -20,12 +22,14 @@ dart_code_metrics:
     - avoid-collection-equality-checks
     - avoid-collection-methods-with-unrelated-types
     # - avoid-collection-mutating-methods # sometimes it's ok
+    - avoid-complex-loop-conditions
     - avoid-conditions-with-boolean-literals
     - avoid-contradictory-expressions
     - avoid-declaring-call-method
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
     - avoid-duplicate-collection-elements
+    # - avoid-duplicate-constant-values # ! check later
     - avoid-duplicate-exports
     - avoid-duplicate-initializers
     - avoid-duplicate-map-keys
@@ -49,9 +53,13 @@ dart_code_metrics:
     - avoid-future-tostring
     - avoid-generics-shadowing
     - avoid-global-state
+    # - avoid-high-cyclomatic-complexity # For now we catch this on CR.
     - avoid-identical-exception-handling-blocks
-    - avoid-ignoring-return-values
+    - avoid-ignoring-return-values:
+        exclude:
+          - test/**
     - avoid-importing-entrypoint-exports
+    - avoid-incorrect-uri
     - avoid-inferrable-type-arguments:
         ignored-invocations:
           - context.read
@@ -60,7 +68,9 @@ dart_code_metrics:
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
-    - avoid-local-functions
+    - avoid-local-functions:
+        exclude:
+          - test/**
     # - avoid-long-files # hard to get the right settings
     # - avoid-long-functions # way too pedantic
     # - avoid-long-parameter-list: # way too pedantic
@@ -75,6 +85,7 @@ dart_code_metrics:
     - avoid-multi-assignment
     # - avoid-mutating-parameters # we use ValueNotifier etc.
     # - avoid-negated-conditions # sometimes it might be better
+    - avoid-negations-in-equality-checks
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
     - avoid-nested-extension-types
@@ -86,6 +97,7 @@ dart_code_metrics:
     - avoid-non-ascii-symbols:
         exclude:
           - test/**
+    # - avoid-non-empty-constructor-bodies # way too pedantic
     - avoid-non-null-assertion:
         skip-checked-fields: true
         exclude:
@@ -108,8 +120,9 @@ dart_code_metrics:
     - avoid-redundant-positional-field-name
     - avoid-redundant-pragma-inline
     - avoid-referencing-discarded-variables
+    # - avoid-referencing-subclasses # we often use this in states and events
     - avoid-renaming-representation-getters
-    - avoid-returning-cascades
+    # - avoid-returning-cascades # collides with prefer-immediate-return
     - avoid-returning-void
     - avoid-self-assignment
     - avoid-self-compare
@@ -125,6 +138,7 @@ dart_code_metrics:
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
     - avoid-top-level-members-in-tests
+    # - avoid-type-casts # needed when working with JSONs
     - avoid-unassigned-late-fields
     - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
@@ -133,12 +147,14 @@ dart_code_metrics:
     - avoid-unnecessary-call
     - avoid-unnecessary-collections
     - avoid-unnecessary-conditionals
+    - avoid-unnecessary-extends
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
     - avoid-unnecessary-if
     - avoid-unnecessary-local-late
     - avoid-unnecessary-negations
     - avoid-unnecessary-nullable-return-type
+    - avoid-unnecessary-overrides
     - avoid-unnecessary-reassignment
     - avoid-unnecessary-return
     - avoid-unnecessary-super
@@ -149,6 +165,7 @@ dart_code_metrics:
     - avoid-unsafe-collection-methods
     - avoid-unsafe-reduce
     - avoid-unused-after-null-check
+    - avoid-unused-assignment
     - avoid-unused-generics
     - avoid-unused-instances
     - avoid-unused-parameters
@@ -162,10 +179,13 @@ dart_code_metrics:
     - enum-constants-ordering
     - format-comment:
         only-doc-comments: true
+        ignored-patterns:
+          - etc.
     # - format-test-name # good but painful
     - function-always-returns-null:
         ignored-invocations:
           - useEffect
+    - function-always-returns-same-value
     - handle-throwing-invocations
     - map-keys-ordering:
         exclude:
@@ -198,7 +218,14 @@ dart_code_metrics:
           - public-methods
           - build-method
           - private-methods
-    - missing-test-assertion
+    - missing-test-assertion:
+        include-assertions:
+          - called # mocktail
+          - calledOnce # mocktail
+          - verifyNoMoreInteractions # mocktail
+          - verifyZeroInteractions # mocktail
+          - blocTest # bloc_test
+          - blocPresentationTest # safe_bloc
     # - missing-use-result-annotation # * OK, we just don't have global config
     - move-records-to-typedefs:
         min-fields: 3
@@ -233,10 +260,35 @@ dart_code_metrics:
     - no-object-declaration
     # - parameters-ordering # way too strict
     - prefer-abstract-final-static-class
+    - prefer-add-all
     # - prefer-addition-subtraction-assignments # dunno
     - prefer-any-or-every
     - prefer-async-await
-    - prefer-boolean-prefixes
+    - prefer-boolean-prefixes:
+        ignored-names:
+        - value
+        - result
+        - "_"
+      prefixes:
+        # Defaults
+        - is
+        - are
+        - was
+        - were
+        - has
+        - have
+        - had
+        - can
+        - should
+        - will
+        - do
+        - does
+        - did
+        # New
+        - show
+        - allow
+        - enable
+        - handle # for handlers that return bool
     - prefer-both-inlining-annotations
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
@@ -252,8 +304,7 @@ dart_code_metrics:
     # - prefer-correct-json-casts # overkill
     - prefer-correct-setter-parameter-name
     - prefer-correct-stream-return-type
-    - prefer-correct-switch-length:
-        max-length: 20 # default value 10 is sometimes way too much
+    # - prefer-correct-switch-length # sometimes switch with 2 cases makes sense
     - prefer-correct-test-file-name
     # - prefer-correct-throws # for now hard to maintain
     - prefer-correct-type-name
@@ -264,7 +315,10 @@ dart_code_metrics:
     - prefer-explicit-parameter-names
     # - prefer-explicit-type-arguments # inference is better
     # - prefer-extracting-function-callbacks # not now
-    - prefer-first
+    - prefer-first:
+        exclude:
+          - test/**
+    - prefer-for-in
     # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
     - prefer-iterable-of
@@ -276,7 +330,9 @@ dart_code_metrics:
         allowed-duplicated-chains: 3
         exclude:
           - test/**
-    - prefer-named-boolean-parameters
+    - prefer-named-boolean-parameters:
+        exclude:
+          - test/**
     # - prefer-named-imports # * OK, we just don't have global config
     - prefer-named-parameters: # TODO
         max-number: 2
@@ -288,6 +344,7 @@ dart_code_metrics:
     - prefer-public-exception-classes
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
+    - prefer-simpler-boolean-expressions
     - prefer-simpler-patterns-null-check
     - prefer-single-declaration-per-file:
         ignore-private: true
@@ -313,9 +370,11 @@ dart_code_metrics:
     - avoid-misused-set-literals
     - avoid-misused-test-matchers
     - prefer-wildcard-pattern
+    - avoid-late-final-reassignment
     # - tag-name # * OK, we just don't have global config
     - unnecessary-trailing-comma:
         max-width: 80
+    - use-existing-variable
 
     ### Flutter
     # - add-copy-with # * OK, we just don't have global config
@@ -323,6 +382,7 @@ dart_code_metrics:
     - avoid-border-all
     - avoid-empty-setstate
     - avoid-expanded-as-spacer
+    - avoid-flexible-outside-flex
     - avoid-incomplete-copy-with
     - avoid-incorrect-image-opacity
     - avoid-inherited-widget-in-initstate
@@ -345,14 +405,17 @@ dart_code_metrics:
     - consistent-update-render-object
     - dispose-fields
     - prefer-action-button-tooltip
+    - prefer-center-over-align
     - prefer-const-border-radius
     - prefer-correct-edge-insets-constructor
     - prefer-dedicated-media-query-methods
     - prefer-define-hero-tag
     - prefer-extracting-callbacks
     - prefer-for-loop-in-children
+    - prefer-padding-over-container
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
+    - prefer-sized-box-square
     - prefer-sliver-prefix
     - prefer-text-rich
     - prefer-using-list-view
@@ -366,14 +429,22 @@ dart_code_metrics:
     - avoid-watch-outside-build
     - dispose-providers
     - prefer-multi-provider
+    - prefer-provider-extensions
 
     ### Bloc
     - avoid-bloc-public-methods
     # - avoid-cubits
+    - avoid-duplicate-bloc-event-handlers
+    # - avoid-empty-build-when
     # - avoid-passing-bloc-to-bloc
+    - avoid-passing-build-context-to-blocs
     - check-is-not-closed-after-async-gap
+    - handle-bloc-event-subclasses
+    - prefer-bloc-extensions
     - prefer-correct-bloc-provider
     - prefer-multi-bloc-provider
+    - prefer-sealed-bloc-events
+    - prefer-sealed-bloc-state
 
     ### Riverpod
     - avoid-calling-notifier-members-inside-build
@@ -420,6 +491,7 @@ dart_code_metrics:
     ### GetX - not used
     # - always-remove-getx-listener
     # - avoid-getx-rx-inside-build
+    # - avoid-mutable-rx-variables
     # - dispose-getx-fields
     # - proper-getx-super-calls
 
