@@ -6,6 +6,7 @@ dart_code_metrics:
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-adjacent-strings
+    - avoid-assigning-to-static-field
     - avoid-assignments-as-conditions
     - avoid-async-call-in-sync-function
     # - avoid-banned-annotations # * OK, we just don't have global config
@@ -29,7 +30,7 @@ dart_code_metrics:
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
     - avoid-duplicate-collection-elements
-    # - avoid-duplicate-constant-values # ! check later
+    # - avoid-duplicate-constant-values # ! check later, does not work for us for 2+ parameters as expected
     - avoid-duplicate-exports
     - avoid-duplicate-initializers
     - avoid-duplicate-map-keys
@@ -52,12 +53,15 @@ dart_code_metrics:
     - avoid-function-type-in-records
     - avoid-future-tostring
     - avoid-generics-shadowing
+    - avoid-getter-prefix:
+        prefix: "^get"
     - avoid-global-state
     # - avoid-high-cyclomatic-complexity # For now we catch this on CR.
     - avoid-identical-exception-handling-blocks
     - avoid-ignoring-return-values:
         exclude:
           - test/**
+    - avoid-implicitly-nullable-extension-types
     - avoid-importing-entrypoint-exports
     - avoid-incorrect-uri
     - avoid-inferrable-type-arguments:
@@ -98,6 +102,7 @@ dart_code_metrics:
         exclude:
           - test/**
     # - avoid-non-empty-constructor-bodies # way too pedantic
+    - avoid-non-final-exception-class-fields
     - avoid-non-null-assertion:
         skip-checked-fields: true
         exclude:
@@ -147,6 +152,9 @@ dart_code_metrics:
     - avoid-unnecessary-call
     - avoid-unnecessary-collections
     - avoid-unnecessary-conditionals
+    - avoid-unnecessary-constructor
+    - avoid-unnecessary-enum-arguments
+    - avoid-unnecessary-enum-prefix
     - avoid-unnecessary-extends
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
@@ -266,9 +274,9 @@ dart_code_metrics:
     - prefer-async-await
     - prefer-boolean-prefixes:
         ignored-names:
-        - value
-        - result
-        - "_"
+          - value
+          - result
+          - "_"
       prefixes:
         # Defaults
         - is
@@ -293,6 +301,7 @@ dart_code_metrics:
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
     - prefer-conditional-expressions
+    - prefer-contains
     - prefer-correct-callback-field-name
     - prefer-correct-error-name:
         allowed-names:
@@ -433,7 +442,7 @@ dart_code_metrics:
 
     ### Bloc
     - avoid-bloc-public-methods
-    # - avoid-cubits
+    # - avoid-cubits # we use cubits in some places
     - avoid-duplicate-bloc-event-handlers
     # - avoid-empty-build-when
     # - avoid-passing-bloc-to-bloc
@@ -519,5 +528,6 @@ dart_code_metrics:
     - prefer-caret-version-syntax
     # - prefer-correct-package-name # * OK, we just don't have global config
     - prefer-correct-screenshots
+    # - prefer-pinned-version-syntax # we use prefer-caret-version-syntax
     - prefer-publish-to-none
     - prefer-semver-version

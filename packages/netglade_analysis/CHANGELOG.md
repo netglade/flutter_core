@@ -25,6 +25,14 @@
   - Add prefer-bloc-extensions
   - Add prefer-sealed-bloc-events
   - Add prefer-sealed-bloc-state
+  - Add avoid-assigning-to-static-field
+  - Add avoid-getter-prefix
+  - Add avoid-implicitly-nullable-extension-types
+  - Add avoid-non-final-exception-class-fields
+  - Add avoid-unnecessary-constructor
+  - Add avoid-unnecessary-enum-arguments
+  - Add avoid-unnecessary-enum-prefix
+  - Add prefer-contains
 
 ## 12.0.0
 - Minimal Dart 3.5.0
