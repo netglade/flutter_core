@@ -1,3 +1,6 @@
+## 13.0.1
+- Fix prefer-boolean-prefixes config
+
 ## 13.0.0
 - Adhere to DCM 1.22.0, 1.23.0, and 1.24.2:
   - Add avoid-adjacent-strings
