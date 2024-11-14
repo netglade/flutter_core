@@ -275,28 +275,29 @@ dart_code_metrics:
     - prefer-boolean-prefixes:
         ignored-names:
           - value
+          - v
           - result
           - "_"
-      prefixes:
-        # Defaults
-        - is
-        - are
-        - was
-        - were
-        - has
-        - have
-        - had
-        - can
-        - should
-        - will
-        - do
-        - does
-        - did
-        # New
-        - show
-        - allow
-        - enable
-        - handle # for handlers that return bool
+        prefixes:
+          # Defaults
+          - is
+          - are
+          - was
+          - were
+          - has
+          - have
+          - had
+          - can
+          - should
+          - will
+          - do
+          - does
+          - did
+          # New
+          - show
+          - allow
+          - enable
+          - handle # for handlers that return bool
     - prefer-both-inlining-annotations
     - prefer-bytes-builder
     - prefer-commenting-analyzer-ignores
