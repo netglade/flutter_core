@@ -30,7 +30,7 @@ dart_code_metrics:
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
     - avoid-duplicate-collection-elements
-    # - avoid-duplicate-constant-values # TODO: new config # ! check later, does not work for us for 2+ parameters as expected
+    # - avoid-duplicate-constant-values # ! check later, does not work for us for 2+ parameters as expected
     - avoid-duplicate-exports
     - avoid-duplicate-initializers
     - avoid-duplicate-map-keys
