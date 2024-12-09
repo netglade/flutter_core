@@ -1,3 +1,18 @@
+## 14.0.0
+- Adhere to DCM 1.25.0:
+  - Add avoid-single-field-destructuring
+  - Add avoid-unnecessary-patterns
+  - Add record-fields-ordering
+  - Add prefer-container
+  - Add avoid-bloc-public-fields
+  - Add avoid-existing-instances-in-bloc-provider
+  - Add avoid-instantiating-in-bloc-value-provider
+  - Add avoid-returning-value-from-cubit-methods
+  - Add emit-new-bloc-state-instances
+  - Add prefer-bloc-event-suffix
+  - Add prefer-bloc-state-suffix
+  - Update bloc rules with onSafe method
+
 ## 13.0.1
 - Fix prefer-boolean-prefixes config
 
