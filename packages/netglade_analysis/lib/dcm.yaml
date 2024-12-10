@@ -460,9 +460,9 @@ dart_code_metrics:
     # - avoid-passing-bloc-to-bloc
     - avoid-passing-build-context-to-blocs
     - avoid-returning-value-from-cubit-methods
-    - check-is-not-closed-after-async-gap:
-        additional-methods:
-          - onSafe
+    - check-is-not-closed-after-async-gap
+        # additional-methods:
+          # - onSafe # ? Don't put onSafe here, it automatically checks whether bloc is closed in emit
     - emit-new-bloc-state-instances
     - handle-bloc-event-subclasses:
         additional-methods:

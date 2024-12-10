@@ -1,3 +1,6 @@
+## 14.0.1
+- Don't check onSafe with check-is-not-closed-after-async-gap
+
 ## 14.0.0
 - Adhere to DCM 1.25.0:
   - Add avoid-single-field-destructuring
