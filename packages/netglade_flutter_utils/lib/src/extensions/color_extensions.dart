@@ -29,4 +29,16 @@ extension ColorExtensions on Color {
 
     return Color(int.parse(value, radix: 16));
   }
+
+  // ignore: prefer-boolean-prefixes, ok naming.
+  String toHexString({bool includeSign = false, bool includeAlpha = true, bool asUpperCase = true}) {
+    final alpha = (a * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final red = (r * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final green = (g * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final blue = (b * 255).toInt().toRadixString(16).padLeft(2, '0');
+
+    final result = '${includeSign ? '#' : ''}${includeAlpha ? alpha : ''}$red$green$blue';
+
+    return asUpperCase ? result.toUpperCase() : result;
+  }
 }
