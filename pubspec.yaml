@@ -2,7 +2,36 @@ name: workspace
 publish_to: "none"
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.6.0
+workspace:
+  - packages/netglade_analysis
+  - packages/netglade_flutter_utils
+  - packages/netglade_utils
+
 
 dev_dependencies:
-  melos: ^3.0.0
+  melos: ^7.0.0-dev.3
+
+melos:
+  scripts:
+    # ANALYZING
+    lint:
+      run: melos run -- lint:dart && melos run lint:dcm
+      description: Run all static analysis checks.
+
+    lint:dart:
+      run: melos exec -c 10 -- dart analyze --fatal-infos
+      description: Run Dart static analysis checks.
+
+    lint:dcm:
+      run: melos exec -c 10 -- dcm analyze . --fatal-style --fatal-performance --fatal-warnings
+      description: Run DCM static analysis checks.
+    # TESTING
+    test:
+      run: melos exec -- flutter test
+      packageFilters:
+        dirExists:
+          - test
+    # CLEAN
+    clean:
+      run: melos exec -- flutter clean

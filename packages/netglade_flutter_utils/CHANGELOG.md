@@ -1,3 +1,7 @@
+## 1.1.0
+- Upgrade repo into pub workspaces
+- Add toHexString() in Colors extension.
+
 ## 1.0.1
 - Adhere to `netglade_analysis 12.0.0`.
 

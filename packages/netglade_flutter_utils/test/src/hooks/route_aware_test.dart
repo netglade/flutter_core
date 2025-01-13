@@ -77,7 +77,6 @@ class _UnderTestWidget extends HookWidget {
   }
 
   void _handlePushNextBtnPressed(BuildContext context) {
-    // ignore: avoid-undisposed-instances, ok for test
     unawaited(Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const _MockPage())));
   }
 }
@@ -135,11 +134,9 @@ void main() {
     );
 
     await tester.tap(find.byKey(pushBtn));
-    // ignore: avoid-ignoring-return-values, ignores number of pump performed
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(_UnderTestWidget._popBtnKey));
-    // ignore: avoid-ignoring-return-values, ignores number of pump performed
     await tester.pumpAndSettle();
     expect(action, equals('didPop'));
   });
@@ -161,14 +158,12 @@ void main() {
     );
 
     await tester.tap(find.byKey(_UnderTestWidget._pushNextBtnKey));
-    // ignore: avoid-ignoring-return-values, ignores number of pump performed
     await tester.pumpAndSettle();
 
     expect(action, equals('didPushNext'));
     expect(find.byKey(_MockPage._btnKey), findsOneWidget);
 
     await tester.tap(find.byKey(_MockPage._btnKey));
-    // ignore: avoid-ignoring-return-values, ignores number of pump performed
     await tester.pumpAndSettle();
 
     expect(action, equals('didPopNext'));
