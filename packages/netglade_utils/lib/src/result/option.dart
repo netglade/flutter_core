@@ -19,17 +19,17 @@ sealed class Option<T> {
   const factory Option.none() = None;
   const factory Option.some(T value) = Some<T>;
 
-  TResult map<TResult extends Object?>({
+  TResult map<TResult>({
     required NoneCallback<TResult> none,
     required SomeCallback<TResult, T> some,
   });
 
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult>({
     NullableNoneCallback<TResult>? none,
     NullableSomeCallback<TResult, T>? some,
   });
 
-  TResult when<TResult extends Object?>({
+  TResult when<TResult>({
     required ValueNoneCallback<TResult> none,
     required ValueSomeCallback<TResult, T> some,
   });
@@ -39,21 +39,21 @@ final class None<T> extends Option<T> {
   const None();
 
   @override
-  TResult map<TResult extends Object?>({
+  TResult map<TResult>({
     required NoneCallback<TResult> none,
     required SomeCallback<TResult, T> some,
   }) =>
       none();
 
   @override
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult>({
     NullableNoneCallback<TResult>? none,
     NullableSomeCallback<TResult, T>? some,
   }) =>
       none?.call();
 
   @override
-  TResult when<TResult extends Object?>({
+  TResult when<TResult>({
     required ValueNoneCallback<TResult> none,
     required ValueSomeCallback<TResult, T> some,
   }) =>
@@ -66,21 +66,21 @@ final class Some<T> extends Option<T> {
   const Some(this.value);
 
   @override
-  TResult map<TResult extends Object?>({
+  TResult map<TResult>({
     required NoneCallback<TResult> none,
     required SomeCallback<TResult, T> some,
   }) =>
       some(this);
 
   @override
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult>({
     NullableNoneCallback<TResult>? none,
     NullableSomeCallback<TResult, T>? some,
   }) =>
       some?.call(this);
 
   @override
-  TResult when<TResult extends Object?>({
+  TResult when<TResult>({
     required ValueNoneCallback<TResult> none,
     required ValueSomeCallback<TResult, T> some,
   }) =>
