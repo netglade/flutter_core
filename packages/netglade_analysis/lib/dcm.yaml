@@ -23,8 +23,11 @@ dart_code_metrics:
     - avoid-collection-equality-checks
     - avoid-collection-methods-with-unrelated-types
     # - avoid-collection-mutating-methods # sometimes it's ok
+    - avoid-commented-out-code
+    - avoid-complex-arithmetic-expressions
     - avoid-complex-loop-conditions
     - avoid-conditions-with-boolean-literals
+    # - avoid-continue # we prefer condition guards
     - avoid-contradictory-expressions
     - avoid-declaring-call-method
     - avoid-double-slash-imports
@@ -51,6 +54,7 @@ dart_code_metrics:
     # - avoid-explicit-type-declaration # public API
     - avoid-extensions-on-records
     - avoid-function-type-in-records
+    - avoid-future-ignore
     - avoid-future-tostring
     - avoid-generics-shadowing
     - avoid-getter-prefix:
@@ -58,6 +62,7 @@ dart_code_metrics:
     - avoid-global-state
     # - avoid-high-cyclomatic-complexity # For now we catch this on CR.
     - avoid-identical-exception-handling-blocks
+    - avoid-if-with-many-branches
     - avoid-ignoring-return-values:
         exclude:
           - test/**
@@ -154,6 +159,7 @@ dart_code_metrics:
     - avoid-unnecessary-collections
     - avoid-unnecessary-conditionals
     - avoid-unnecessary-constructor
+    - avoid-unnecessary-continue
     - avoid-unnecessary-enum-arguments
     - avoid-unnecessary-enum-prefix
     - avoid-unnecessary-extends
@@ -248,6 +254,7 @@ dart_code_metrics:
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
+    # - no-empty-string # way too pedantic
     # - no-equal-arguments: # hard to set up so it makes sense
     #     ignored-parameters:
     #       - height
@@ -269,6 +276,7 @@ dart_code_metrics:
     #- no-magic-string # way too strict for default values of parameters etc.
     - no-object-declaration
     # - parameters-ordering # way too strict
+    - pattern-fields-ordering
     - prefer-abstract-final-static-class
     - prefer-add-all
     # - prefer-addition-subtraction-assignments # dunno
@@ -303,7 +311,9 @@ dart_code_metrics:
           - handle # for handlers that return bool
     - prefer-both-inlining-annotations
     - prefer-bytes-builder
+    # - prefer-class-destructuring # way too pedantic
     - prefer-commenting-analyzer-ignores
+    - prefer-commenting-future-delayed
     - prefer-conditional-expressions
     - prefer-contains
     - prefer-correct-callback-field-name
@@ -367,10 +377,13 @@ dart_code_metrics:
         ignore-names:
           - (.*)Provider
           - use(.*)
+    # - prefer-static-method # way too pedantic
+    - prefer-switch-expression
     - prefer-switch-with-enums:
         ignore-contains: true
     - prefer-test-matchers
     - prefer-trailing-comma
+    - use-existing-destructuring
     # - prefer-type-over-var # we prefer type inference
     - prefer-typedefs-for-callbacks
     - prefer-unique-test-names
@@ -419,6 +432,7 @@ dart_code_metrics:
     - consistent-update-render-object
     - dispose-fields
     - prefer-action-button-tooltip
+    - prefer-align-over-container
     - prefer-center-over-align
     - prefer-const-border-radius
     - prefer-container:
@@ -433,10 +447,13 @@ dart_code_metrics:
         ignore-private-widgets: true
     - prefer-sized-box-square
     - prefer-sliver-prefix
+    - prefer-spacing
     - prefer-text-rich
+    - prefer-transform-over-container
     - prefer-using-list-view
     - prefer-widget-private-members
     - proper-super-calls
+    - use-closest-build-context
     - use-setstate-synchronously
 
     ### Provider

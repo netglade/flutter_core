@@ -1,3 +1,19 @@
+## 15.0.0
+- Adhere to DCM 1.26.0:
+  - Add avoid-commented-out-code
+  - Add avoid-future-ignore
+  - Add prefer-switch-expression
+  - Add avoid-unnecessary-continue
+  - Add pattern-fields-ordering
+  - Add use-existing-destructuring
+  - Add avoid-if-with-many-branches
+  - Add prefer-commenting-future-delayed
+  - Add avoid-complex-arithmetic-expressions
+  - Add prefer-spacing
+  - Add use-closest-build-context
+  - Add prefer-transform-over-container
+  - Add prefer-align-over-container
+
 ## 14.0.1
 - Don't check onSafe with check-is-not-closed-after-async-gap
 
