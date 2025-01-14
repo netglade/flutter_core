@@ -1,5 +1,5 @@
 name: netglade_utils
-version: 2.4.1
+version: 2.4.2
 description: Dart utils used internally at netglade.
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues
@@ -19,4 +19,4 @@ dependencies:
 
 dev_dependencies:
   netglade_analysis: ^15.0.0
-  test: ^1.24.6
+  test: ^1.25.2
