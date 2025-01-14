@@ -41,7 +41,7 @@ jobs:
           version: 1.21.1
 
       - name: Run DCM
-        uses: CQLabs/dcm-action@v1
+        uses: CQLabs/dcm-action@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           ci_key: ${{ secrets.DCM_KEY }}
