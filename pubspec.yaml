@@ -8,7 +8,6 @@ workspace:
   - packages/netglade_flutter_utils
   - packages/netglade_utils
 
-
 dev_dependencies:
   melos: ^7.0.0-dev.3
 

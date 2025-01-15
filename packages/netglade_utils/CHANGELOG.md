@@ -1,3 +1,6 @@
+## 2.5.0
+- Dependencies update.
+
 ## 2.4.1
 - Fix `firstLetterUppercase()` for empty strings.
 - Adhere to `netglade_analysis 12.0.0`.
