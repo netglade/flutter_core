@@ -1,3 +1,6 @@
+## 1.2.0
+- Dependencies update.
+
 ## 1.1.0
 - Upgrade repo into pub workspaces
 - Add toHexString() in Colors extension.
