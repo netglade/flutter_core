@@ -1,5 +1,5 @@
 name: netglade_flutter_utils
-version: 1.1.1
+version: 1.2.0
 description: Flutter utils used internally at netglade.
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_flutter_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues

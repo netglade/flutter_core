@@ -1,3 +1,5 @@
+// ignore_for_file: prefer-commenting-future-delayed
+
 import 'dart:async';
 
 import 'package:clock/clock.dart';

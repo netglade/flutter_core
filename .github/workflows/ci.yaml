@@ -35,21 +35,19 @@ jobs:
         run: melos run lint:dart
 
       - name: Install DCM
-        uses: CQLabs/setup-dcm@v1
+        uses: CQLabs/setup-dcm@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           version: 1.21.1
 
       - name: Run DCM
-        uses: CQLabs/dcm-action@v1
+        uses: CQLabs/dcm-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          ci_key: ${{ secrets.DCM_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          ci-key: ${{ secrets.DCM_KEY }}
           email: ${{ secrets.DCM_EMAIL }}
           folders: packages/netglade_analysis
-          fatal_style: true
-          fatal_performance: true
-          fatal_warnings: true
+          fatal-found: true
 
       - name: Test
         run: melos run test
