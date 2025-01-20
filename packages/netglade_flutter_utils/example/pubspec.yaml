@@ -3,13 +3,13 @@ version: 0.0.1
 publish_to: none
 
 environment:
-  sdk: ^3.0.0
-  flutter: ">=3.0.0"
+  sdk: ^3.6.0
+  flutter: ">=3.27.1"
 
 dependencies:
   flutter:
     sdk: flutter
-  netglade_analysis: ^8.0.0
+  netglade_analysis: ^15.0.0
   netglade_flutter_utils:
     path: ..
 
