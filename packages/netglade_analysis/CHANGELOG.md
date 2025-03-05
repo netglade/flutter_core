@@ -1,3 +1,11 @@
+## 17.0.0
+- Requires Dart 3.7.0 (Flutter 3.29.0)
+- Adhere to Dart lints 3.7.0
+  - Add unnecessary_underscores
+  - Add strict_top_level_inference
+  - Remove package_api_docs
+  - Remove unsafe_html
+
 ## 16.0.0
 - Adhere to DCM 1.27.0:
   - Add prefer-redirecting-superclass-constructor
