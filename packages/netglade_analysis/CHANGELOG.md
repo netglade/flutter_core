@@ -1,3 +1,11 @@
+## 16.0.0
+- Adhere to DCM 1.27.0:
+  - Add prefer-redirecting-superclass-constructor
+  - Add prefer-expect-later
+  - Add avoid-nested-try-statements
+  - Add avoid-unnecessary-block
+- Remove prefer_adjacent_string_concatenation from Dart lints
+
 ## 15.0.0
 - Adhere to DCM 1.26.0:
   - Add avoid-commented-out-code

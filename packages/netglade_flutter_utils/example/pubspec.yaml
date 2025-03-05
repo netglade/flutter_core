@@ -5,11 +5,12 @@ publish_to: none
 environment:
   sdk: ^3.6.0
   flutter: ">=3.27.1"
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  netglade_analysis: ^15.0.0
+  netglade_analysis: ^16.0.0
   netglade_flutter_utils:
     path: ..
 

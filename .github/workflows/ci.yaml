@@ -34,11 +34,17 @@ jobs:
       - name: Dart Analyze
         run: melos run lint:dart
 
+      - name: Get DCM version
+        id: dcm-version
+        run: |
+          dcmVersion=$(cat dcm_global.yaml | grep version | cut -d' ' -f2 | sed -r 's/"//g')
+          echo "DCM_VERSION=$dcmVersion" >> "$GITHUB_OUTPUT"
+
       - name: Install DCM
         uses: CQLabs/setup-dcm@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          version: 1.26.2
+          version: ${{ steps.dcm-version.outputs.DCM_VERSION }}
 
       - name: Run DCM
         uses: CQLabs/dcm-action@v2

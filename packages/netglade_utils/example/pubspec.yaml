@@ -4,8 +4,9 @@ publish_to: none
 
 environment:
   sdk: ^3.6.0
+resolution: workspace
 
 dependencies:
-  netglade_analysis: ^15.0.0
+  netglade_analysis: ^16.0.0
   netglade_utils:
     path: ..
