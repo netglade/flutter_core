@@ -5,8 +5,11 @@ environment:
   sdk: ^3.6.0
 workspace:
   - packages/netglade_analysis
+  - packages/netglade_analysis/example
   - packages/netglade_flutter_utils
+  - packages/netglade_flutter_utils/example
   - packages/netglade_utils
+  - packages/netglade_utils/example
 
 dev_dependencies:
   melos: ^7.0.0-dev.7
