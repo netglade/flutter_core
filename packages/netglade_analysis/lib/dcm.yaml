@@ -1,4 +1,4 @@
-# version 1.25.0 - https://dcm.dev/changelog
+# version 1.27.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -74,6 +74,7 @@ dart_code_metrics:
           - context.read
           - context.watch
           - GetIt.I
+          - Get.find
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
     # - avoid-late-keyword
@@ -103,6 +104,8 @@ dart_code_metrics:
     - avoid-nested-streams-and-futures
     - avoid-nested-switch-expressions
     - avoid-nested-switches
+    - avoid-nested-try-statements:
+        acceptable-level: 2
     - avoid-non-ascii-symbols:
         exclude:
           - test/**
@@ -155,6 +158,7 @@ dart_code_metrics:
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unknown-pragma
+    - avoid-unnecessary-block
     - avoid-unnecessary-call
     - avoid-unnecessary-collections
     - avoid-unnecessary-conditionals
@@ -334,6 +338,7 @@ dart_code_metrics:
     - prefer-declaring-const-constructor
     - prefer-early-return
     - prefer-enums-by-name
+    - prefer-expect-later
     - prefer-explicit-function-type
     - prefer-explicit-parameter-names
     # - prefer-explicit-type-arguments # inference is better
@@ -365,6 +370,7 @@ dart_code_metrics:
     # - prefer-prefixed-global-constants # * OK, we just don't have global config
     - prefer-private-extension-type-field
     - prefer-public-exception-classes
+    - prefer-redirecting-superclass-constructor
     - prefer-return-await
     # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-boolean-expressions
