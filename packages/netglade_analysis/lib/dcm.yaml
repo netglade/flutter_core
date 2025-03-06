@@ -576,3 +576,40 @@ dart_code_metrics:
     # - prefer-pinned-version-syntax # we use prefer-caret-version-syntax
     - prefer-publish-to-none
     - prefer-semver-version
+  
+  metrics:
+    # Function / Method Metrics
+    cyclomatic-complexity: 20
+    halstead-volume: 150
+    lines-of-code: 200
+    maintainability-index: 50
+    maximum-nesting-level: 5
+    number-of-parameters: 4
+    number-of-used-widgets: 20
+    source-lines-of-code: 100
+    widgets-nesting-level: 10
+
+    # Class Metrics
+    coupling-between-object-classes: 12
+    depth-of-inheritance-tree: 5
+    number-of-added-methods: 10
+    number-of-implemented-interfaces: 5
+    number-of-methods: 10
+    number-of-overridden-methods: 10
+    response-for-class: 55
+    tight-class-cohesion: 0.33
+    weight-of-class: 0.33
+    weighted-methods-per-class: 35
+
+    # File Metrics
+    number-of-external-imports: 5
+    number-of-imports: 10
+    technical-debt:
+      threshold: 1
+      todo-cost: 161
+      ignore-cost: 320
+      ignore-for-file-cost: 396
+      as-dynamic-cost: 322
+      deprecated-annotations-cost: 37
+      file-nullsafety-migration-cost: 41
+      unit-type: "EUR"
