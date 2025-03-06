@@ -1,3 +1,6 @@
+## 16.1.0
+- Setup DCM Metrics
+
 ## 16.0.0
 - Adhere to DCM 1.27.0:
   - Add prefer-redirecting-superclass-constructor
