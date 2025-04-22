@@ -1,3 +1,17 @@
+## 17.0.0
+- Adhere to DCM 1.28.1
+  - Add avoid-recursive-tostring
+  - Add avoid-enum-values-by-index
+  - Add avoid-constant-assert-conditions
+  - Add avoid-nested-assignments
+  - Add avoid-unnecessary-compare-to
+  - Add prefer-digit-separators
+  - Add avoid-unnecessary-digit-separators
+  - Add avoid-inconsistent-digit-separators
+  - Add pass-existing-future-to-future-builder
+  - Add pass-existing-stream-to-stream-builder
+  - Add prefer-compute-over-isolate-run
+
 ## 16.1.0
 - Setup DCM Metrics
 

@@ -27,6 +27,7 @@ dart_code_metrics:
     - avoid-complex-arithmetic-expressions
     - avoid-complex-loop-conditions
     - avoid-conditions-with-boolean-literals
+    - avoid-constant-assert-conditions
     # - avoid-continue # we prefer condition guards
     - avoid-contradictory-expressions
     - avoid-declaring-call-method
@@ -48,6 +49,7 @@ dart_code_metrics:
         include-methods:
           - blocTest
           - blocPresentationTest
+    - avoid-enum-values-by-index
     - avoid-equal-expressions
     - avoid-excessive-expressions
     - avoid-explicit-pattern-field-name
@@ -68,6 +70,7 @@ dart_code_metrics:
           - test/**
     - avoid-implicitly-nullable-extension-types
     - avoid-importing-entrypoint-exports
+    - avoid-inconsistent-digit-separators
     - avoid-incorrect-uri
     - avoid-inferrable-type-arguments:
         ignored-invocations:
@@ -96,6 +99,7 @@ dart_code_metrics:
     # - avoid-mutating-parameters # we use ValueNotifier etc.
     # - avoid-negated-conditions # sometimes it might be better
     - avoid-negations-in-equality-checks
+    - avoid-nested-assignments
     - avoid-nested-conditional-expressions:
         acceptable-level: 2
     - avoid-nested-extension-types
@@ -128,6 +132,7 @@ dart_code_metrics:
     - avoid-passing-self-as-argument
     - avoid-positional-record-field-access
     - avoid-recursive-calls
+    - avoid-recursive-tostring
     - avoid-redundant-async
     - avoid-redundant-else
     - avoid-redundant-positional-field-name
@@ -161,9 +166,11 @@ dart_code_metrics:
     - avoid-unnecessary-block
     - avoid-unnecessary-call
     - avoid-unnecessary-collections
+    - avoid-unnecessary-compare-to
     - avoid-unnecessary-conditionals
     - avoid-unnecessary-constructor
     - avoid-unnecessary-continue
+    - avoid-unnecessary-digit-separators
     - avoid-unnecessary-enum-arguments
     - avoid-unnecessary-enum-prefix
     - avoid-unnecessary-extends
@@ -336,6 +343,7 @@ dart_code_metrics:
     # - prefer-correct-throws # for now hard to maintain
     - prefer-correct-type-name
     - prefer-declaring-const-constructor
+    - prefer-digit-separators
     - prefer-early-return
     - prefer-enums-by-name
     - prefer-expect-later
@@ -437,9 +445,12 @@ dart_code_metrics:
     - check-for-equals-in-render-object-setters
     - consistent-update-render-object
     - dispose-fields
+    - pass-existing-future-to-future-builder
+    - pass-existing-stream-to-stream-builder
     - prefer-action-button-tooltip
     - prefer-align-over-container
     - prefer-center-over-align
+    - prefer-compute-over-isolate-run
     - prefer-const-border-radius
     - prefer-container:
         min-sequence: 2
