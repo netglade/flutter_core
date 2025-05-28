@@ -1,3 +1,7 @@
+## Unreleased
+- Require Dart SDK 3.8.0 or later.
+- Require Flutter SDK 3.32.0 or later.
+
 ## 1.2.0
 - Dependencies update.
 

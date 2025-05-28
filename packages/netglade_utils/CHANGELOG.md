@@ -1,3 +1,6 @@
+## Unreleased
+- Require Dart SDK 3.8.0 or later.
+
 ## 2.5.0
 - Dependencies update.
 

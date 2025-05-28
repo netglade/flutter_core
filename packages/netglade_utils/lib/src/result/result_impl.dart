@@ -41,22 +41,19 @@ final class Success<S, E> extends Result<S, E> {
   TResult map<TResult>({
     required SuccessCallback<TResult, S, E> success,
     required ErrorCallback<TResult, S, E> error,
-  }) =>
-      success(this);
+  }) => success(this);
 
   @override
   TResult? mapOrNull<TResult>({
     NullableSuccessCallback<TResult, S, E>? success,
     NullableErrorCallback<TResult, S, E>? error,
-  }) =>
-      success?.call(this);
+  }) => success?.call(this);
 
   @override
   TResult when<TResult>({
     required SuccessValueCallback<TResult, S> success,
     required ErrorValueCallback<TResult, E> error,
-  }) =>
-      success(this.success);
+  }) => success(this.success);
 }
 
 final class Error<S, E> extends Result<S, E> {
@@ -68,22 +65,19 @@ final class Error<S, E> extends Result<S, E> {
   TResult map<TResult>({
     required SuccessCallback<TResult, S, E> success,
     required ErrorCallback<TResult, S, E> error,
-  }) =>
-      error(this);
+  }) => error(this);
 
   @override
   TResult? mapOrNull<TResult>({
     NullableSuccessCallback<TResult, S, E>? success,
     NullableErrorCallback<TResult, S, E>? error,
-  }) =>
-      error?.call(this);
+  }) => error?.call(this);
 
   @override
   TResult when<TResult>({
     required SuccessValueCallback<TResult, S> success,
     required ErrorValueCallback<TResult, E> error,
-  }) =>
-      error(this.error);
+  }) => error(this.error);
 }
 
 // ignore: prefer-single-declaration-per-file, this can be here

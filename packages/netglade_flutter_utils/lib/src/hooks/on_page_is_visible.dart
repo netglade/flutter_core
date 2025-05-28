@@ -14,11 +14,10 @@ typedef OnPageVisibleCallback = void Function({bool pushedIn});
 void useOnPageIsVisible({
   required RouteObserver observer,
   required OnPageVisibleCallback onPageVisible,
-}) =>
-    useRouteAware(
-      observer: observer,
-      onDidPopNext: () => onPageVisible(pushedIn: false),
-      onDidPush: () {
-        onPageVisible(pushedIn: true);
-      },
-    );
+}) => useRouteAware(
+  observer: observer,
+  onDidPopNext: () => onPageVisible(pushedIn: false),
+  onDidPush: () {
+    onPageVisible(pushedIn: true);
+  },
+);

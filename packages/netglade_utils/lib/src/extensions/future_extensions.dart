@@ -21,9 +21,7 @@ extension FutureExtensions<T> on Future<T> {
       timer.cancel();
 
       return result;
-    }
-    // ignore: avoid_catches_without_on_clauses, gotta catch them all
-    catch (e, s) {
+    } catch (e, s) {
       timer.cancel();
 
       return Future.error(e, s);
