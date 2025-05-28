@@ -38,7 +38,7 @@ void useRouteAware({
   );
 }
 
-// ignore: prefer_mixin, prefer-match-file-name, should be private class and should use RouteAware as a mixin
+// ignore: prefer-match-file-name, should be private class and should use RouteAware as a mixin
 class _RouteCallbacks with RouteAware {
   final VoidCallback? onDidPop;
   final VoidCallback? onDidPopNext;

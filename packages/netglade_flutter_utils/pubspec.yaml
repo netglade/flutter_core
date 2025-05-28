@@ -7,8 +7,8 @@ homepage: https://github.com/netglade/flutter_core
 documentation: https://github.com/netglade/flutter_core/tree/main/packages/netglade_flutter_utils
 
 environment:
-  sdk: ^3.6.0
-  flutter: ">=3.27.1"
+  sdk: ^3.8.0
+  flutter: ">=3.32.0"
 resolution: workspace
 
 dependencies:

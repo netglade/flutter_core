@@ -2,5 +2,4 @@ include: lints.yaml
 
 linter:
   rules:
-    package_api_docs: true
     public_member_api_docs: true

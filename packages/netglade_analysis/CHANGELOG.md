@@ -1,4 +1,13 @@
 ## 17.0.0
+- Require Dart 3.8.0 (Flutter 3.32.0) or later
+- Adhere to Dart lints 3.7.0
+ - Add unnecessary_underscores
+ - Add strict_top_level_inference
+ - Remove package_api_docs
+ - Remove unsafe_html
+- Adhere to Dart lints 3.8.0
+  - Add use_null_aware_elements
+  - Add unnecessary_ignore
 - Adhere to DCM 1.28.1
   - Add avoid-recursive-tostring
   - Add avoid-enum-values-by-index

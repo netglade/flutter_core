@@ -45,16 +45,16 @@ extension ErrorAnswerOr<T, E> on When<FutureOr<Result<T, E>>> {
 
 extension StreamSubscriptionAnswer<T> on When<StreamSubscription<T>> {
   void thenAnswerWithProvidedCallback() => thenAnswer((i) {
-        final callback = i.positionalArguments.singleOrNull;
+    final callback = i.positionalArguments.singleOrNull;
 
-        // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
-        return Stream.fromIterable(<T>[]).listen(callback != null ? callback as void Function(T value) : (_) {});
-      });
+    // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
+    return Stream.fromIterable(<T>[]).listen(callback != null ? callback as void Function(T value) : (_) {});
+  });
 
   void thenAnswerWithCustomStream(Stream<T> stream) => thenAnswer((i) {
-        final callback = i.positionalArguments.singleOrNull;
+    final callback = i.positionalArguments.singleOrNull;
 
-        // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
-        return stream.listen(callback != null ? callback as void Function(T value) : (_) {});
-      });
+    // ignore: no-empty-block, it needs to be empty, prefer-typedefs-for-callbacks, private API
+    return stream.listen(callback != null ? callback as void Function(T value) : (_) {});
+  });
 }

@@ -42,22 +42,19 @@ final class None<T> extends Option<T> {
   TResult map<TResult>({
     required NoneCallback<TResult> none,
     required SomeCallback<TResult, T> some,
-  }) =>
-      none();
+  }) => none();
 
   @override
   TResult? mapOrNull<TResult>({
     NullableNoneCallback<TResult>? none,
     NullableSomeCallback<TResult, T>? some,
-  }) =>
-      none?.call();
+  }) => none?.call();
 
   @override
   TResult when<TResult>({
     required ValueNoneCallback<TResult> none,
     required ValueSomeCallback<TResult, T> some,
-  }) =>
-      none();
+  }) => none();
 }
 
 final class Some<T> extends Option<T> {
@@ -69,22 +66,19 @@ final class Some<T> extends Option<T> {
   TResult map<TResult>({
     required NoneCallback<TResult> none,
     required SomeCallback<TResult, T> some,
-  }) =>
-      some(this);
+  }) => some(this);
 
   @override
   TResult? mapOrNull<TResult>({
     NullableNoneCallback<TResult>? none,
     NullableSomeCallback<TResult, T>? some,
-  }) =>
-      some?.call(this);
+  }) => some?.call(this);
 
   @override
   TResult when<TResult>({
     required ValueNoneCallback<TResult> none,
     required ValueSomeCallback<TResult, T> some,
-  }) =>
-      some(value);
+  }) => some(value);
 }
 
 // ignore: prefer-single-declaration-per-file, this can be here

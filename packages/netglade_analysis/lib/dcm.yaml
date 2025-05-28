@@ -1,4 +1,4 @@
-# version 1.27.0 - https://dcm.dev/changelog
+# version 1.28.1 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -156,7 +156,9 @@ dart_code_metrics:
     - avoid-suspicious-super-overrides
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
-    - avoid-top-level-members-in-tests
+    - avoid-top-level-members-in-tests:
+        include:
+          - test/**/*_test.dart
     # - avoid-type-casts # needed when working with JSONs
     - avoid-unassigned-late-fields
     - avoid-unassigned-stream-subscriptions
