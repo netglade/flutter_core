@@ -1,5 +1,7 @@
 ## Unreleased
 - Require Dart SDK 3.8.0 or later.
+- Add `verifyCalledOnceAndNoMoreInteractions` 
+- Add shortcut calls for stubbing When with Option result.
 
 ## 2.5.0
 - Dependencies update.
