@@ -92,4 +92,8 @@ extension ResultExtension<S, E> on Result<S, E> {
   /// Retreives error from [Result] or throws.
   // ignore: avoid-non-null-assertion, developer's responsbility
   E get asError => mapOrNull(error: (r) => r)!.error;
+
+  S? get maybeSuccess => mapOrNull(success: (l) => l.success);
+
+  E? get maybeError => mapOrNull(error: (r) => r.error);
 }
