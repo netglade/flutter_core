@@ -31,7 +31,7 @@ extension VerificationResultEx on VerificationResult {
 ///
 /// Also verifies that no other interactions with the mock occurred.
 // ignore: prefer-static-class, prefer-typedefs-for-callbacks, avoid-dynamic, keep it.
-void verifyOnlyOneCallAndNothingElse<T>(dynamic mock, T Function() verifyCall) {
+void verifyCalledOnceAndNoMoreInteractions<T>(dynamic mock, T Function() verifyCall) {
   verify(verifyCall).calledOnce();
   verifyNoMoreInteractions(mock);
 }
