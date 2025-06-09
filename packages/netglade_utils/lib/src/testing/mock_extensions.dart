@@ -25,22 +25,43 @@ extension StreamedAnswer<T> on When<Stream<T>> {
 
 extension VerificationResultEx on VerificationResult {
   void calledOnce() => called(1);
+
+  void calledOnlyThisAndNothingElse() {
+    called(1);
+  }
+}
+
+/// Verifies that the given mock was called exactly once with the provided function.
+///
+/// Also verifies that no other interactions with the mock occurred.
+// ignore: prefer-static-class, prefer-typedefs-for-callbacks, avoid-dynamic, keep it.
+void verifyOnlyOneCallAndNothingElse<T>(dynamic mock, T Function() verifyCall) {
+  verify(verifyCall).calledOnce();
+  verifyNoMoreInteractions(mock);
 }
 
 extension SuccessAnswer<T, E> on When<Future<Result<T, E>>> {
   void thenAnswerWithSuccess(T value) => thenAnswer((_) async => Success(value));
+
+  void thenAnswerWithError(E error) => thenAnswer((_) async => Error(error));
 }
 
 extension SuccessAnswerOr<T, E> on When<FutureOr<Result<T, E>>> {
   void thenAnswerWithSuccess(T value) => thenAnswer((_) => Success(value));
-}
 
-extension ErrorAnswer<T, E> on When<Future<Result<T, E>>> {
-  void thenAnswerWithError(E error) => thenAnswer((_) async => Error(error));
-}
-
-extension ErrorAnswerOr<T, E> on When<FutureOr<Result<T, E>>> {
   void thenAnswerWithError(E error) => thenAnswer((_) => Error(error));
+}
+
+extension OptionAnswer<T> on When<Future<Option<T>>> {
+  void thenAnswerWithNone() => thenAnswer((_) async => const None());
+
+  void thenAnswerWithSome(T value) => thenAnswer((_) async => Some(value));
+}
+
+extension OptionAnswerOr<T> on When<FutureOr<Option<T>>> {
+  void thenAnswerWithNone() => thenAnswer((_) async => const None());
+
+  void thenAnswerWithSome(T value) => thenAnswer((_) async => Some(value));
 }
 
 extension StreamSubscriptionAnswer<T> on When<StreamSubscription<T>> {
