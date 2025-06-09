@@ -25,10 +25,6 @@ extension StreamedAnswer<T> on When<Stream<T>> {
 
 extension VerificationResultEx on VerificationResult {
   void calledOnce() => called(1);
-
-  void calledOnlyThisAndNothingElse() {
-    called(1);
-  }
 }
 
 /// Verifies that the given mock was called exactly once with the provided function.
