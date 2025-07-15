@@ -1,6 +1,7 @@
 ## Unreleased
 - Require Dart SDK 3.8.0 or later.
 - Add `maybeSuccess` and `maybeError` to `Result` type.
+- Add string extensions tests.
 
 ## 2.5.0
 - Dependencies update.
