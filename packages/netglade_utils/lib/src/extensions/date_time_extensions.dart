@@ -71,7 +71,6 @@ extension DateTimeExtensions on DateTime {
   }
 }
 
-// ignore: prefer-single-declaration-per-file, this can be here
 enum DateSpecification {
   endOfWeek,
   nextWeek,

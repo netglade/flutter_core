@@ -1,3 +1,24 @@
+## 18.0.0
+- Adhere to DCM 1.30.1:
+  - Add prefer-pushing-conditional-expressions
+  - Add avoid-suspicious-global-reference
+  - Add pass-correct-accepted-type
+  - Add avoid-unreachable-for-loop
+  - Add avoid-unnecessary-length-check
+  - Add prefer-specifying-future-value-type
+  - Add avoid-default-tostring
+  - Add avoid-stream-tostring
+  - Add prefer-null-aware-elements
+  - Add avoid-unnecessary-null-aware-elements
+  - Add avoid-unnecessary-statements
+  - Add avoid-unnecessary-nullable-fields
+  - Add avoid-deprecated-usage
+  - Add prefer-single-setstate
+  - Add avoid-mounted-in-setstate
+  - Add prefer-immutable-selector-value
+  - Add prefer-commenting-pubspec-ignores
+  - Modify prefer-single-widget-per-file so it sets ignore-visible-for-testing
+
 ## 17.0.0
 - Require Dart 3.8.0 (Flutter 3.32.0) or later
 - Adhere to Dart lints 3.7.0

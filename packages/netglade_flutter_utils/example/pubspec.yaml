@@ -10,7 +10,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  netglade_analysis: ^17.0.0
+  netglade_analysis: ^18.0.0
   netglade_flutter_utils:
     path: ..
 
