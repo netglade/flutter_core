@@ -23,7 +23,7 @@ To use the lints, add as a dev dependency in your `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
-  netglade_analysis: ^17.0.0
+  netglade_analysis: ^18.0.0
 ```
 
 Then, add an include in `analysis_options.yaml`:
