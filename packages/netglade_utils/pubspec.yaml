@@ -1,5 +1,5 @@
 name: netglade_utils
-version: 2.5.0
+version: 2.6.0
 description: Dart utils used internally at netglade.
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues
