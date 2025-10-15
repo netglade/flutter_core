@@ -1,4 +1,4 @@
-# version 1.30.1 - https://dcm.dev/changelog
+# version 1.32.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -30,10 +30,13 @@ dart_code_metrics:
     - avoid-complex-loop-conditions
     - avoid-conditions-with-boolean-literals
     - avoid-constant-assert-conditions
+    - avoid-constant-conditions
+    - avoid-constant-switches
     # - avoid-continue # we prefer condition guards
     - avoid-contradictory-expressions
     - avoid-declaring-call-method
-    - avoid-default-tostring
+    - avoid-default-tostring:
+        ignore-enums: true
     - avoid-deprecated-usage
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
@@ -114,6 +117,7 @@ dart_code_metrics:
     - avoid-nested-switches
     - avoid-nested-try-statements:
         acceptable-level: 2
+    - avoid-never-passed-parameters
     - avoid-non-ascii-symbols:
         exclude:
           - test/**
@@ -186,11 +190,14 @@ dart_code_metrics:
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
     - avoid-unnecessary-if
+    - avoid-unnecessary-late-fields
     - avoid-unnecessary-length-check
     - avoid-unnecessary-local-late
+    - avoid-unnecessary-local-variable
     - avoid-unnecessary-negations
     - avoid-unnecessary-null-aware-elements
     - avoid-unnecessary-nullable-fields
+    - avoid-unnecessary-nullable-parameters
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-overrides
     - avoid-unnecessary-patterns
@@ -203,15 +210,18 @@ dart_code_metrics:
     - avoid-unreachable-for-loop
     - avoid-unrelated-type-assertions
     - avoid-unrelated-type-casts
+    - avoid-unremovable-callbacks-in-listeners
     - avoid-unsafe-collection-methods
     - avoid-unsafe-reduce
     - avoid-unused-after-null-check
     - avoid-unused-assignment
     - avoid-unused-generics
     - avoid-unused-instances
+    - avoid-unused-local-variable
     - avoid-unused-parameters
     - avoid-weak-cryptographic-algorithms
     - avoid-wildcard-cases-with-enums
+    - avoid-wildcard-cases-with-sealed-classes
     - prefer-switch-with-sealed-classes
     # - banned-usage # * OK, we just don't have global config
     - binary-expression-operand-order
@@ -231,6 +241,7 @@ dart_code_metrics:
     - map-keys-ordering:
         exclude:
           - test/**
+    - match-base-class-default-value
     # - match-class-name-pattern # * OK, we just don't have global config
     # - match-getter-setter-field-names # forces API to equals internal code
     # - match-lib-folder-structure # maybe later
@@ -399,6 +410,7 @@ dart_code_metrics:
     - prefer-pushing-conditional-expressions
     - prefer-redirecting-superclass-constructor
     - prefer-return-await
+    # - prefer-returning-condition # Sometimes it is more readable to have if statement
     # - prefer-returning-conditional-expressions # annoying sometimes
     - prefer-simpler-boolean-expressions
     - prefer-simpler-patterns-null-check
@@ -418,6 +430,7 @@ dart_code_metrics:
     - prefer-switch-with-enums:
         ignore-contains: true
     - prefer-test-matchers
+    - prefer-test-structure
     - prefer-trailing-comma
     - use-existing-destructuring
     # - prefer-type-over-var # we prefer type inference
@@ -472,9 +485,11 @@ dart_code_metrics:
     - pass-existing-stream-to-stream-builder
     - prefer-action-button-tooltip
     - prefer-align-over-container
+    - prefer-async-callback
     - prefer-center-over-align
     - prefer-compute-over-isolate-run
     - prefer-const-border-radius
+    - prefer-constrained-box-over-container
     - prefer-container:
         min-sequence: 2
     - prefer-correct-edge-insets-constructor
@@ -493,6 +508,7 @@ dart_code_metrics:
     - prefer-text-rich
     - prefer-transform-over-container
     - prefer-using-list-view
+    - prefer-void-callback
     - prefer-widget-private-members
     - proper-super-calls
     - use-closest-build-context
@@ -541,15 +557,20 @@ dart_code_metrics:
     ### Riverpod
     - avoid-calling-notifier-members-inside-build
     - avoid-notifier-constructors
+    - avoid-nullable-async-value-pattern
+    - avoid-public-notifier-properties
+    - avoid-ref-inside-state-dispose
     - avoid-ref-read-inside-build
     - avoid-ref-watch-outside-build
     - avoid-unnecessary-consumer-widgets
     - dispose-provided-instances
+    - prefer-immutable-provider-arguments
     - use-ref-read-synchronously
 
     ### Equatable
     # - extend-equatable # * OK, we just don't have global config
     - list-all-equatable-fields
+    - prefer-equatable-mixin
 
     ### Flame - not used
     # - avoid-creating-vector-in-update
@@ -605,16 +626,21 @@ dart_code_metrics:
 
   pubspec-rules:
     ### Pubspec
+    # - add-resolution-workspace # * OK, we just don't want to set it globally
     - avoid-any-version
     # - avoid-dependency-overrides
     # - banned-dependencies # * OK, we just don't have global config
+    - dependencies-ordering
+    - newline-before-pubspec-entry
     - prefer-caret-version-syntax
     - prefer-commenting-pubspec-ignores
     # - prefer-correct-package-name # * OK, we just don't have global config
     - prefer-correct-screenshots
+    - prefer-correct-topics
     # - prefer-pinned-version-syntax # we use prefer-caret-version-syntax
     - prefer-publish-to-none
     - prefer-semver-version
+    - pubspec-ordering
   
   metrics:
     # Function / Method Metrics

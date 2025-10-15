@@ -20,7 +20,8 @@ formatter:
   page_width: 120
   trailing_commas: preserve
 
-# version 3.8.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
+# version 3.9.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
+# lints here - https://dart.dev/tools/linter-rules
 linter:
   rules:
     ### ERROR
@@ -54,6 +55,7 @@ linter:
     - no_wildcard_variable_uses
     # - prefer_relative_imports
     - prefer_void_to_null
+    - switch_on_type
     - test_types_in_equals
     - throw_in_finally
     - unnecessary_statements
@@ -233,6 +235,7 @@ linter:
     - unnecessary_string_interpolations
     - unnecessary_this
     - unnecessary_to_list_in_spreads
+    - unnecessary_unawaited
     - unnecessary_underscores
     # - unreachable_from_main
     - use_colored_box
@@ -259,4 +262,4 @@ linter:
     - depend_on_referenced_packages
     - package_names
     - secure_pubspec_urls
-    - sort_pub_dependencies
+    # - sort_pub_dependencies # We use DCM for this

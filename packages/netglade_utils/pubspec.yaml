@@ -1,6 +1,7 @@
 name: netglade_utils
-version: 2.6.0
+resolution: workspace
 description: Dart utils used internally at netglade.
+version: 2.6.0
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues
 homepage: https://github.com/netglade/flutter_core
@@ -8,7 +9,6 @@ documentation: https://github.com/netglade/flutter_core/tree/main/packages/netgl
 
 environment:
   sdk: ^3.8.0
-resolution: workspace
 
 dependencies:
   characters: ^1.2.0
@@ -18,5 +18,5 @@ dependencies:
   mocktail: ^1.0.0
 
 dev_dependencies:
-  netglade_analysis: ^18.0.0
+  netglade_analysis: ^19.0.0
   test: ^1.25.2

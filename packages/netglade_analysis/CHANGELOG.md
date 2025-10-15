@@ -1,5 +1,35 @@
+## 19.0.0
+- Adhere to Dart linter 3.9.0
+  - Add switch_on_type
+  - Add unnecessary_unawaited
+- Adhere to DCM 1.31.0 and 1.32.0
+  - Add avoid-constant-conditions
+  - Add avoid-constant-switches
+  - Update avoid-default-tostring to ignore enums
+  - Add avoid-never-passed-parameters
+  - Add avoid-unnecessary-late-fields
+  - Add avoid-unnecessary-local-variable
+  - Add avoid-unnecessary-nullable-parameters
+  - Add avoid-unremovable-callbacks-in-listeners
+  - Add avoid-unused-local-variable
+  - Add avoid-wildcard-cases-with-sealed-classes
+  - Add match-base-class-default-value
+  - Add prefer-test-structure
+  - Add prefer-async-callback
+  - Add prefer-constrained-box-over-container
+  - Add prefer-void-callback
+  - Add avoid-nullable-async-value-pattern
+  - Add avoid-public-notifier-properties
+  - Add avoid-ref-inside-state-dispose
+  - Add prefer-immutable-provider-arguments
+  - Add prefer-equatable-mixin
+  - Add dependencies-ordering
+  - Add newline-before-pubspec-entry
+  - Add prefer-correct-topics
+  - Add pubspec-ordering
+
 ## 18.0.0
-- Adhere to DCM 1.30.1:
+- Adhere to DCM 1.30.0
   - Add prefer-pushing-conditional-expressions
   - Add avoid-suspicious-global-reference
   - Add pass-correct-accepted-type
