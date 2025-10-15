@@ -1,12 +1,12 @@
 name: netglade_utils_example
-version: 0.0.1
+resolution: workspace
 publish_to: none
+version: 0.0.1
 
 environment:
   sdk: ^3.8.0
-resolution: workspace
 
 dependencies:
-  netglade_analysis: ^18.0.0
+  netglade_analysis: ^19.0.0
   netglade_utils:
     path: ..

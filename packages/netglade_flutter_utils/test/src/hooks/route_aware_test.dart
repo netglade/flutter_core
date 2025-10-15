@@ -89,7 +89,10 @@ void main() {
   });
 
   testWidgets('On subcribe, didPush is called', (tester) async {
+    // arrange
     var action = '';
+
+    // act
     await tester.pumpWidget(
       MaterialApp(
         navigatorObservers: [observer],
@@ -100,15 +103,18 @@ void main() {
       ),
     );
 
+    // assert
     expect(find.byType(Text), findsNWidgets(3));
     expect(find.text('didPush'), findsOneWidget);
     expect(action, equals('didPush'));
   });
 
   testWidgets('DidPop is called', (tester) async {
+    // arrange
     var action = '';
     final pushBtn = UniqueKey();
 
+    // act
     await tester.pumpWidget(
       MaterialApp(
         navigatorObservers: [observer],
@@ -138,11 +144,16 @@ void main() {
 
     await tester.tap(find.byKey(_UnderTestWidget._popBtnKey));
     await tester.pumpAndSettle();
+
+    // assert
     expect(action, equals('didPop'));
   });
 
   testWidgets('DidPushNext and DidPopNext are called', (tester) async {
+    // arrange
     var action = '';
+
+    // act
     await tester.pumpWidget(
       MaterialApp(
         navigatorObservers: [observer],

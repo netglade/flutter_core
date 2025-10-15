@@ -1,6 +1,7 @@
 name: netglade_flutter_utils
-version: 1.3.0
+resolution: workspace
 description: Flutter utils used internally at netglade.
+version: 1.3.0
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_flutter_utils
 issue_tracker: https://github.com/netglade/flutter_core/issues
 homepage: https://github.com/netglade/flutter_core
@@ -9,7 +10,6 @@ documentation: https://github.com/netglade/flutter_core/tree/main/packages/netgl
 environment:
   sdk: ^3.8.0
   flutter: ">=3.32.0"
-resolution: workspace
 
 dependencies:
   flutter:
@@ -20,7 +20,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.0
-  netglade_analysis: ^18.0.0
+  netglade_analysis: ^19.0.0
   test: ^1.25.8
 
 flutter:
