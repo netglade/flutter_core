@@ -6,6 +6,7 @@ dart_code_metrics:
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-adjacent-strings
+    - avoid-always-null-parameters
     - avoid-assigning-to-static-field
     - avoid-assignments-as-conditions
     - avoid-async-call-in-sync-function
@@ -112,6 +113,7 @@ dart_code_metrics:
     - avoid-nested-extension-types
     - avoid-nested-futures
     - avoid-nested-records
+    - avoid-nested-shorthands
     - avoid-nested-streams-and-futures
     - avoid-nested-switch-expressions
     - avoid-nested-switches
@@ -171,6 +173,7 @@ dart_code_metrics:
         include:
           - test/**/*_test.dart
     # - avoid-type-casts # needed when working with JSONs
+    - avoid-unassigned-fields
     - avoid-unassigned-late-fields
     - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
@@ -286,6 +289,7 @@ dart_code_metrics:
     - move-variable-closer-to-its-usage
     - move-variable-outside-iteration
     - newline-before-case
+    - newline-before-constructor
     - newline-before-method
     - newline-before-return
     - no-boolean-literal-compare:
@@ -412,6 +416,10 @@ dart_code_metrics:
     - prefer-return-await
     # - prefer-returning-condition # Sometimes it is more readable to have if statement
     # - prefer-returning-conditional-expressions # annoying sometimes
+    - prefer-returning-shorthands
+    - prefer-shorthands-with-constructors
+    - prefer-shorthands-with-enums
+    - prefer-shorthands-with-static-fields
     - prefer-simpler-boolean-expressions
     - prefer-simpler-patterns-null-check
     - prefer-single-declaration-per-file:

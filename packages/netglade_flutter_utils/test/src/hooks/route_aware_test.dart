@@ -173,10 +173,10 @@ void main() {
 
     expect(action, equals('didPushNext'));
     expect(find.byKey(_MockPage._btnKey), findsOneWidget);
-
     await tester.tap(find.byKey(_MockPage._btnKey));
     await tester.pumpAndSettle();
 
+    // assert
     expect(action, equals('didPopNext'));
     final status = find.byKey(_UnderTestWidget._statusKey);
     expect(status, findsOneWidget);

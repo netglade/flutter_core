@@ -1,3 +1,16 @@
+## 20.0.0
+- Adhere to DCM 1.33.0:
+  - Add prefer-returning-shorthands
+  - Add prefer-shorthands-with-static-fields
+  - Add prefer-shorthands-with-enums
+  - Add avoid-nested-shorthands
+  - Add prefer-shorthands-with-constructors
+  - Add newline-before-constructor
+  - Add avoid-always-null-parameters
+  - Add avoid-unassigned-fields
+- Adhere to Dart lints 3.10.0:
+  - Remove deprecated_member_use_from_same_package
+
 ## 19.0.0
 - Adhere to Dart linter 3.9.0
   - Add switch_on_type

@@ -37,10 +37,10 @@ extension DateTimeExtensions on DateTime {
   }
 
   /// Returns same date but without time part.
-  DateTime get withoutTime => DateTime(year, month, day);
+  DateTime get withoutTime => .new(year, month, day);
 
   /// Retuns Date set to equatal 0.0.1900 with time part from this date.
-  DateTime get onlyTime => DateTime(1900, 0, 0, hour, minute);
+  DateTime get onlyTime => .new(1900, 0, 0, hour, minute);
 
   /// Returns true if this is before or is the same as [other].
   // ignore: prefer-boolean-prefixes, dont wannta change public API
@@ -59,15 +59,15 @@ extension DateTimeExtensions on DateTime {
   }
 
   DateSpecification get dateSpecification {
-    if (isToday) return DateSpecification.today;
+    if (isToday) return .today;
 
-    if (isTomorrow) return DateSpecification.tomorrow;
+    if (isTomorrow) return .tomorrow;
 
-    if (day > (clock.now().day + 1) && day <= clock.now().endOfWeek.day) return DateSpecification.endOfWeek;
+    if (day > (clock.now().day + 1) && day <= clock.now().endOfWeek.day) return .endOfWeek;
 
-    if (day > clock.now().endOfWeek.day) return DateSpecification.nextWeek;
+    if (day > clock.now().endOfWeek.day) return .nextWeek;
 
-    return DateSpecification.past;
+    return .past;
   }
 }
 

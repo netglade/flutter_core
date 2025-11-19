@@ -4,9 +4,9 @@ publish_to: none
 version: 0.0.1
 
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0
 
 dependencies:
-  netglade_analysis: ^19.0.0
+  netglade_analysis: ^20.0.0
   netglade_utils:
     path: ..

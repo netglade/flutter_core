@@ -13,14 +13,13 @@ analyzer:
     todo: ignore
     unused_element: warning
     unused_local_variable: warning
-    deprecated_member_use_from_same_package: warning
     record_literal_one_positional_no_trailing_comma: error
 
 formatter:
   page_width: 120
   trailing_commas: preserve
 
-# version 3.9.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
+# version 3.10.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
 # lints here - https://dart.dev/tools/linter-rules
 linter:
   rules:
@@ -39,7 +38,7 @@ linter:
     - collection_methods_unrelated_type
     - comment_references
     - control_flow_in_finally
-    - deprecated_member_use_from_same_package
+    # - deprecated_member_use_from_same_package # we are using DCM
     # - diagnostic_describe_all_properties
     # - discarded_futures
     - empty_statements
@@ -194,6 +193,7 @@ linter:
     - provide_deprecation_message
     # - public_member_api_docs
     - recursive_getters
+    # - remove_deprecations_in_breaking_versions
     - require_trailing_commas
     - sized_box_for_whitespace
     - sized_box_shrink_expand
