@@ -1,3 +1,6 @@
+## 20.0.1
+- Remove (ignore) deprecated_member_use_from_same_package diagnostic
+
 ## 20.0.0
 - Adhere to DCM 1.33.0:
   - Add prefer-returning-shorthands
