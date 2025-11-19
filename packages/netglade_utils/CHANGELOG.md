@@ -1,3 +1,6 @@
+## Unreleased
+- Require Dart SDK 3.10.0 or later.
+
 ## 2.6.0
 - Require Dart SDK 3.8.0 or later.
 - Add `maybeSuccess` and `maybeError` to `Result` type.

@@ -17,6 +17,7 @@ sealed class Option<T> {
   const Option();
 
   const factory Option.none() = None;
+
   const factory Option.some(T value) = Some<T>;
 
   TResult map<TResult>({

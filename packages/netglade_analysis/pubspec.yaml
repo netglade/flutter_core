@@ -8,7 +8,7 @@ homepage: https://github.com/netglade/flutter_core
 documentation: https://github.com/netglade/flutter_core/tree/main/packages/netglade_analysis
 
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0
 screenshots:
   - description: The netglade_analysis package logo.
     path: doc/icon.png

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 extension TextStyleExtensions on TextStyle {
-  TextStyle get normal => copyWith(fontWeight: FontWeight.normal);
-  TextStyle get semiBold => copyWith(fontWeight: FontWeight.w600);
-  TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
-  TextStyle get extraBold => copyWith(fontWeight: FontWeight.w900);
+  TextStyle get normal => copyWith(fontWeight: .normal);
+  TextStyle get semiBold => copyWith(fontWeight: .w600);
+  TextStyle get bold => copyWith(fontWeight: .bold);
+  TextStyle get extraBold => copyWith(fontWeight: .w900);
 
-  TextStyle get undertline => copyWith(decoration: TextDecoration.underline);
-  TextStyle get italic => copyWith(fontStyle: FontStyle.italic);
+  TextStyle get undertline => copyWith(decoration: .underline);
+  TextStyle get italic => copyWith(fontStyle: .italic);
 
   TextStyle withLetterSpacing(double value) => copyWith(letterSpacing: value);
 

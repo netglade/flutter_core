@@ -14,6 +14,7 @@ sealed class Result<S, E> {
   const Result();
 
   const factory Result.success(S success) = Success<S, E>;
+
   const factory Result.error(E error) = Error<S, E>;
 
   TResult map<TResult>({
