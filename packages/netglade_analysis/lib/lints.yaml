@@ -14,6 +14,7 @@ analyzer:
     unused_element: warning
     unused_local_variable: warning
     record_literal_one_positional_no_trailing_comma: error
+    deprecated_member_use_from_same_package: ignore
 
 formatter:
   page_width: 120
