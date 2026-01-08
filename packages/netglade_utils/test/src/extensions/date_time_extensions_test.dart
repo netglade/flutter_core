@@ -1,3 +1,5 @@
+// ignore_for_file: prefer-boolean-prefixes
+
 import 'package:netglade_utils/netglade_utils.dart';
 import 'package:test/test.dart';
 
@@ -23,7 +25,12 @@ void main() {
   }.entries) {
     test('EndOfWorkWeek: $key should be $value', () {
       // arrange
-      expect(key.endOfWorkWeek, equals(value));
+
+      // act
+      final processed = key.endOfWorkWeek;
+
+      // assert
+      expect(processed, equals(value));
     });
   }
 
@@ -37,17 +44,25 @@ void main() {
     DateTime(2022, 12, 4): DateTime(2022, 12, 4),
   }.entries) {
     test('EndOfWeek: $key should be $value', () {
-      expect(key.endOfWeek, equals(value));
+      // arrange
+
+      // act
+      final processed = key.endOfWeek;
+
+      // assert
+      expect(processed, equals(value));
     });
   }
 
   test('isToday', () {
     // arrange
-    // act
     final date = DateTime.now();
 
+    // act
+    final processed = date.isToday;
+
     // assert
-    expect(date.isToday, isTrue);
+    expect(processed, isTrue);
   });
 
   test('isTomorrow', () {
@@ -56,9 +71,10 @@ void main() {
 
     // act
     final date = DateTime.now().add(durationToAdd);
+    final processed = date.isTomorrow;
 
     // assert
-    expect(date.isTomorrow, isTrue);
+    expect(processed, isTrue);
   });
 
   test('withoutTime', () {
@@ -66,17 +82,20 @@ void main() {
     final date = DateTime(2022, 1, 1, 4, 30, 30);
 
     // act
+    final processed = date.withoutTime;
+
     // assert
-    expect(date.withoutTime, equals(DateTime(2022)));
+    expect(processed, equals(DateTime(2022)));
   });
 
   test('withoutDate', () {
     // arrange
-
-    // act
     final date = DateTime(2022, 1, 1, 4, 30, 30);
 
+    // act
+    final processed = date.withoutTime;
+
     // assert
-    expect(date.withoutTime, equals(DateTime(2022)));
+    expect(processed, equals(DateTime(2022)));
   });
 }
