@@ -1,3 +1,11 @@
+## 21.0.0
+- Adhere to DCM 1.34.0 and 1.35.0:
+  - Add avoid-complex-conditions
+  - Add avoid-immediately-invoked-functions
+  - Add avoid-assigning-notifiers
+  - Add use-ref-and-state-synchronously
+  - Update maintainability-index metric to match new config
+
 ## 20.0.1
 - Remove (ignore) deprecated_member_use_from_same_package diagnostic
 
