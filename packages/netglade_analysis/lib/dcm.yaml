@@ -1,4 +1,4 @@
-# version 1.32.0 - https://dcm.dev/changelog
+# version 1.35.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -28,6 +28,7 @@ dart_code_metrics:
     # - avoid-collection-mutating-methods # sometimes it's ok
     - avoid-commented-out-code
     - avoid-complex-arithmetic-expressions
+    - avoid-complex-conditions
     - avoid-complex-loop-conditions
     - avoid-conditions-with-boolean-literals
     - avoid-constant-assert-conditions
@@ -76,6 +77,7 @@ dart_code_metrics:
     - avoid-ignoring-return-values:
         exclude:
           - test/**
+    - avoid-immediately-invoked-functions
     - avoid-implicitly-nullable-extension-types
     - avoid-importing-entrypoint-exports
     - avoid-inconsistent-digit-separators
@@ -318,6 +320,7 @@ dart_code_metrics:
     - no-object-declaration
     # - parameters-ordering # way too strict
     - pass-correct-accepted-type
+    # - pass-optional-argument * OK, we just don't have global config
     - pattern-fields-ordering
     - prefer-abstract-final-static-class
     - prefer-add-all
@@ -563,6 +566,7 @@ dart_code_metrics:
     - prefer-sealed-bloc-state
 
     ### Riverpod
+    - avoid-assigning-notifiers
     - avoid-calling-notifier-members-inside-build
     - avoid-notifier-constructors
     - avoid-nullable-async-value-pattern
@@ -573,6 +577,7 @@ dart_code_metrics:
     - avoid-unnecessary-consumer-widgets
     - dispose-provided-instances
     - prefer-immutable-provider-arguments
+    - use-ref-and-state-synchronously
     - use-ref-read-synchronously
 
     ### Equatable
@@ -625,6 +630,7 @@ dart_code_metrics:
     # - provide-correct-intl-args
 
     ### Easy Localization
+    # - avoid-missing-tr-on-strings # we dont like this
     - avoid-missing-tr
 
     ### Angular - not used
@@ -655,7 +661,7 @@ dart_code_metrics:
     cyclomatic-complexity: 20
     halstead-volume: 150
     lines-of-code: 200
-    maintainability-index: 50
+    maintainability-index: 0.5
     maximum-nesting-level: 5
     number-of-parameters: 4
     number-of-used-widgets: 20

@@ -1,7 +1,7 @@
 name: netglade_analysis
 resolution: workspace
 description: Lint rules for Dart and Flutter used internally at netglade.
-version: 20.0.1
+version: 21.0.0
 repository: https://github.com/netglade/flutter_core/tree/main/packages/netglade_analysis
 issue_tracker: https://github.com/netglade/flutter_core/issues
 homepage: https://github.com/netglade/flutter_core
