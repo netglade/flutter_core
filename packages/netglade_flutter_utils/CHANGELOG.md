@@ -1,5 +1,7 @@
-## Unreleased
+## 1.4.0
 - Require Dart SDK 3.10.0 or later.
+- *Add* `withAlphaPercent` method to Color extension to set alpha using percentage.
+- Dependencies update.
 
 ## 1.3.0
 - Require Dart SDK 3.9.0 or later.

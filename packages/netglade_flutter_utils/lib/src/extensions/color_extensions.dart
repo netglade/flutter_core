@@ -41,4 +41,15 @@ extension ColorExtensions on Color {
 
     return asUpperCase ? result.toUpperCase() : result;
   }
+
+  /// Returns color with alpha set to [percent].
+  ///
+  /// Corresponds with deprecated withOpacity method.
+  Color withAlphaPercent(double percent) {
+    assert(percent >= 0 && percent <= 1, 'percent must be between 0 and 1');
+
+    final alphaValue = (percent * 255).toInt().clamp(0, 255);
+
+    return withAlpha(alphaValue);
+  }
 }
