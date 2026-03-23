@@ -1,3 +1,17 @@
+## 22.0.0
+- Adhere to DCM 1.36.0:
+  - avoid-throw
+  - avoid-unassigned-local-variable
+  - avoid-unnecessary-parentheses
+  - prefer-non-nulls
+  - avoid-disposing-late-fields
+  - prefer-correct-static-icon-provider
+  - add-equatable-props
+  - avoid-implementation-in-mocks
+  - pass-mock-object
+  - prefer-correct-any-matcher
+  - use-then-answer
+
 ## 21.0.0
 - Adhere to DCM 1.34.0 and 1.35.0:
   - Add avoid-complex-conditions

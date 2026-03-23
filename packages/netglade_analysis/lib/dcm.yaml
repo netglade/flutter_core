@@ -171,12 +171,14 @@ dart_code_metrics:
     - avoid-suspicious-super-overrides
     - avoid-throw-in-catch-block
     - avoid-throw-objects-without-tostring
+    # - avoid-throw # for now we just manually check this
     - avoid-top-level-members-in-tests:
         include:
           - test/**/*_test.dart
     # - avoid-type-casts # needed when working with JSONs
     - avoid-unassigned-fields
     - avoid-unassigned-late-fields
+    - avoid-unassigned-local-variable
     - avoid-unassigned-stream-subscriptions
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
@@ -205,6 +207,7 @@ dart_code_metrics:
     - avoid-unnecessary-nullable-parameters
     - avoid-unnecessary-nullable-return-type
     - avoid-unnecessary-overrides
+    - avoid-unnecessary-parentheses
     - avoid-unnecessary-patterns
     - avoid-unnecessary-reassignment
     - avoid-unnecessary-return
@@ -407,6 +410,7 @@ dart_code_metrics:
     # - prefer-named-imports # * OK, we just don't have global config
     - prefer-named-parameters:
         max-number: 2
+    - prefer-non-nulls
     - prefer-null-aware-elements
     - prefer-null-aware-spread
     - prefer-overriding-parent-equality
@@ -467,6 +471,7 @@ dart_code_metrics:
     # - add-copy-with # * OK, we just don't have global config
     - always-remove-listener
     - avoid-border-all
+    - avoid-disposing-late-fields
     - avoid-empty-setstate
     - avoid-expanded-as-spacer
     - avoid-flexible-outside-flex
@@ -504,6 +509,7 @@ dart_code_metrics:
     - prefer-container:
         min-sequence: 2
     - prefer-correct-edge-insets-constructor
+    - prefer-correct-static-icon-provider
     - prefer-dedicated-media-query-methods
     - prefer-define-hero-tag
     - prefer-extracting-callbacks
@@ -549,8 +555,8 @@ dart_code_metrics:
     - avoid-passing-build-context-to-blocs
     - avoid-returning-value-from-cubit-methods
     - check-is-not-closed-after-async-gap
-        # additional-methods:
-          # - onSafe # ? Don't put onSafe here, it automatically checks whether bloc is closed in emit
+      # additional-methods:
+      # - onSafe # ? Don't put onSafe here, it automatically checks whether bloc is closed in emit
     - emit-new-bloc-state-instances
     - handle-bloc-event-subclasses:
         additional-methods:
@@ -581,6 +587,7 @@ dart_code_metrics:
     - use-ref-read-synchronously
 
     ### Equatable
+    - add-equatable-props
     # - extend-equatable # * OK, we just don't have global config
     - list-all-equatable-fields
     - prefer-equatable-mixin
@@ -597,6 +604,12 @@ dart_code_metrics:
 
     ### Fake Async
     - avoid-async-callback-in-fake-async
+
+    ### Mocktail
+    - avoid-implementation-in-mocks
+    - pass-mock-object
+    - prefer-correct-any-matcher
+    - use-then-answer
 
     ### Get It
     - avoid-functions-in-register-singleton:
@@ -655,7 +668,7 @@ dart_code_metrics:
     - prefer-publish-to-none
     - prefer-semver-version
     - pubspec-ordering
-  
+
   metrics:
     # Function / Method Metrics
     cyclomatic-complexity: 20
