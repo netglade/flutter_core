@@ -471,7 +471,7 @@ dart_code_metrics:
     # - add-copy-with # * OK, we just don't have global config
     - always-remove-listener
     - avoid-border-all
-    - avoid-disposing-late-fields
+    # - avoid-disposing-late-fields # not sure it works for us
     - avoid-empty-setstate
     - avoid-expanded-as-spacer
     - avoid-flexible-outside-flex

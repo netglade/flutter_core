@@ -1,10 +1,8 @@
 ## 22.0.0
 - Adhere to DCM 1.36.0:
-  - avoid-throw
   - avoid-unassigned-local-variable
   - avoid-unnecessary-parentheses
   - prefer-non-nulls
-  - avoid-disposing-late-fields
   - prefer-correct-static-icon-provider
   - add-equatable-props
   - avoid-implementation-in-mocks
