@@ -1,4 +1,4 @@
-# version 1.35.0 - https://dcm.dev/changelog
+# version 1.37.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -40,6 +40,7 @@ dart_code_metrics:
     - avoid-default-tostring:
         ignore-enums: true
     - avoid-deprecated-usage
+    # - avoid-dot-shorthands # we prefer dot shorthands
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
     - avoid-duplicate-collection-elements
@@ -90,6 +91,7 @@ dart_code_metrics:
           - Get.find
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
+    - avoid-labels
     # - avoid-late-keyword
     - avoid-local-functions:
         exclude:
@@ -246,6 +248,7 @@ dart_code_metrics:
           - useEffect
     - function-always-returns-same-value
     - handle-throwing-invocations
+    - initializers-ordering
     - map-keys-ordering:
         exclude:
           - test/**
@@ -254,7 +257,8 @@ dart_code_metrics:
     # - match-getter-setter-field-names # forces API to equals internal code
     # - match-lib-folder-structure # maybe later
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
-    # - max-imports # way too strict
+    # - max-imports # way too pedantic
+    # - max-statements # way too pedantic
     - member-ordering:
         order:
           - public-fields
@@ -293,10 +297,13 @@ dart_code_metrics:
         min-occurrences: 3
     - move-variable-closer-to-its-usage
     - move-variable-outside-iteration
+    - newline-before-break
     - newline-before-case
     - newline-before-constructor
+    - newline-before-continue
     - newline-before-method
     - newline-before-return
+    - newline-before-throw
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
@@ -329,6 +336,7 @@ dart_code_metrics:
     - prefer-add-all
     # - prefer-addition-subtraction-assignments # dunno
     - prefer-any-or-every
+    - prefer-assert-initializers-first
     # - prefer-assigning-await-expressions # way too strict sometimes
     - prefer-async-await
     - prefer-boolean-prefixes:
@@ -461,6 +469,7 @@ dart_code_metrics:
     - avoid-misused-test-matchers
     - prefer-wildcard-pattern
     - record-fields-ordering
+    - require-atomic-async-updates
     - avoid-late-final-reassignment
     # - tag-name # * OK, we just don't have global config
     - unnecessary-trailing-comma:
@@ -469,6 +478,7 @@ dart_code_metrics:
 
     ### Flutter
     # - add-copy-with # * OK, we just don't have global config
+    - always-pass-global-key
     - always-remove-listener
     - avoid-border-all
     # - avoid-disposing-late-fields # not sure it works for us
@@ -497,6 +507,7 @@ dart_code_metrics:
     - check-for-equals-in-render-object-setters
     - consistent-update-render-object
     - dispose-fields
+    - keep-state-below-its-widget
     - pass-existing-future-to-future-builder
     - pass-existing-stream-to-stream-builder
     - prefer-action-button-tooltip
