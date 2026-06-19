@@ -1,5 +1,5 @@
-## Unreleased
-- Require Dart SDK 3.10.0 or later.
+## 2.7.0
+- Require Dart SDK 3.12.0 or later.
 
 ## 2.6.0
 - Require Dart SDK 3.8.0 or later.

@@ -1,4 +1,4 @@
-# version 1.35.0 - https://dcm.dev/changelog
+# version 1.37.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
@@ -40,11 +40,15 @@ dart_code_metrics:
     - avoid-default-tostring:
         ignore-enums: true
     - avoid-deprecated-usage
+    # - avoid-dot-shorthands # we prefer dot shorthands
     - avoid-double-slash-imports
     - avoid-duplicate-cascades
-    - avoid-duplicate-collection-elements
+    - avoid-duplicate-collection-elements:
+        exclude:
+          - test/**
     # - avoid-duplicate-constant-values # ! check later, does not work for us for 2+ parameters as expected
     - avoid-duplicate-exports
+    - avoid-duplicate-factories
     - avoid-duplicate-initializers
     - avoid-duplicate-map-keys
     - avoid-duplicate-mixins
@@ -90,6 +94,7 @@ dart_code_metrics:
           - Get.find
     - avoid-inverted-boolean-checks
     - avoid-keywords-in-wildcard-pattern
+    - avoid-labels
     # - avoid-late-keyword
     - avoid-local-functions:
         exclude:
@@ -157,6 +162,9 @@ dart_code_metrics:
     - avoid-returning-void
     - avoid-self-assignment
     - avoid-self-compare
+    - avoid-sensitive-query-params:
+        exclude:
+          - test/**
     - avoid-shadowed-extension-methods
     - avoid-shadowing:
         ignore-parameters: true
@@ -183,6 +191,7 @@ dart_code_metrics:
     - avoid-uncaught-future-errors
     - avoid-unconditional-break
     - avoid-unknown-pragma
+    - avoid-unmodified-loop-condition
     - avoid-unnecessary-block
     - avoid-unnecessary-call
     - avoid-unnecessary-collections
@@ -194,6 +203,7 @@ dart_code_metrics:
     - avoid-unnecessary-enum-arguments
     - avoid-unnecessary-enum-prefix
     - avoid-unnecessary-extends
+    - avoid-unnecessary-factory
     - avoid-unnecessary-futures
     # - avoid-unnecessary-getter # it's ok to have getter for private field
     - avoid-unnecessary-if
@@ -219,7 +229,9 @@ dart_code_metrics:
     - avoid-unrelated-type-assertions
     - avoid-unrelated-type-casts
     - avoid-unremovable-callbacks-in-listeners
-    - avoid-unsafe-collection-methods
+    - avoid-unsafe-collection-methods:
+        exclude:
+          - test/**
     - avoid-unsafe-reduce
     - avoid-unused-after-null-check
     - avoid-unused-assignment
@@ -246,6 +258,7 @@ dart_code_metrics:
           - useEffect
     - function-always-returns-same-value
     - handle-throwing-invocations
+    - initializers-ordering
     - map-keys-ordering:
         exclude:
           - test/**
@@ -254,7 +267,8 @@ dart_code_metrics:
     # - match-getter-setter-field-names # forces API to equals internal code
     # - match-lib-folder-structure # maybe later
     # - match-positional-field-names-on-assignment # not compatible with avoid-redundant-positional-field-name
-    # - max-imports # way too strict
+    # - max-imports # way too pedantic
+    # - max-statements # way too pedantic
     - member-ordering:
         order:
           - public-fields
@@ -293,10 +307,13 @@ dart_code_metrics:
         min-occurrences: 3
     - move-variable-closer-to-its-usage
     - move-variable-outside-iteration
+    - newline-before-break
     - newline-before-case
     - newline-before-constructor
+    - newline-before-continue
     - newline-before-method
     - newline-before-return
+    - newline-before-throw
     - no-boolean-literal-compare:
         allow-false: true # allows `variable == false` instead of just `!variable`
     - no-empty-block
@@ -329,6 +346,7 @@ dart_code_metrics:
     - prefer-add-all
     # - prefer-addition-subtraction-assignments # dunno
     - prefer-any-or-every
+    - prefer-assert-initializers-first
     # - prefer-assigning-await-expressions # way too strict sometimes
     - prefer-async-await
     - prefer-boolean-prefixes:
@@ -395,6 +413,7 @@ dart_code_metrics:
     - prefer-for-in
     # - prefer-getter-over-method # way too pedantic
     - prefer-immediate-return
+    - prefer-initializing-formals
     - prefer-iterable-of
     - prefer-last
     - prefer-match-file-name:
@@ -417,8 +436,10 @@ dart_code_metrics:
     - prefer-parentheses-with-if-null
     # - prefer-prefixed-global-constants # * OK, we just don't have global config
     - prefer-private-extension-type-field
+    - prefer-private-named-parameters
     - prefer-public-exception-classes
     - prefer-pushing-conditional-expressions
+    - prefer-random-secure
     - prefer-redirecting-superclass-constructor
     - prefer-return-await
     # - prefer-returning-condition # Sometimes it is more readable to have if statement
@@ -461,6 +482,7 @@ dart_code_metrics:
     - avoid-misused-test-matchers
     - prefer-wildcard-pattern
     - record-fields-ordering
+    - require-atomic-async-updates
     - avoid-late-final-reassignment
     # - tag-name # * OK, we just don't have global config
     - unnecessary-trailing-comma:
@@ -469,6 +491,7 @@ dart_code_metrics:
 
     ### Flutter
     # - add-copy-with # * OK, we just don't have global config
+    - always-pass-global-key
     - always-remove-listener
     - avoid-border-all
     # - avoid-disposing-late-fields # not sure it works for us
@@ -493,10 +516,13 @@ dart_code_metrics:
     - avoid-unnecessary-overrides-in-state
     - avoid-unnecessary-setstate
     - avoid-unnecessary-stateful-widgets
+    - avoid-unrestricted-javascript
+    - avoid-unrestricted-navigation
     - avoid-wrapping-in-padding
     - check-for-equals-in-render-object-setters
     - consistent-update-render-object
     - dispose-fields
+    - keep-state-below-its-widget
     - pass-existing-future-to-future-builder
     - pass-existing-stream-to-stream-builder
     - prefer-action-button-tooltip
@@ -582,7 +608,12 @@ dart_code_metrics:
     - avoid-ref-watch-outside-build
     - avoid-unnecessary-consumer-widgets
     - dispose-provided-instances
+    - prefer-correct-notifier-file-name
+    - prefer-correct-provider-file-name
     - prefer-immutable-provider-arguments
+    - prefer-riverpod-notifier-suffix
+    - prefer-riverpod-provider-suffix
+    - prefer-single-notifier-per-file
     - use-ref-and-state-synchronously
     - use-ref-read-synchronously
 

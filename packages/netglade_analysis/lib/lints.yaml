@@ -20,7 +20,7 @@ formatter:
   page_width: 120
   trailing_commas: preserve
 
-# version 3.10.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
+# version 3.12.0 - https://github.com/dart-lang/sdk/blob/main/pkg/linter/CHANGELOG.md
 # lints here - https://dart.dev/tools/linter-rules
 linter:
   rules:
@@ -65,6 +65,7 @@ linter:
     - use_key_in_widget_constructors
     - use_truncating_division
     - valid_regexps
+    - var_with_no_type_annotation
 
     ### STYLE
     - always_declare_return_types
@@ -89,7 +90,6 @@ linter:
     - avoid_init_to_null
     - avoid_js_rounded_ints
     - avoid_multiple_declarations_per_line
-    - avoid_null_checks_in_equality_operators
     - avoid_equals_and_hash_code_on_mutable_classes
     - avoid_positional_boolean_parameters
     - avoid_private_typedef_functions
@@ -147,8 +147,8 @@ linter:
     - null_check_on_nullable_type_parameter
     - null_closures
     - omit_local_variable_types
-    # - omit_obvious_local_variable_types # ! experimental
-    # - omit_obvious_property_types # ! experimental
+    # - omit_obvious_local_variable_types
+    # - omit_obvious_property_types
     - one_member_abstracts
     - only_throw_errors
     - overridden_fields
@@ -170,7 +170,6 @@ linter:
     - prefer_final_fields
     - prefer_final_in_for_each
     - prefer_final_locals
-    # - prefer_final_parameters
     # - prefer_foreach
     - prefer_for_elements_to_map_fromIterable
     - prefer_function_declarations_over_variables
@@ -196,14 +195,16 @@ linter:
     - recursive_getters
     # - remove_deprecations_in_breaking_versions
     - require_trailing_commas
+    - simple_directive_paths
+    - simplify_variable_pattern
     - sized_box_for_whitespace
     - sized_box_shrink_expand
     - slash_for_doc_comments
     - sort_child_properties_last
     # - sort_constructors_first
     - sort_unnamed_constructors_first
-    # - specify_nonobvious_local_variable_types # ! experimental
-    # - specify_nonobvious_property_types # ! experimental
+    # - specify_nonobvious_local_variable_types
+    # - specify_nonobvious_property_types
     - strict_top_level_inference
     - tighten_type_of_initializing_formals
     - type_annotate_public_apis
@@ -244,7 +245,6 @@ linter:
     - use_enums
     - use_full_hex_values_for_flutter_colors
     - use_function_type_syntax_for_parameters
-    - use_if_null_to_convert_nulls_to_bools
     - use_is_even_rather_than_modulo
     - use_late_for_private_fields_and_variables
     - use_named_constants

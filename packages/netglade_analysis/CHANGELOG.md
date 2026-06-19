@@ -1,14 +1,45 @@
+## 23.0.0
+- Exclude in tests:
+  - avoid-duplicate-collection-elements
+  - avoid-unsafe-collection-methods
+  - avoid-sensitive-query-params
+- Adhere to DCM 1.38.0
+  - Add avoid-duplicate-factories
+  - Add avoid-unnecessary-factory
+  - Add avoid-unmodified-loop-condition
+  - Add prefer-private-named-parameters
+  - Add prefer-initializing-formals
+  - Add prefer-random-secure
+  - Add avoid-sensitive-query-params
+  - Add avoid-unrestricted-navigation
+  - Add avoid-unrestricted-javascript
+  - Add prefer-single-notifier-per-file
+  - Add prefer-correct-provider-file-name
+  - Add prefer-riverpod-provider-suffix
+  - Add prefer-riverpod-notifier-suffix
+  - Add prefer-correct-notifier-file-name
+- Adhere to DCM 1.37.0:
+  - Add avoid-labels
+  - Add initializers-ordering
+  - Add newline-before-break
+  - Add newline-before-continue
+  - Add newline-before-throw
+  - Add prefer-assert-initializers-first
+  - Add require-atomic-async-updates
+  - Add always-pass-global-key
+  - Add keep-state-below-its-widget
+
 ## 22.0.0
 - Adhere to DCM 1.36.0:
-  - avoid-unassigned-local-variable
-  - avoid-unnecessary-parentheses
-  - prefer-non-nulls
-  - prefer-correct-static-icon-provider
-  - add-equatable-props
-  - avoid-implementation-in-mocks
-  - pass-mock-object
-  - prefer-correct-any-matcher
-  - use-then-answer
+  - Add avoid-unassigned-local-variable
+  - Add avoid-unnecessary-parentheses
+  - Add prefer-non-nulls
+  - Add prefer-correct-static-icon-provider
+  - Add add-equatable-props
+  - Add avoid-implementation-in-mocks
+  - Add pass-mock-object
+  - Add prefer-correct-any-matcher
+  - Add use-then-answer
 
 ## 21.0.0
 - Adhere to DCM 1.34.0 and 1.35.0:
