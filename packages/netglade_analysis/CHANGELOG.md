@@ -1,3 +1,14 @@
+## 24.0.0
+- Adhere to DCM 1.39.0
+  - Rename avoid-missing-image-alt to provide-image-semantic-label
+  - Add avoid-always-null-variables
+  - Add avoid-duplicate-field-initializers
+  - Add avoid-mutating-constant-collections
+  - Add avoid-not-assignable-collection-types
+  - Add prefer-unmodifiable-of
+  - Add avoid-focusable-offstage
+  - Add prefer-icon-button-tooltip
+  - Add specify-unknown-enum-value
 ## 23.0.0
 - Exclude in tests:
   - avoid-duplicate-collection-elements

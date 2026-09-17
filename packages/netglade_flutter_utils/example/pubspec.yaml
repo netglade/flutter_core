@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  netglade_analysis: ^23.0.0
+  netglade_analysis: ^24.0.0
   netglade_flutter_utils:
     path: ..
 

@@ -1,12 +1,14 @@
-# version 1.37.0 - https://dcm.dev/changelog
+# version 1.39.0 - https://dcm.dev/changelog
 dart_code_metrics:
   rules:
     ### Common
+    # - add-static-field # * OK, we just don't have global config
     # - arguments-ordering # way too pedantic
     - avoid-accessing-collections-by-constant-index
     - avoid-accessing-other-classes-private-members
     - avoid-adjacent-strings
     - avoid-always-null-parameters
+    - avoid-always-null-variables
     - avoid-assigning-to-static-field
     - avoid-assignments-as-conditions
     - avoid-async-call-in-sync-function
@@ -49,6 +51,7 @@ dart_code_metrics:
     # - avoid-duplicate-constant-values # ! check later, does not work for us for 2+ parameters as expected
     - avoid-duplicate-exports
     - avoid-duplicate-factories
+    - avoid-duplicate-field-initializers
     - avoid-duplicate-initializers
     - avoid-duplicate-map-keys
     - avoid-duplicate-mixins
@@ -111,6 +114,7 @@ dart_code_metrics:
     - avoid-misused-wildcard-pattern
     - avoid-mixing-named-and-positional-fields
     - avoid-multi-assignment
+    - avoid-mutating-constant-collections
     # - avoid-mutating-parameters # we use ValueNotifier etc.
     # - avoid-negated-conditions # sometimes it might be better
     - avoid-negations-in-equality-checks
@@ -137,6 +141,7 @@ dart_code_metrics:
         skip-checked-fields: true
         exclude:
           - test/**
+    - avoid-not-assignable-collection-types
     - avoid-not-encodable-in-to-json
     - avoid-nullable-interpolation
     - avoid-nullable-parameters-with-default-values
@@ -392,6 +397,7 @@ dart_code_metrics:
     # - prefer-correct-handler-name # not now
     # - prefer-correct-identifier-length # way too pedantic
     # - prefer-correct-json-casts # overkill
+    # - prefer-correct-mutated # needs the dcm annotations package
     - prefer-correct-setter-parameter-name
     - prefer-correct-stream-return-type
     # - prefer-correct-switch-length # sometimes switch with 2 cases makes sense
@@ -472,6 +478,7 @@ dart_code_metrics:
     # - prefer-type-over-var # we prefer type inference
     - prefer-typedefs-for-callbacks
     - prefer-unique-test-names
+    - prefer-unmodifiable-of
     # - prefer-unwrapping-future-or # we are ok with awaiting values
     - prefer-visible-for-testing-on-members
     - avoid-missing-interpolation:
@@ -498,14 +505,17 @@ dart_code_metrics:
     - avoid-empty-setstate
     - avoid-expanded-as-spacer
     - avoid-flexible-outside-flex
+    - avoid-focusable-offstage
     - avoid-incomplete-copy-with
     - avoid-incorrect-image-opacity
     - avoid-inherited-widget-in-initstate
     - avoid-late-context
+    # - avoid-merge-semantics-list-tile # ! a11y, revisit when prioritized (EAA)
     - avoid-missing-controller
-    - avoid-missing-image-alt
     - avoid-mounted-in-setstate
+    # - avoid-nested-interactive-semantics # ! a11y, revisit when prioritized (EAA)
     - avoid-recursive-widget-calls
+    # - avoid-redundant-semantics-wrapper # ! a11y, revisit when prioritized (EAA)
     - avoid-returning-widgets
     - avoid-shrink-wrap-in-lists
     - avoid-single-child-column-or-row
@@ -540,7 +550,11 @@ dart_code_metrics:
     - prefer-define-hero-tag
     - prefer-extracting-callbacks
     - prefer-for-loop-in-children
+    # - prefer-haptic-feedback-on-interaction # ! not decided yet, depends on UX
+    - prefer-icon-button-tooltip
+    # - prefer-localized-semantic-labels # ! a11y, revisit when prioritized (EAA)
     - prefer-padding-over-container
+    # - prefer-semantics-header # ! a11y, revisit when prioritized (EAA)
     - prefer-single-setstate
     - prefer-single-widget-per-file:
         ignore-private-widgets: true
@@ -554,7 +568,14 @@ dart_code_metrics:
     - prefer-void-callback
     - prefer-widget-private-members
     - proper-super-calls
+    # - provide-autofill-hints # ! a11y, revisit when prioritized (EAA)
+    # - provide-icon-semantic-label # ! a11y, revisit when prioritized (EAA)
+    - provide-image-semantic-label
+    # - provide-input-field-label # ! a11y, revisit when prioritized (EAA)
+    # - provide-progress-indicator-semantics # ! a11y, revisit when prioritized (EAA)
+    # - provide-slider-semantic-formatter # ! a11y, revisit when prioritized (EAA)
     - use-closest-build-context
+    # - use-existing-widget # * OK, we just don't have global config
     - use-setstate-synchronously
 
     ### Provider
@@ -641,6 +662,9 @@ dart_code_metrics:
     - pass-mock-object
     - prefer-correct-any-matcher
     - use-then-answer
+
+    ### Json Serializable
+    - specify-unknown-enum-value
 
     ### Get It
     - avoid-functions-in-register-singleton:
