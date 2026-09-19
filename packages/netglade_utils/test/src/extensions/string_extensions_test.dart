@@ -591,4 +591,122 @@ void main() {
       });
     });
   });
+
+  group('normalizeUrl', () {
+    for (final testCase in [
+      'https://aaa.cz',
+      'aaa.cz',
+      'https://aaa.cz/',
+      'aaa.cz/',
+      '  https://aaa.cz/',
+      '  aaa.cz/',
+      'https://aaa.cz///  ',
+      'aaa.cz///  ',
+    ]) {
+      test('URL $testCase should be normalized', () {
+        final result = testCase.normalizeUrl();
+
+        expect(result, equals('https://aaa.cz'));
+      });
+    }
+  });
+
+  group('rtrim', () {
+    test('should remove trailing slash', () {
+      final result = 'https://aaa.cz/'.rtrim('/');
+      expect(result, equals('https://aaa.cz'));
+    });
+    test('should remove trailing slashes', () {
+      final result = 'https://aaa.cz///'.rtrim('/');
+      expect(result, equals('https://aaa.cz'));
+    });
+  });
+
+  group('capitalize', () {
+    test('should capitalize first letter', () {
+      final result = 'hello world'.capitalize();
+      expect(result, equals('Hello world'));
+    });
+
+    test('should not change already capitalized string', () {
+      final result = 'Hello world'.capitalize();
+      expect(result, equals('Hello world'));
+    });
+
+    test('single character is not capitalized', () {
+      final result = 'h'.capitalize();
+      expect(result, equals('h'));
+    });
+
+    test('Should capitalize first letter when two characters', () {
+      final result = 'hh'.capitalize();
+      expect(result, equals('Hh'));
+    });
+
+    test('should handle empty string', () {
+      final result = ''.capitalize();
+      expect(result, equals(''));
+    });
+  });
+
+  group('shorten', () {
+    test('should shorten string to max length', () {
+      final result = 'Hello, world!'.shorten(5);
+      expect(result, equals('Hello...'));
+    });
+
+    test('should not shorten if length is less than max length', () {
+      final result = 'Hi'.shorten(5);
+      expect(result, equals('Hi'));
+    });
+
+    test('should handle empty string', () {
+      final result = ''.shorten(5);
+      expect(result, equals(''));
+    });
+  });
+
+  group('stripOuterQuotes', () {
+    test('should strip outer quotes from string', () {
+      final result = '"Hello, world!"'.stripOuterQuotes();
+      expect(result, equals('Hello, world!'));
+    });
+
+    test('should handle string without quotes', () {
+      final result = 'Hello, world!'.stripOuterQuotes();
+      expect(result, equals('Hello, world!'));
+    });
+
+    test('string with single quote is not handled', () {
+      final result = "'Hello, world!'".stripOuterQuotes();
+      expect(result, equals("'Hello, world!'"));
+    });
+
+    test('should handle empty string', () {
+      final result = ''.stripOuterQuotes();
+      expect(result, equals(''));
+    });
+  });
+
+  group('stripNewLines', () {
+    test('should replace new lines with space', () {
+      final result = 'Hello\nWorld'.stripNewLines();
+      expect(result, equals('Hello World'));
+    });
+
+    test('should replace multiple new lines with single space', () {
+      final result = 'Hello\n\nWorld'.stripNewLines();
+      expect(result, equals('Hello World'));
+    });
+
+    test('should handle empty string', () {
+      final result = ''.stripNewLines();
+      expect(result, equals(''));
+    });
+
+    test('should handle string without new lines', () {
+      final result = 'Hello World'.stripNewLines();
+      expect(result, equals('Hello World'));
+    });
+  });
 }
